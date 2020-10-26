@@ -2,6 +2,10 @@ body {
     font-family: sans-serif;
     background: #34495e;
 }
+input[type = "image"] {
+    width: 50px;
+    margin: 10px;   
+}
 .grid-layout{
     display: grid; /* 1 */
     grid-template-columns: 20vw 20vw 20vw 20vw 20vw; /* 2 */

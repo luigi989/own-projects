@@ -1,2 +1,8 @@
 Index.html
-- Byt form tilll a href
+- Boxes should start at the same height, even if the height of 
+  them all are different
+
+Login forms
+- Return buttons color should fit with the sites color. 
+    Issue: As now, the return button is a picture. Maybe change color of
+           picture or other way.
