@@ -1,8 +1,16 @@
 Index.html
-- Boxes should start at the same height, even if the height of 
-  them all are different
+- Boxes should start at the same height
+- Rounded corners at Boxes
+- SHadows behind boxes
+- On hover, the box should be enlarged
 
-Login forms
+Login form transparent
+- Add a register tab
+    - The line under login should move to register on click
+
+All sites
 - Return buttons color should fit with the sites color. 
     Issue: As now, the return button is a picture. Maybe change color of
            picture or other way.
+
+- make a MAKE-file for git
