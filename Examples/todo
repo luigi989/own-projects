@@ -7,6 +7,7 @@ Index.html
 Login form transparent
 - Add a register tab
     - The line under login should move to register on click
+- In transparent login, wrong pointer is displayed when hovering the text Login
 
 All sites
 - Return buttons color should fit with the sites color. 
