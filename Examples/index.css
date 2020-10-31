@@ -16,7 +16,7 @@ input[type = "image"] {
 }   
 .box {
     display: inline-block;
-    vertical-align: middle;
+    vertical-align: top;
     position: relative;
     padding: 30px;
     padding-top: 10px;

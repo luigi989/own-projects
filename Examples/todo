@@ -4,14 +4,7 @@ Index.html
 - SHadows behind boxes
 - On hover, the box should be enlarged
 
-Login form transparent
-- Add a register tab
-    - The line under login should move to register on click
-- In transparent login, wrong pointer is displayed when hovering the text Login
-
 All sites
 - Return buttons color should fit with the sites color. 
     Issue: As now, the return button is a picture. Maybe change color of
            picture or other way.
-
-- make a MAKE-file for git
