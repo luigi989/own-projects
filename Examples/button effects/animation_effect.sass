@@ -1,0 +1,217 @@
+$backgr_color: #031321
+
+body  
+    margin: 0  
+    padding: 0  
+    background: $backgr_color  
+  
+input[type="image"]  
+    top:90%  
+  
+div h1  
+    position: absolute  
+    background-color: $backgr_color  
+    font-size: 20px  
+    margin-left: 1%  
+    margin-top: -0.7%  
+    padding-left: 10px  
+    padding-right: 10px  
+  
+.btn.shrink_bottom_top,
+.btn.shrink_top_bottom,
+.btn.fill_top_bottom:hover,
+.btn.fill_bottom_top:hover,
+.btn.fill_left_right:hover,
+.btn.fill_left_bottom_right_top:hover  
+    color: #000000
+  
+/* === COLORS === */
+/* Blue color*/
+$blue_border_color: #255784
+$blue: #044b85
+
+.blue  
+    margin: 1%  
+    border: 1px solid $blue_border_color  
+  
+.blue 
+    h1  
+        color: $blue  
+    button  
+        color: $blue  
+        border: 1px solid $blue    
+    button:hover  
+        box-shadow: 0 0 10px $blue  
+    .shrink_bottom_top:hover, 
+    .shrink_top_bottom:hover  
+        color: $blue    
+    .btn::before  
+        background: $blue  
+
+/* Green color */
+$green_border_color: #055205
+$green: #0c8612
+$green_btn: #0d5e11 
+
+.green  
+    margin: 1%  
+    border: 1px solid $green_border_color  
+   
+.green 
+    h1  
+        color: $green  
+    button  
+        color: $green_btn  
+        border: 1px solid $green_btn  
+    button:hover  
+        box-shadow: 0 0 10px $green  
+    .shrink_bottom_top:hover, 
+    .shrink_top_bottom:hover  
+        color: $green_btn    
+    .btn::before  
+        background-color: $green_border_color  
+  
+/* Red color */
+$red: #740000
+
+.red  
+    margin: 1%  
+    border: 1px solid $red
+
+.red 
+    h1  
+        color: $red  
+    button  
+        color: $red  
+        border: 1px solid $red    
+    button:hover  
+        box-shadow: 0 0 10px $red    
+    .shrink_bottom_top:hover, 
+    .shrink_top_bottom:hover  
+        color: $red    
+    .btn::before  
+        background: $red  
+
+/* Black color */
+$text_color: #585353
+
+.black  
+    margin: 1%  
+    border: 1px solid #000000  
+   
+.black 
+    h1  
+        color: $text_color   
+    button  
+        color: $text_color  
+        border: 1px solid #000000  
+    .shrink_bottom_top,
+    .shrink_top_bottom  
+        color: $text_color      
+    .fill_top_bottom:hover,
+    .fill_bottom_top:hover,
+    .fill_left_right:hover,
+    .fill_left_bottom_right_top:hover  
+        color: $text_color  
+    button:hover  
+        box-shadow: 0 0 10px #000000    
+    .btn::before  
+        background: #000000  
+  
+/* Multicolor */
+$purple: #743ad5
+
+.multi  
+    margin: 1%  
+    border: 1px solid  
+    border-image-slice: 1  
+    border-width: 1px  
+    border-image-source: linear-gradient(to right, $purple, red)  
+   
+.multi 
+    h1  
+        color: $purple  
+    button  
+        color: $purple  
+        border: 1px solid  
+        border-image-slice: 1  
+        border-width: 1px  
+        border-image-source: linear-gradient(to right, $purple, red)    
+    button:hover  
+        border: 1px solid  
+        border-image-slice: 1  
+        border-width: 1px  
+        border-image-source: linear-gradient(to right, $purple, red)      
+    .btn:last-child:hover  
+        background: #000000  
+        box-shadow: 0 0 10px #000000    
+    .shrink_bottom_top:hover, 
+    .shrink_top_bottom:hover  
+        color: $purple    
+    .btn::before  
+        background: linear-gradient(to right, $purple, red)  
+  
+/* === ANIMATION === */
+.btn  
+    background: none  
+    padding: 10px 20px  
+    font-size: 20px  
+    font-family: "montserrat"  
+    cursor: pointer  
+    margin: 1%  
+    transition: 0.8s  
+    position: relative  
+    overflow: hidden  
+  
+.btn::before  
+    content: ""  
+    position: absolute  
+    left: 0  
+    width: 100%  
+    height: 0%  
+    z-index: -1      
+    transition: 0.8s  
+  
+.fill_top_bottom::before,
+.shrink_bottom_top::before  
+    top: 0  
+    border-radius: 0 0 50% 50%  
+  
+.fill_bottom_top::before, 
+.shrink_top_bottom::before  
+    bottom: 0  
+    border-radius: 50% 50% 0 0  
+  
+.shrink_bottom_top::before, 
+.shrink_top_bottom::before  
+    height: 180%  
+  
+.fill_top_bottom:hover::before, 
+.fill_bottom_top:hover::before  
+    height: 180%  
+  
+.shrink_bottom_top:hover::before, 
+.shrink_top_bottom:hover::before  
+    height: 0%  
+  
+/* Fill left to right */
+.fill_left_right::before  
+    top: 0  
+    width: 0%  
+    height: 100%  
+    border-radius: 0 25% 25% 0  
+  
+.fill_left_right:hover::before  
+    width: 130%  
+  
+/* Fill left bottom corner to right top corner */
+.fill_left_bottom_right_top::before  
+    bottom: 0  
+    width: 0%  
+    height: 0%  
+    border-radius: 0 50% 0 0  
+  
+.fill_left_bottom_right_top:hover::before  
+    width: 130%  
+    height: 110%  
+  
