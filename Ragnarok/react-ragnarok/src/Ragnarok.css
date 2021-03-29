@@ -83,7 +83,9 @@ a {
     -webkit-transition-property: box-shadow;
     transition-property: box-shadow;
   }
-  
+.gods:hover, .creatures:hover, .lore:hover {
+    cursor: pointer;
+}
 .gods:hover:before{
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
 }
