@@ -4,6 +4,7 @@
 - If an image is missing the visual becomes messed up 
         (Can it even be like that? React throws error)
 - Better server-side messages
+- Better descriptions in markdown files on Git
 
 / Close-button at bottom of popup
 / Click outside popup should close popup
