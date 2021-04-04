@@ -1,0 +1,16 @@
+{
+  "name": "db_test",
+  "version": "1.0.0",
+  "description": "An exemple of connecting to a postgresql db with react",
+  "main": "index.js",
+  "scripts": {
+    "test": "\t"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "ng": "0.0.0",
+    "pg": "^8.5.1"
+  }
+}
