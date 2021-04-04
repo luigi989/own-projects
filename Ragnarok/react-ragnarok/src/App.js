@@ -1,11 +1,11 @@
 import React from 'react';
-import Gods from './gods';
-import Creatures from './creatures';
-import Lore from './lore';
-import Popup from './popup';
+import Gods from './components/gods';
+import Creatures from './components/creatures';
+import Lore from './components/lore';
+import Popup from './components/popup';
 
-import './Ragnarok.css';
-import './hover_effects.css';
+import './visual/Ragnarok.css';
+import './visual/hover_effects.css';
 
 import logo from './images/pattern.png';
 import arrowRight from './images/arrowRight.png';
@@ -63,10 +63,10 @@ class App extends React.Component {
         this.handleGodChange = this.handleGodChange.bind(this);
     } 
 
-    handleGodChange(id, name, description) {
-        this.setState({name: name});
-        this.setState({id: id});
-        this.setState({description: description});
+    handleGodChange(god) {
+        this.setState({name: god.name});
+        this.setState({id: god.id});
+        this.setState({description: god.description});
         this.setState({showPopup: !this.state.showPopup});
     }
 
