@@ -5,6 +5,7 @@
         (Can it even be like that? React throws error)
 - Better server-side messages
 - Better descriptions in markdown files on Git
+- Error message if server is unreachable
 
 / Close-button at bottom of popup
 / Click outside popup should close popup
