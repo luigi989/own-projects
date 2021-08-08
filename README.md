@@ -4,7 +4,9 @@ A repo where I house all my own little side-project. Planning to store webpages,
 
 ## :notebook_with_decorative_cover: Examples
 
-A website with cool stuff coded in HTML and CSS. Javascript may be used later on also. 
+A website with a lot of experimental code examples, for example login pages with a modern design.
+
+# Used languages
 
 ## :microscope: Periodiska systemet
 
