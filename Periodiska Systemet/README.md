@@ -1,4 +1,4 @@
-## :notebook_with_decorative_cover: Perodiska Systemet
+## :microscope: Perodiska Systemet
 
 ### :seedling: Install and launch
 Open index.html in any web browser.
