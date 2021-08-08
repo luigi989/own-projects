@@ -6,7 +6,7 @@ A repo where I house all my own little side-project. Planning to store webpages,
 
 A website with a lot of experimental code examples, for example login pages with a modern design.
 
-# Used languages
+### Used languages
 
 ## :microscope: Periodiska systemet
 
