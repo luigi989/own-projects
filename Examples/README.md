@@ -1,10 +1,10 @@
 ## :notebook_with_decorative_cover: Examples
 
-### Install and launch
+### :seedling: Install and launch
 Open index.html in any web browser.
 
-### Prerequisites
+### :ballot_box_with_check: Prerequisites
 Nothing
 
-### Further development
+### :triangular_flag_on_post: Further development
 Planning to expand with more types of interesting examples. Javascript will be included later on also.
