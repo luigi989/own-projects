@@ -1,0 +1,288 @@
+@charset "utf-8";
+.elements_sort {
+	position: absolute;
+	padding: 5px;
+	width: 8.5vw;
+	color: white; 
+	font-size: 1vw;
+}
+#alkaliemetall_sort {
+	height: 1vw;
+	background-color: #833081;
+}
+#alkaliska-jordartsmetaller_sort {
+	top: 2.4vw;
+	height: 2.2vw;
+	background-color: #A63737;
+}
+#ädelgaser_sort {
+	top: 5.6vw;
+	height: 1vw;
+	background-color: #0066CC;
+}
+#halogener_sort {
+	top: 7.6vw;
+	height: 1vw;
+	background-color: #3E67B5;
+}
+#icke-metaller_sort {
+	top: 9.6vw;
+	height: 1vw;
+	background-color: #0066CC;
+}
+#metalloid_sort {
+	top: 11.6vw;
+	height: 1vw;
+	background-color: #006600;
+}
+#övriga-metaller_sort {
+	top: 13.6vw;
+	height: 1vw;
+	background-color: #00cc00;
+} 
+#halvmetaller_sort {
+	top: 15.6vw;
+	height: 1vw;
+	background-color: #FF6600;
+}
+#lantanoider_sort {
+	top: 17.6vw;
+	height: 1vw;
+	background-color: #CC6699;
+}
+#aktinider_sort {
+	top: 19.6vw;
+	height: 1vw;
+	background-color: #CC33FF;
+}
+
+.elements_sort:hover {
+	border-style: solid;
+	border-bottom: none;
+	border-top: none;
+	border-radius: 10px;
+	border-color: black;
+}
+
+/* Ädelgaser */
+#ädelgaser_sort:hover ~ div div[class=icke-metaller],
+#ädelgaser_sort:hover ~ div div[class=alkaliemetall], 
+#ädelgaser_sort:hover ~ div div[class=alkaliska-jordartsmetaller] ,
+#ädelgaser_sort:hover ~ div div[class=metalloid], 
+#ädelgaser_sort:hover ~ div div[class=övriga-metaller], 
+#ädelgaser_sort:hover ~ div div[class=halvmetaller],
+#ädelgaser_sort:hover ~ div div[class=halogener], 
+#ädelgaser_sort:hover ~ div div[class=lantanoider], 
+#ädelgaser_sort:hover ~ div div[class=aktinider] {
+	background-color: gray;
+	opacity: 0.3;
+}
+/* Halogener */
+#halogener_sort:hover ~ div div[class=icke-metaller], 
+#halogener_sort:hover ~ div div[class=alkaliemetall], 
+#halogener_sort:hover ~ div div[class=metalloid], 
+#halogener_sort:hover ~ div div[class=övriga-metaller],
+#halogener_sort:hover ~ div div[class=halvmetaller],
+#halogener_sort:hover ~ div div[class=ädelgaser],
+#halogener_sort:hover ~ div div[class=lantanoider],
+#halogener_sort:hover ~ div div[class=aktinider] {
+	background-color: gray;
+	opacity: 0.3;
+}
+/* Alkaliemetaller */
+#alkaliemetall_sort:hover ~ div div[class=icke-metaller], 
+#alkaliemetall_sort:hover ~ div div[class=halogener], 
+#alkaliemetall_sort:hover ~ div div[class=alkaliska-jordartsmetaller] , 
+#alkaliemetall_sort:hover ~ div div[class=metalloid], 
+#alkaliemetall_sort:hover ~ div div[class=övriga-metaller], 
+#alkaliemetall_sort:hover ~ div div[class=halvmetaller], 
+#alkaliemetall_sort:hover ~ div div[class=ädelgaser],
+#alkaliemetall_sort:hover ~ div div[class=lantanoider], 
+#alkaliemetall_sort:hover ~ div div[class=aktinider] {
+	background-color: gray;
+	opacity: 0.3;
+}
+/* Alkaliska jordartsmetaller */
+#alkaliska-jordartsmetaller_sort:hover ~ div div[class=icke-metaller],
+#alkaliska-jordartsmetaller_sort:hover ~ div div[class=halogener], 
+#alkaliska-jordartsmetaller_sort:hover ~ div div[class=alkaliemetall] , 
+#alkaliska-jordartsmetaller_sort:hover ~ div div[class=metalloid], 
+#alkaliska-jordartsmetaller_sort:hover ~ div div[class=övriga-metaller], 
+#alkaliska-jordartsmetaller_sort:hover ~ div div[class=halvmetaller], 
+#alkaliska-jordartsmetaller_sort:hover ~ div div[class=ädelgaser], 
+#alkaliska-jordartsmetaller_sort:hover ~ div div[class=lantanoider], 
+#alkaliska-jordartsmetaller_sort:hover ~ div div[class=aktinider]{
+	background-color: gray;
+	opacity: 0.3;
+}
+/* Ickemetaller */
+#icke-metaller_sort:hover ~ div div[class=alkaliska-jordartsmetaller],
+#icke-metaller_sort:hover ~ div div[class=halogener], 
+#icke-metaller_sort:hover ~ div div[class=alkaliemetall] , 
+#icke-metaller_sort:hover ~ div div[class=metalloid],
+#icke-metaller_sort:hover ~ div div[class=övriga-metaller], 
+#icke-metaller_sort:hover ~ div div[class=halvmetaller], 
+#icke-metaller_sort:hover ~ div div[class=ädelgaser], 
+#icke-metaller_sort:hover ~ div div[class=lantanoider],
+#icke-metaller_sort:hover ~ div div[class=aktinider]{
+	background-color: gray;
+	opacity: 0.3;
+}
+/* Metalloider */
+#metalloid_sort:hover ~ div div[class=alkaliska-jordartsmetaller],
+#metalloid_sort:hover ~ div div[class=halogener], 
+#metalloid_sort:hover ~ div div[class=alkaliemetall] , 
+#metalloid_sort:hover ~ div div[class=icke-metaller],
+#metalloid_sort:hover ~ div div[class=övriga-metaller], 
+#metalloid_sort:hover ~ div div[class=halvmetaller], 
+#metalloid_sort:hover ~ div div[class=ädelgaser], 
+#metalloid_sort:hover ~ div div[class=lantanoider],
+#metalloid_sort:hover ~ div div[class=aktinider]{
+	background-color: gray;
+	opacity: 0.3;
+}
+/* Övriga metaller */
+#övriga-metaller_sort:hover ~ div div[class=alkaliska-jordartsmetaller],
+#övriga-metaller_sort:hover ~ div div[class=halogener], 
+#övriga-metaller_sort:hover ~ div div[class=alkaliemetall] , 
+#övriga-metaller_sort:hover ~ div div[class=icke-metaller],
+#övriga-metaller_sort:hover ~ div div[class=metalloid], 
+#övriga-metaller_sort:hover ~ div div[class=halvmetaller], 
+#övriga-metaller_sort:hover ~ div div[class=ädelgaser], 
+#övriga-metaller_sort:hover ~ div div[class=lantanoider],
+#övriga-metaller_sort:hover ~ div div[class=aktinider]{
+	background-color: gray;
+	opacity: 0.3;
+}
+/* Halvmetaller */
+#halvmetaller_sort:hover ~ div div[class=alkaliska-jordartsmetaller],
+#halvmetaller_sort:hover ~ div div[class=halogener], 
+#halvmetaller_sort:hover ~ div div[class=alkaliemetall] , 
+#halvmetaller_sort:hover ~ div div[class=icke-metaller],
+#halvmetaller_sort:hover ~ div div[class=metalloid], 
+#halvmetaller_sort:hover ~ div div[class=övriga-metaller], 
+#halvmetaller_sort:hover ~ div div[class=ädelgaser], 
+#halvmetaller_sort:hover ~ div div[class=lantanoider],
+#halvmetaller_sort:hover ~ div div[class=aktinider]{
+	background-color: gray;
+	opacity: 0.3;
+}
+/* Lantanoider */
+#lantanoider_sort:hover ~ div div[class=alkaliska-jordartsmetaller],
+#lantanoider_sort:hover ~ div div[class=halogener], 
+#lantanoider_sort:hover ~ div div[class=alkaliemetall] , 
+#lantanoider_sort:hover ~ div div[class=icke-metaller],
+#lantanoider_sort:hover ~ div div[class=metalloid], 
+#lantanoider_sort:hover ~ div div[class=övriga-metaller], 
+#lantanoider_sort:hover ~ div div[class=ädelgaser], 
+#lantanoider_sort:hover ~ div div[class=halvmetaller],
+#lantanoider_sort:hover ~ div div[class=aktinider]{
+	background-color: gray;
+	opacity: 0.3;
+}
+/* Aktinider */
+#aktinider_sort:hover ~ div div[class=alkaliska-jordartsmetaller],
+#aktinider_sort:hover ~ div div[class=halogener], 
+#aktinider_sort:hover ~ div div[class=alkaliemetall], 
+#aktinider_sort:hover ~ div div[class=icke-metaller],
+#aktinider_sort:hover ~ div div[class=metalloid], 
+#aktinider_sort:hover ~ div div[class=övriga-metaller], 
+#aktinider_sort:hover ~ div div[class=ädelgaser], 
+#aktinider_sort:hover ~ div div[class=halvmetaller],
+#aktinider_sort:hover ~ div div[class=lantanoider]{
+	background-color: gray;
+	opacity: 0.3;
+}
+
+.siffra:hover,
+.faq .siffraEx:hover {
+	text-decoration: underline;	
+	transform: scale(1.3, 1.3);
+	transform-origin: center;
+}
+.faq .siffraEx:hover ~ ul li:first-of-type {
+	box-shadow: 0 0 3pt 2pt red;
+}
+
+#siffraVä1:hover ~ div div[class=period2], 
+#siffraVä1:hover ~ div div[class=period3], 
+#siffraVä1:hover ~ div div[class=period4],
+#siffraVä1:hover ~ div div[class=period5], 
+#siffraVä1:hover ~ div div[class=period6], 
+#siffraVä1:hover ~ div div[class=period7],
+#siffraVä1:hover ~ div div[class=återstående1],
+#siffraVä1:hover ~ div div[class=återstående2] {
+	opacity: 0.3;	
+}
+#siffraVä2:hover ~ div div[class=period1], 
+#siffraVä2:hover ~ div div[class=period3], 
+#siffraVä2:hover ~ div div[class=period4],
+#siffraVä2:hover ~ div div[class=period5], 
+#siffraVä2:hover ~ div div[class=period6], 
+#siffraVä2:hover ~ div div[class=period7],
+#siffraVä2:hover ~ div div[class=återstående1],
+#siffraVä2:hover ~ div div[class=återstående2] {
+	opacity: 0.3;	
+}
+#siffraVä3:hover ~ div div[class=period1], 
+#siffraVä3:hover ~ div div[class=period2], 
+#siffraVä3:hover ~ div div[class=period4],
+#siffraVä3:hover ~ div div[class=period5], 
+#siffraVä3:hover ~ div div[class=period6], 
+#siffraVä3:hover ~ div div[class=period7],
+#siffraVä3:hover ~ div div[class=återstående1],
+#siffraVä3:hover ~ div div[class=återstående2] {
+	opacity: 0.3;	
+}
+#siffraVä4:hover ~ div div[class=period1], 
+#siffraVä4:hover ~ div div[class=period2], 
+#siffraVä4:hover ~ div div[class=period3],
+#siffraVä4:hover ~ div div[class=period5], 
+#siffraVä4:hover ~ div div[class=period6], 
+#siffraVä4:hover ~ div div[class=period7],
+#siffraVä4:hover ~ div div[class=återstående1],
+#siffraVä4:hover ~ div div[class=återstående2] {
+	opacity: 0.3;	
+}
+#siffraVä5:hover ~ div div[class=period1], 
+#siffraVä5:hover ~ div div[class=period2], 
+#siffraVä5:hover ~ div div[class=period3],
+#siffraVä5:hover ~ div div[class=period4], 
+#siffraVä5:hover ~ div div[class=period6], 
+#siffraVä5:hover ~ div div[class=period7],
+#siffraVä5:hover ~ div div[class=återstående1],
+#siffraVä5:hover ~ div div[class=återstående2] {
+	opacity: 0.3;	
+}
+#siffraVä6:hover ~ div div[class=period1], 
+#siffraVä6:hover ~ div div[class=period2], 
+#siffraVä6:hover ~ div div[class=period3],
+#siffraVä6:hover ~ div div[class=period4], 
+#siffraVä6:hover ~ div div[class=period5], 
+#siffraVä6:hover ~ div div[class=period7],
+#siffraVä6:hover ~ div div[class=återstående2] {
+	opacity: 0.3;	
+}
+#siffraVä7:hover ~ div div[class=period1], 
+#siffraVä7:hover ~ div div[class=period2], 
+#siffraVä7:hover ~ div div[class=period3],
+#siffraVä7:hover ~ div div[class=period4],
+#siffraVä7:hover ~ div div[class=period5], 
+#siffraVä7:hover ~ div div[class=period6],
+#siffraVä7:hover ~ div div[class=återstående1] {
+	opacity: 0.3;	
+}
+.faq-button:hover {
+	text-decoration: underline;
+	border: double rgb(22, 22, 22) 2px;
+}
+a[href="Index.html"]:hover  {
+	text-decoration: none;
+	border: double darkgray 2px;
+}
+.back_button:hover {
+	box-shadow: 0 0 3pt 2pt darkgray;
+}
+
+
+
