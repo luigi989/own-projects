@@ -7,13 +7,15 @@ class Cell extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.red,
+      width: 80,
+      height: 80,
+      color: Colors.blue.shade800,
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
-            color: Colors.blueGrey,
-            width: 70,
-            padding: const EdgeInsets.symmetric(horizontal: 5),
+            color: Colors.blue.shade800,
+            padding: const EdgeInsets.symmetric(horizontal: 7, vertical: 3),
             child: const Text('1', style: TextStyle(fontSize: 14),),
           ),
           Expanded(child: Container(
