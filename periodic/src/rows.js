@@ -1,6 +1,6 @@
 import { Stack } from 'react-bootstrap';
 import React from 'react';
-import Cell from './cell';
+import { Cell, EmptyCell } from './cell';
 
 // Row 1
 class Row1 extends React.Component {
@@ -161,6 +161,8 @@ class Row6exp extends React.Component {
     render() {
         return (
             <Stack className='' direction='horizontal' gap={1}>
+                <div ckassName=''><EmptyCell></EmptyCell></div>
+                <div ckassName=''><EmptyCell></EmptyCell></div>
                 <div className=''><Cell></Cell></div>
                 <div className=''><Cell></Cell></div>
                 <div className=''><Cell></Cell></div>
@@ -185,6 +187,8 @@ class Row7exp extends React.Component {
     render() {
         return (
             <Stack className='' direction='horizontal' gap={1}>
+                <div ckassName=''><EmptyCell></EmptyCell></div>
+                <div ckassName=''><EmptyCell></EmptyCell></div>
                 <div className=''><Cell></Cell></div>
                 <div className=''><Cell></Cell></div>
                 <div className=''><Cell></Cell></div>
