@@ -3,14 +3,14 @@ import React from 'react';
 
 function getCategory( category) {
     switch (category) {
-        case 'diatomic nonmetals':  return 'icke-metall'
+        case 'diatomic nonmetal':  return 'icke-metall'
         case 'noble gas': return 'ädelgas'
         case 'alkali metal': return 'alkaliemetall'
         case 'alkaline earth metal': return 'alkalisk-jordartsmetall'
         case 'metalloid': return 'metalloid'
         case 'polyatomic nonmetal': return 'icke-metall'
         case 'post-transition metal': return 'övrig-metall'
-        case 'transition metal': return 'halvmetal'
+        case 'transition metal': return 'halvmetall'
         case 'lanthanide': return 'lantanoid'
         case 'actinide': return 'aktinid'
         default: return 'none'
@@ -20,7 +20,7 @@ function getCategory( category) {
 class Cell extends React.Component {
     render() {
         return (
-            <div className={"wh-10 text-light" + getCategory}>
+            <div className={"wh-10 text-light " + getCategory(this.props.eData.category)}>
                 <div className="ps-1">
                     {this.props.eData.number}
                 </div>
