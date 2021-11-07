@@ -13,15 +13,14 @@ body {
   background-color: #34384B;
 }
 
-.w-10 {
-  width: 80px;
+.wh-10 {
+  width: 3vw;
+  height: 9vh;
 }
-.h-10 {
-  height: 80px;
+
+.fit-content {
+  width: fit-content;
+  height: fit-content; 
+  margin: 0 auto;
 }
- .fit-content {
-   width: fit-content;
-   height: fit-content; 
-   margin: 0 auto;
-  }
 

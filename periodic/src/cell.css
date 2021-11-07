@@ -1,0 +1,81 @@
+@charset "UTF-8";
+.icke-metall div:first-child {
+  background-color: #0066CC;
+}
+
+.icke-metall div:last-child {
+  background-color: #03C;
+}
+
+.metalliod div:first-child {
+  background-color: #006600;
+}
+
+.metalliod div:last-child {
+  background-color: #003C00;
+}
+
+.övrig-metall div:first-child {
+  background-color: #00cc00;
+}
+
+.övrig-metall div:last-child {
+  background-color: #008400;
+}
+
+.alkaliemetall div:first-child {
+  background-color: #833081;
+}
+
+.alkaliemetall div:last-child {
+  background-color: #582062;
+}
+
+.alkalisk-jordartsmetall div:first-child {
+  background-color: #A63737;
+}
+
+.alkalisk-jordartsmetall div:last-child {
+  background-color: #722525;
+}
+
+.halvmetall div:first-child {
+  background-color: #FF6600;
+}
+
+.halvmetall div:last-child {
+  background-color: #A64200;
+}
+
+.ädelgas div:first-child {
+  background-color: #293F76;
+}
+
+.ädelgas div:last-child {
+  background-color: #1B284B;
+}
+
+.halogen div:first-child {
+  background-color: #3E67B5;
+}
+
+.halogen div:last-child {
+  background-color: #284477;
+}
+
+.lantanoid div:first-child {
+  background-color: #CC6699;
+}
+
+.lantanoid div:last-child {
+  background-color: #AF3A75;
+}
+
+.aktinid div:first-child {
+  background-color: #CC33FF;
+}
+
+.aktinid div:last-child {
+  background-color: #A600DD;
+}
+/*# sourceMappingURL=cell.css.map */
