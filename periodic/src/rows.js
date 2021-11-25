@@ -1,24 +1,37 @@
 import { Stack } from 'react-bootstrap';
 import React from 'react';
-import { Cell, EmptyCell, IntervalCell } from './cell';
+import { Cell, EmptyCell, IntervalCell } from './cells';
 import data from './PeriodicTableJSON.json';
+import { Modal } from './modal'
 
 class LoopRow extends React.Component {
+    // onHover(e) {
+    //     e.target.style.transform = 'scale(1.25)';
+    //     console.log("works");
+    // }
+    // onLeave(e) {
+    //     e.target.style.transform = 'scale(1.00)';
+    //     console.log("eyyy");
+    // }
+
     render() {
         let elems = [];
         let divider = this.props.divider;
         for(var i = this.props.start; i <= this.props.end; i++) {
             if(i === divider) {
-                elems.push(<div key={i} className='ms-auto'><Cell eData={data.elements[i]} ></Cell></div>);
+                elems.push(<div className='cell ms-auto'key={i}>
+                    <Cell eData={data.elements[i]} ></Cell></div>);
             } else {
-                elems.push(<div key={i}><Cell eData={data.elements[i]} ></Cell></div>);                
+                elems.push(<div className='cell' key={i}><Cell eData={data.elements[i]} ></Cell></div>);                
             }
         }
         return (
-            <div className='p-0'>
+            <div className='p-1'>
                 <Stack direction='horizontal' gap={1}>
                     {elems}
                 </Stack>
+                <button type="button" data-toggle="modal" data-target="#exModal">Click</button>
+                <Modal id="exModal"></Modal>
             </div>
         );
     }
@@ -28,15 +41,15 @@ class LoopSplitRow extends React.Component {
     render() {
         let elems = [];
         for(var i = this.props.start1; i <= this.props.end1; i++) {
-            elems.push(<div key={i}><Cell eData={data.elements[i]} ></Cell></div>);                
+            elems.push(<div div className='cell' key={i}><Cell eData={data.elements[i]} ></Cell></div>);                
         }
-        elems.push(<div key={i}><IntervalCell interval={this.props.interval}></IntervalCell></div>)
+        elems.push(<div className='cell' key={i}><IntervalCell interval={this.props.interval}></IntervalCell></div>)
         
         for(i = this.props.start2; i <= this.props.end2; i++) {
-            elems.push(<div key={i}><Cell eData={data.elements[i]} ></Cell></div>);                
+            elems.push(<div className='cell' key={i}><Cell eData={data.elements[i]} ></Cell></div>);                
         }
         return (
-            <div className='p-0'>
+            <div className='p-1'>
                 <Stack className='' direction='horizontal' gap={1}>
                     {elems}
                 </Stack>
@@ -47,15 +60,17 @@ class LoopSplitRow extends React.Component {
 
 class LoopSpecialRow extends React.Component {
     render() {
+        var i = this.props.start
         let elems = [];
-        elems.push(<div key={i}><EmptyCell></EmptyCell></div>);
-        elems.push(<div key={i}><EmptyCell></EmptyCell></div>);
-        for(var i = this.props.start; i <= this.props.end; i++) {
-            elems.push(<div key={i}><Cell eData={data.elements[i]} ></Cell></div>);                
+        elems.push(<div className='cell' key={i}><EmptyCell></EmptyCell></div>);
+        i++;
+        elems.push(<div className='cell' key={i}><EmptyCell></EmptyCell></div>);
+        i++;
+        for(i; i <= this.props.end; i++) {
+            elems.push(<div className='cell' key={i}><Cell eData={data.elements[i]} ></Cell></div>);                
         }
-        elems.push(<div key={i}><EmptyCell></EmptyCell></div>);
         return (
-            <div className='p-0'>
+            <div className='p-1'>
                 <Stack direction='horizontal' gap={1}>
                     {elems}
                 </Stack>

@@ -1,5 +1,28 @@
 @charset "UTF-8";
-.icke-metall div:first-child {
+.flexfill {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  height: 100%;
+}
+
+.flexfill > div {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 auto;
+          flex: 0 1 auto;
+}
+
+.flexfill div:last-child {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+}
+
+.icke-metall > div {
   background-color: #0066CC;
 }
 
@@ -7,7 +30,7 @@
   background-color: #03C;
 }
 
-.metalloid div:first-child {
+.metalloid > div {
   background-color: #006600;
 }
 
@@ -15,7 +38,7 @@
   background-color: #003C00;
 }
 
-.övrig-metall div:first-child {
+.övrig-metall > div {
   background-color: #00cc00;
 }
 
@@ -23,7 +46,7 @@
   background-color: #008400;
 }
 
-.alkaliemetall div:first-child {
+.alkaliemetall > div {
   background-color: #833081;
 }
 
@@ -31,7 +54,7 @@
   background-color: #582062;
 }
 
-.alkalisk-jordartsmetall div:first-child {
+.alkalisk-jordartsmetall > div {
   background-color: #A63737;
 }
 
@@ -39,7 +62,7 @@
   background-color: #722525;
 }
 
-.halvmetall div:first-child {
+.halvmetall > div {
   background-color: #FF6600;
 }
 
@@ -47,7 +70,7 @@
   background-color: #A64200;
 }
 
-.ädelgas div:first-child {
+.ädelgas > div {
   background-color: #293F76;
 }
 
@@ -55,7 +78,7 @@
   background-color: #1B284B;
 }
 
-.halogen div:first-child {
+.halogen > div {
   background-color: #3E67B5;
 }
 
@@ -63,7 +86,7 @@
   background-color: #284477;
 }
 
-.lantanoid div:first-child {
+.lantanoid > div {
   background-color: #CC6699;
 }
 
@@ -71,7 +94,7 @@
   background-color: #AF3A75;
 }
 
-.aktinid div:first-child {
+.aktinid > div {
   background-color: #CC33FF;
 }
 

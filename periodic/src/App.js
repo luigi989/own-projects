@@ -4,8 +4,6 @@ import { Container, Navbar } from 'react-bootstrap';
 import { Row1, Row2, Row3, Row4, Row5, Row6, Row7, Row6exp, Row7exp } from './rows';
 
 function App() {
-
-
   return (
     <div className='background'>
       <Navbar bg='dark' variant='dark'>

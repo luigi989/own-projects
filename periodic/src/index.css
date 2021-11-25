@@ -15,7 +15,7 @@ body {
 
 .wh-10 {
   width: 3vw;
-  height: 9vh;
+  height: 8vh;
 }
 
 .fit-content {
@@ -24,3 +24,7 @@ body {
   margin: 0 auto;
 }
 
+.cell:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 0 2px red;
+}
