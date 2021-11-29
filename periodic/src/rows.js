@@ -1,61 +1,60 @@
 import { Stack } from 'react-bootstrap';
-import React from 'react';
+import React, { useState } from 'react';
 import { Cell, EmptyCell, IntervalCell } from './cells';
+import ElementModal from './modal';
 import data from './PeriodicTableJSON.json';
-import { Modal } from './modal'
 
-class LoopRow extends React.Component {
-    // onHover(e) {
-    //     e.target.style.transform = 'scale(1.25)';
-    //     console.log("works");
-    // }
-    // onLeave(e) {
-    //     e.target.style.transform = 'scale(1.00)';
-    //     console.log("eyyy");
-    // }
-
-    render() {
-        let elems = [];
-        let divider = this.props.divider;
-        for(var i = this.props.start; i <= this.props.end; i++) {
-            if(i === divider) {
-                elems.push(<div className='cell ms-auto'key={i}>
-                    <Cell eData={data.elements[i]} ></Cell></div>);
-            } else {
-                elems.push(<div className='cell' key={i}><Cell eData={data.elements[i]} ></Cell></div>);                
-            }
-        }
-        return (
-            <div className='p-1'>
-                <Stack direction='horizontal' gap={1}>
-                    {elems}
-                </Stack>
-                <button type="button" data-toggle="modal" data-target="#exModal">Click</button>
-                <Modal id="exModal"></Modal>
-            </div>
-        );
+function LoopRow(props) {
+    const [show, setShow] = useState(false);
+    const [currentData, setCurrentData] = useState(null);
+    const handleClose = () => setShow(false);
+    const handleShow = (e) => {
+        setShow(true);
+        var index = e.currentTarget.firstChild.firstChild.innerText;
+        setCurrentData(data.elements[index-1]);
     }
+
+    var elems = [];
+    for(var i = props.start; i <= props.end; i++) {
+        if(i === props.divider) {
+            elems.push(<div className='cell ms-auto' key={i} onClick={(e) => {handleShow(e)}}>
+                <Cell eData={data.elements[i]}></Cell></div>);
+        } else {
+            elems.push(
+                <div className='cell' key={i} onClick={(e) => {handleShow(e)}}>
+                    <Cell eData={data.elements[i]}></Cell>
+                </div>);                
+        }
+    }
+
+    return (
+        <div className='p-1'>
+            <Stack direction='horizontal' gap={1}>
+                {elems}
+            </Stack>
+            {show ? <ElementModal closeModal={handleClose} data={currentData}/> : null}
+        </div>
+    );
 }
 
-class LoopSplitRow extends React.Component {
-    render() {
-        let elems = [];
-        for(var i = this.props.start1; i <= this.props.end1; i++) {
-            elems.push(<div div className='cell' key={i}><Cell eData={data.elements[i]} ></Cell></div>);                
-        }
-        elems.push(<div className='cell' key={i}><IntervalCell interval={this.props.interval}></IntervalCell></div>)
-        
-        for(i = this.props.start2; i <= this.props.end2; i++) {
-            elems.push(<div className='cell' key={i}><Cell eData={data.elements[i]} ></Cell></div>);                
-        }
-        return (
-            <div className='p-1'>
-                <Stack className='' direction='horizontal' gap={1}>
-                    {elems}
-                </Stack>
-            </div>
-        );
+function LoopSplitRow(props) {
+    var elems = [];
+    for(var i = props.start1; i <= props.end1; i++) {
+        elems.push(<div div className='cell' key={i}><Cell eData={data.elements[i]} ></Cell></div>);                
     }
+    elems.push(<div className='cell' key={i}><IntervalCell interval={props.interval}></IntervalCell></div>)
+    
+    for(i = props.start2; i <= props.end2; i++) {
+        elems.push(<div className='cell' key={i}><Cell eData={data.elements[i]} ></Cell></div>);                
+    }
+
+    return(
+        <div className='p-1'>
+            <Stack direction='horizontal' gap={1}>
+                {elems}
+            </Stack>
+        </div>
+    );
 }
 
 class LoopSpecialRow extends React.Component {

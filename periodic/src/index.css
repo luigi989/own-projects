@@ -28,3 +28,7 @@ body {
   transform: scale(1.2);
   box-shadow: 0 0 0 2px red;
 }
+
+.modal .modal-content {
+  background-color: #34384B;
+}

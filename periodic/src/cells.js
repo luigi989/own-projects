@@ -1,7 +1,7 @@
 import './cell.css'
 import React from 'react';
 
-function getCategory( category) {
+function getCategory(category) {
     switch (category) {
         case 'diatomic nonmetal':  return 'icke-metall'
         case 'noble gas': return 'ädelgas'
@@ -17,50 +17,44 @@ function getCategory( category) {
     }
 }
 
-class Cell extends React.Component {
-    render() {
-        return (
-            <div className={"wh-10 text-light flexfill " + getCategory(this.props.eData.category)}>
-                <div className="ps-1">
-                    {this.props.eData.number}
-                </div>
-                <div className="text-center">
-                    <div className="">{this.props.eData.symbol}</div>
-                    <div className="">
-                        {(this.props.eData.atomic_mass).toPrecision(3)}
-                    </div>
+function Cell(props) {
+    return(
+        <div className={"wh-10 text-light flexfill " + getCategory(props.eData.category)}>
+            <div className="ps-1">
+                {props.eData.number}
+            </div>
+            <div className="text-center">
+                <div className="">{props.eData.symbol}</div>
+                <div className="">
+                    {props.eData.atomic_mass.toPrecision(3)}
                 </div>
             </div>
-        );
-    }
+        </div>
+    );
 }
 
-class IntervalCell extends React.Component {
-    render() {
-        return (
-            <div className="d-flex flex-column wh-10 ädelgas">
-                <div className="ps-1">&nbsp;</div>
-                <div className="d-flex align-items-center justify-content-center text-light">
-                    {this.props.interval}
-                </div>
+function IntervalCell(props) {
+    return(
+        <div className="d-flex flex-column wh-10 ädelgas">
+            <div className="ps-1">&nbsp;</div>
+            <div className="d-flex align-items-center justify-content-center text-light">
+                {props.interval}
             </div>
-        );
-    }
+        </div>
+    );
 }
 
-class EmptyCell extends React.Component {
-    render() {
-        return (
-            <div className="wh-10">
-                <div className="bg-primary ps-1">
-                </div>
-                <div className="bg-info d-flex flex-column align-items-center">
-                    <div className=""></div>
-                    <div className="flex-grow-1"></div>
-                </div>
+function EmptyCell() {
+    return (
+        <div className="wh-10">
+            <div className="bg-primary ps-1">
             </div>
-        );
-    }
+            <div className="bg-info d-flex flex-column align-items-center">
+                <div className=""></div>
+                <div className="flex-grow-1"></div>
+            </div>
+        </div>
+    );
 }
 export {
     Cell,

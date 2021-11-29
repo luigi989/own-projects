@@ -1,4 +1,5 @@
 import './App.css';
+import React from 'react';
 import { Container, Navbar } from 'react-bootstrap';
 
 import { Row1, Row2, Row3, Row4, Row5, Row6, Row7, Row6exp, Row7exp } from './rows';
@@ -11,7 +12,6 @@ function App() {
           <Navbar.Brand href="#home">Periodiska systemet</Navbar.Brand>
         </Container>
       </Navbar>
-
       <div className="fit-content">
         <Row1></Row1>
         <Row2></Row2>
@@ -26,5 +26,4 @@ function App() {
     </div>
   );
 }
-
 export default App;
