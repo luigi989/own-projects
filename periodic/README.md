@@ -1,8 +1,6 @@
 ## :microscope: Periodic
 
 ### :seedling: Install and launch
-
-#### React
 1. Execute the following command in the folder perodic/:
 ```
   npm start
