@@ -1,4 +1,4 @@
-## :microsdcope: Periodic
+## :microscope: Periodic
 
 ### :seedling: Install and launch
 
