@@ -7,8 +7,9 @@ export default function Bin2Dec() {
   const [alert, setAlert] = useState(false);
 
   const convertToDec = (binaryNum) => {
-    var pattern = new RegExp("[2-9A-Za-z]");
+    var pattern = new RegExp("[2-9A-Za-z]"); // Test if number has numbers > 1 and letters
     if(pattern.test(binaryNum)) {
+      setResult();
       setAlert(true);
       setTimeout(() => {
         setAlert(false);
@@ -24,7 +25,7 @@ export default function Bin2Dec() {
         <label>A tool to convert binary numbers to decimal numbers with base 2.</label>
         <div>
           <label for="binary">Enter a binary number:</label>
-          <input type="text" name="binary" maxLength="8" onChange={e => setBinaryNumber(e.target.value)}></input>
+          <input type="text" id="binary" name="binary" maxLength="8" onChange={e => setBinaryNumber(e.target.value)}></input>
         </div>
         <button onClick={e => convertToDec(binaryNumber)}>Convert</button>
         <h4>Result: {result}</h4>

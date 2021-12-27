@@ -17,12 +17,13 @@ body {
 }
 
 .linkActive {
-  color:red;
+  text-decoration: underline;
 }
 .linkInactive {
-  color: blue;
+  text-decoration: none;
 }
 
+/* bin2dec */
 .content {
   height: 100%;
   display: flex;
@@ -56,4 +57,41 @@ button:hover {
   display: inline-block;
   align-self: stretch;
   margin-top: auto;
+}
+
+/* borderRadiusPreeviewer */
+.radiousPreview {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.radiusChangeWindow {
+  display: flex;  
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+}
+.radiusChangeWindow input {
+  width: 100px;
+}
+
+.grid-header2 {
+  grid-column-start: 2;
+}
+.grid-header3 {
+  grid-column-start: 3;
+}
+.grid-button {
+  grid-column: 2 / 4;
+  justify-self: center;
+}
+.grid {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-right: 10%;
+}
+.grid label:not(.grid-header2, .grid-header3) {
+  justify-self: end;
 }
