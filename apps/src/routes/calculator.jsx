@@ -1,6 +1,9 @@
 import { useState } from 'react';
 import '../css/calculator.css';
 
+/*
+TODO: After clearing last number, number1 or number2 are not updated with the cleared number.
+*/
 export default function Calculator() {
   const [sum, setSum] = useState();
   const [number1, setNumber1] = useState(0);
@@ -10,32 +13,35 @@ export default function Calculator() {
   const [numberDisplayed, setNumberDisplayed] = useState(0);
 
   const saveNumber = (number) => {
-    removeZeroIfExists(number);
+    number = removeZeroIfExists(number);
+    console.log(number);
+
     if(operatorSet) {
       setNumber2(number);
     } else {
       setNumber1(number);
     }
     setNumberDisplayed(number);
-    console.log(number1 + ": " + number2);
-    console.log(operator + ": " + operatorSet);
+    // console.log(number1 + ": " + number2);
+    // console.log(operator + ": " + operatorSet);
   }
 
   const removeLastNumber = () => {
-    console.log(numberDisplayed);
-    if(numberDisplayed > 0) {
+    if(numberDisplayed > 0 && numberDisplayed.length > 1) {
       setNumberDisplayed(numberDisplayed.slice(0, -1));
-      console.log(numberDisplayed);
     } else {
-      console.log("not work");
+      setNumberDisplayed(0);
     }
   }
   const removeZeroIfExists = (number) => {
     var pattern = new RegExp("^0");
     if(pattern.test(number)) {
+      console.log(number);
       return number.slice(1);
+    } else {
+      console.log("not work");
+      return number;
     }
-    return number;
   }
 
   const clearNumbers = () => {
