@@ -3,7 +3,7 @@
 A repo where I house all my own little side-project. Planning to store webpages, small programs and more here. The languages used will be HTML, CSS, Javascript, Java and more.
 
 
-## :microscope: [Apps](apps/)
+## :books: [Apps](apps/)
 
 Ongoing project. Website with different small apps. Few apps for now, but more will be added later
 
