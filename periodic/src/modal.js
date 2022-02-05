@@ -16,7 +16,7 @@ function ElementModal( {closeModal, data} ) {
                   <ListGroup.Item variant="dark">Appearance: {data.appearance}</ListGroup.Item>
                   <ListGroup.Item variant="dark">Phase: {data.phase}</ListGroup.Item>
                   <ListGroup.Item variant="dark">Atomic mass: {data.atomic_mass} u</ListGroup.Item>
-                  <ListGroup.Item variant="dark">BoiListGroup.Itemng point: {data.boil} &#8490;</ListGroup.Item>
+                  <ListGroup.Item variant="dark">Boil point: {data.boil} &#8490;</ListGroup.Item>
                   <ListGroup.Item variant="dark">Melting point: {data.melt} &#8490;</ListGroup.Item>
                   <ListGroup.Item variant="dark">Density: {data.density} g/L</ListGroup.Item>
                 </ListGroup>
