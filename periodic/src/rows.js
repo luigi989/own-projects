@@ -17,8 +17,10 @@ function LoopRow(props) {
     var elems = [];
     for(var i = props.start; i <= props.end; i++) {
         if(i === props.divider) {
-            elems.push(<div className='cell ms-auto' key={i} onClick={(e) => {handleShow(e)}}>
-                <Cell eData={data.elements[i]}></Cell></div>);
+            elems.push(
+                <div className='cell ms-auto' key={i} onClick={(e) => {handleShow(e)}}>
+                    <Cell eData={data.elements[i]}></Cell>
+                </div>);
         } else {
             elems.push(
                 <div className='cell' key={i} onClick={(e) => {handleShow(e)}}>
@@ -32,20 +34,34 @@ function LoopRow(props) {
             <Stack direction='horizontal' gap={1}>
                 {elems}
             </Stack>
-            {show ? <ElementModal closeModal={handleClose} data={currentData}/> : null}
+            {show ? <ElementModal closeModal={handleClose} data={currentData} /> : null}
         </div>
     );
 }
 
 function LoopSplitRow(props) {
+    const [show, setShow] = useState(false);
+    const [currentData, setCurrentData] = useState(null);
+    const handleClose = () => setShow(false);
+    const handleShow = (e) => {
+        setShow(true);
+        var index = e.currentTarget.firstChild.firstChild.innerText;
+        setCurrentData(data.elements[index-1]);
+    }
+
     var elems = [];
     for(var i = props.start1; i <= props.end1; i++) {
-        elems.push(<div div className='cell' key={i}><Cell eData={data.elements[i]} ></Cell></div>);                
+        elems.push(
+            <div div className='cell' key={i} onClick={(e) => {handleShow(e)}}>
+                <Cell eData={data.elements[i]} ></Cell>
+            </div>);                
     }
     elems.push(<div className='cell' key={i}><IntervalCell interval={props.interval}></IntervalCell></div>)
-    
     for(i = props.start2; i <= props.end2; i++) {
-        elems.push(<div className='cell' key={i}><Cell eData={data.elements[i]} ></Cell></div>);                
+        elems.push(
+            <div className='cell' key={i} onClick={(e) => {handleShow(e)}}>
+                <Cell eData={data.elements[i]}></Cell>
+            </div>);                
     }
 
     return(
@@ -53,29 +69,42 @@ function LoopSplitRow(props) {
             <Stack direction='horizontal' gap={1}>
                 {elems}
             </Stack>
+            {show ? <ElementModal closeModal={handleClose} data={currentData} /> : null}
         </div>
     );
 }
 
-class LoopSpecialRow extends React.Component {
-    render() {
-        var i = this.props.start
-        let elems = [];
-        elems.push(<div className='cell' key={i}><EmptyCell></EmptyCell></div>);
-        i++;
-        elems.push(<div className='cell' key={i}><EmptyCell></EmptyCell></div>);
-        i++;
-        for(i; i <= this.props.end; i++) {
-            elems.push(<div className='cell' key={i}><Cell eData={data.elements[i]} ></Cell></div>);                
-        }
-        return (
-            <div className='p-1'>
-                <Stack direction='horizontal' gap={1}>
-                    {elems}
-                </Stack>
-            </div>
-        );
+function LoopSpecialRow(props) {
+    const [show, setShow] = useState(false);
+    const [currentData, setCurrentData] = useState(null);
+    const handleClose = () => setShow(false);
+    const handleShow = (e) => {
+        setShow(true);
+        var index = e.currentTarget.firstChild.firstChild.innerText;
+        setCurrentData(data.elements[index-1]);
     }
+
+    var elems = [];
+    var i = props.start;
+    elems.push(<div className='cell' key={i}><EmptyCell></EmptyCell></div>);
+    /* i++; */
+    elems.push(<div className='cell' key={i}><EmptyCell></EmptyCell></div>);
+    /* i++; */
+    for(i; i <= props.end; i++) {
+        elems.push(
+            <div div className='cell' key={i} onClick={(e) => {handleShow(e)}}>
+                <Cell eData={data.elements[i]} ></Cell>
+            </div>);                
+    }
+
+    return(
+        <div className='p-1'>
+            <Stack direction='horizontal' gap={1}>
+                {elems}
+            </Stack>
+            {show ? <ElementModal closeModal={handleClose} data={currentData} /> : null}
+        </div>
+    );
 }
 
 class Row1 extends React.Component {

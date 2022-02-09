@@ -23,7 +23,8 @@ console.log(`https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Electron_
                 </Col>
                 <Col xs={6} md={4} className="text-light">
                   <img 
-                    src={`https://upload.wikimedia.org/wikipedia/commons/2/29/Electron_shell_006_Carbon.svg`}
+                    className='w-100'
+                    src={ require(`./images/${data.name}.png`).default }
                     alt={`${data.name} atomic model`}
                   ></img>
                 </Col>
