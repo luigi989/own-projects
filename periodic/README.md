@@ -8,7 +8,8 @@
 2. The website will be shown in your standard web browser.
 
 ### :ballot_box_with_check: Prerequisites
-Node and npm has to be installed to perform the neccessary commands.
+- Node 16.13.0 or later
+- Npm 8.1.0 or later
 
 ### :triangular_flag_on_post: Further development
 The website is not ported completely from [Periodiska systemet](../Periodiska_Systemet/).
