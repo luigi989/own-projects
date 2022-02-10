@@ -32,13 +32,6 @@ body {
 .modal .modal-content {
   background-color: #34384B;
 }
-.modal .list-group {
-  box-shadow: 5px 5px 10px 0px #000000;
-}
 .modal .list-group .list-group-item {
-  background-color: #34384B;
-}
-.modal .desc {
-  box-shadow: 5px 5px 10px 0px #000000;
-
+  background-color: #232633;
 }

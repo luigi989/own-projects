@@ -6,18 +6,38 @@ function ElementModal( {closeModal, data} ) {
         <>
           <Modal className="modal" size="lg" show={true} onHide={closeModal}>
             <Modal.Header className="" closeButton>
-              <Modal.Title className="w-100 text-center text-light">{data.name}</Modal.Title>
+              <Modal.Title className="w-100 text-center text-light">
+                <strong>{data.name}</strong>
+                </Modal.Title>
             </Modal.Header>
             <Modal.Body>
               <Row>
                 <Col xs={12} md={6}>
                 <ListGroup>
-                  <ListGroup.Item className='text-light' variant="dark">Appearance: {data.appearance}</ListGroup.Item>
-                  <ListGroup.Item className='text-light' variant="dark">Phase: {data.phase}</ListGroup.Item>
-                  <ListGroup.Item className='text-light' variant="dark">Atomic mass: {data.atomic_mass} u</ListGroup.Item>
-                  <ListGroup.Item className='text-light' variant="dark">Boil point: {data.boil} &#8490;</ListGroup.Item>
-                  <ListGroup.Item className='text-light' variant="dark">Melting point: {data.melt} &#8490;</ListGroup.Item>
-                  <ListGroup.Item className='text-light' variant="dark">Density: {data.density} g/L</ListGroup.Item>
+                  <ListGroup.Item>
+                    <strong className='text-light'>Appearance: </strong>
+                    <span className='text-secondary'>{data.appearance}</span>
+                  </ListGroup.Item>
+                  <ListGroup.Item>
+                    <strong className='text-light'>Phase: </strong>                    
+                    <span className='text-secondary'>{data.phase}</span>
+                  </ListGroup.Item>
+                  <ListGroup.Item>
+                    <strong className='text-light'>Atomic mass: </strong> 
+                    <span className='text-secondary'>{data.atomic_mass} u</span>
+                  </ListGroup.Item>
+                  <ListGroup.Item>
+                    <strong className='text-light'>Boil point: </strong> 
+                    <span className='text-secondary'>{data.boil} &#176;&#8490;</span>
+                  </ListGroup.Item>
+                  <ListGroup.Item>
+                    <strong className='text-light'>Melting point: </strong> 
+                    <span className='text-secondary'>{data.melt} &#176;&#8490;</span>
+                  </ListGroup.Item>
+                  <ListGroup.Item>
+                    <strong className='text-light'>Density: </strong> 
+                    <span className='text-secondary'>{data.density} g/cm&#179;</span>
+                  </ListGroup.Item>
                 </ListGroup>
                 </Col>
                 <Col xs={12} md={6} 
@@ -30,8 +50,10 @@ function ElementModal( {closeModal, data} ) {
                   ></img>
                 </Col>
               </Row>
-              <Row className="desc m-2 mt-3 p-2 text-light align-middle">
-                {data.summary}
+              <Row className="m-1 mt-3 text-light align-middle">
+                <hr></hr>
+                <span className='mb-3'>{data.summary}</span>
+                <hr></hr>
               </Row>
 
               <Container className="w-100 text-center text-light">
