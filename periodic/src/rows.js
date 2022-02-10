@@ -2,7 +2,7 @@ import { Stack } from 'react-bootstrap';
 import React, { useState } from 'react';
 import { Cell, EmptyCell, IntervalCell } from './cells';
 import ElementModal from './modal';
-import data from './PeriodicTableJSON.json';
+import data from './json/PeriodicTableJSON.json';
 
 function LoopRow(props) {
     const [show, setShow] = useState(false);

@@ -1,4 +1,4 @@
-import './cell.css'
+import './css/cell.css';
 import React from 'react';
 
 function getCategory(category) {
