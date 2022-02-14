@@ -25,16 +25,18 @@ function LoopRow(props) {
             elems.push(
                 <div className='cell' key={i} onClick={(e) => {handleShow(e)}}>
                     <Cell eData={data.elements[i]}></Cell>
-                </div>);                
+                </div>);              
         }
     }
 
     return (
-        <div className='p-1'>
-            <Stack direction='horizontal' gap={1}>
-                {elems}
-            </Stack>
-            {show ? <ElementModal closeModal={handleClose} data={currentData} /> : null}
+        <div className='row'>
+            <div className='col-12 col-md-10 p-1'>
+                <Stack direction='horizontal' gap={1}>
+                    {elems}
+                </Stack>
+                {show ? <ElementModal closeModal={handleClose} data={currentData} /> : null}
+            </div>
         </div>
     );
 }
@@ -65,11 +67,13 @@ function LoopSplitRow(props) {
     }
 
     return(
-        <div className='p-1'>
-            <Stack direction='horizontal' gap={1}>
-                {elems}
-            </Stack>
-            {show ? <ElementModal closeModal={handleClose} data={currentData} /> : null}
+        <div className='row'>
+            <div className='col-12 col-md-10 p-1'>
+                <Stack direction='horizontal' gap={1}>
+                    {elems}
+                </Stack>
+                {show ? <ElementModal closeModal={handleClose} data={currentData} /> : null}
+            </div>
         </div>
     );
 }
@@ -98,11 +102,13 @@ function LoopSpecialRow(props) {
     }
 
     return(
-        <div className='p-1'>
-            <Stack direction='horizontal' gap={1}>
-                {elems}
-            </Stack>
-            {show ? <ElementModal closeModal={handleClose} data={currentData} /> : null}
+        <div className='row'>
+            <div className='col-12 p-1'>
+                <Stack direction='horizontal' gap={1}>
+                    {elems}
+                </Stack>
+                {show ? <ElementModal closeModal={handleClose} data={currentData} /> : null}
+            </div>
         </div>
     );
 }

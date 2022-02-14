@@ -12,7 +12,7 @@ function App() {
           <Navbar.Brand href="#home">Periodiska systemet</Navbar.Brand>
         </Container>
       </Navbar>
-      <div className="fit-content">
+      <div className="container fit-content">
         <Row1></Row1>
         <Row2></Row2>
         <Row3></Row3>
