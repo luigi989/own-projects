@@ -8,6 +8,7 @@ import Sidebar from './sidebar'
 import LoginForm from './login_forms/login_form';
 import LoginFormTrans from './login_forms/login_form_trans';
 import SearchBox from './misc/searchbox';
+import ProfileCard from './profile_cards/profile_card';
 
 const rootElement = document.getElementById('root')
 render(
@@ -21,6 +22,7 @@ render(
           <Route path="loginForm" element={<LoginForm />} />
           <Route path="loginFormTrans" element={<LoginFormTrans />} />
           <Route path='searchbox' element={<SearchBox />} />
+          <Route path='profilecard' element={<ProfileCard />} />
         </Routes>
       </div>
     </div>
