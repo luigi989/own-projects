@@ -3,12 +3,19 @@
 @tailwind utilities;
 
 body {
-    font-family: sans-serif;
-    background: #34495e;
+  font-family: sans-serif;
+  background: #34495e;
   }
 html, body {
   height: 100%;
 }
 #root {
   height: 100%;
+}
+
+.linkActive {
+  text-decoration: underline;
+  }
+.linkInactive {
+  text-decoration: none;
 }
