@@ -1,14 +1,13 @@
 import React from 'react';
-import { scaleDown as Menu } from 'react-burger-menu';
+import { slide as Menu } from 'react-burger-menu';
 import { NavLink } from 'react-router-dom';
 
 import './sidebar.css';
 
-const Sidebar = ({
-//here's where I pass the props from App.js
-  outerContainerId,
-  pageWrapId,
-}) => {
+import { FaPlus } from 'react-icons/fa';
+
+
+const Sidebar = ({ outerContainerId, pageWrapId }) => {
   return (
     <Menu pageWrapId={pageWrapId} outerContainerId={outerContainerId}>
         <NavLink to="/" 
@@ -26,6 +25,12 @@ const Sidebar = ({
         <NavLink to="/searchbox" 
                  className={({ isActive }) => (isActive ? 'linkActive' : 'linkInactive')}>
                 Searchbox
+        </NavLink>
+        <NavLink to="/profilecard">
+               <div className='flex items-center'>
+                    <span className=''>Profile cards</span>
+                    <FaPlus className='text-xs ml-2'/>
+               </div>
         </NavLink>
     </Menu>
   );

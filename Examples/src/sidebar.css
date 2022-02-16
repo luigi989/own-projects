@@ -5,12 +5,11 @@
     height: 30px;
     left: 36px;
     top: 36px;
-    background: red;
   }
   
   /* Color/shape of burger icon bars */
   .bm-burger-bars {
-    background: #373a47;
+    background: black;
   }
   
   /* Color/shape of burger icon bars on hover*/
@@ -58,11 +57,8 @@
   
   /* Individual item */
   .bm-item {
-    display: inline-block;
-  
     color: #d1d1d1;
     margin-bottom: 10px;
-    text-align: left;
     text-decoration: none;
     transition: color 0.2s;
   }
