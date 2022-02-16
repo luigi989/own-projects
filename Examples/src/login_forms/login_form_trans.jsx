@@ -1,13 +1,12 @@
 // import './login_form_trans.css';
 import React from 'react';
-import backgr from './pics/Astronaut.png';
 
 export default function Login_form_trans() {
     return(
         <div className="flex-1 flex justify-center items-center bg-black">
             <div className="flex flex-col p-10">
-                <input class="radio" type="radio" id="login_btn"  name="group" checked />
-                <input class="radio" type="radio" id="register_btn" name="group" />
+                {/* <input class="radio" type="radio" id="login_btn"  name="group" checked />
+                <input class="radio" type="radio" id="register_btn" name="group" /> */}
                 <div className='text-white mb-4'>
                     <label className='hover:border-b-2 hover:border-solid hover:border-red-900
                                       mr-4 text-4xl cursor-pointer' 
@@ -34,7 +33,7 @@ export default function Login_form_trans() {
                            name="" 
                            placeholder="Password" 
                     />
-                    <a className='text-white text-xs' href='#'>Forgot your password?</a>
+                    <button className='text-white text-xs w-fit' href='#'>Forgot your password?</button>
                     <input className='hover:bg-[#a51717] border-solid border-2 border-[#a51717]
                                       bg-none text-white p-1 cursor-pointer my-2'
                            type="submit" 
