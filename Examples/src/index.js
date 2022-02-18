@@ -10,6 +10,7 @@ import LoginFormTrans from './login_forms/login_form_trans';
 import SearchBox from './misc/searchbox';
 import ProfileCard from './profile_cards/profile_card';
 import ProfileCard2 from './profile_cards/profile_card2';
+import NeonEffects from './button_effects/neon_effect';
 
 const rootElement = document.getElementById('root')
 render(
@@ -25,6 +26,7 @@ render(
           <Route path='searchbox' element={<SearchBox />} />
           <Route path='profilecard' element={<ProfileCard />} />
           <Route path='profilecard2' element={<ProfileCard2 />} />
+          <Route path='neonEffect' element={<NeonEffects />} />
         </Routes>
       </div>
     </div>
