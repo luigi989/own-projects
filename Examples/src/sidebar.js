@@ -11,6 +11,7 @@ import { FaMinus } from 'react-icons/fa';
 const Sidebar = ({ outerContainerId, pageWrapId }) => {
   const [cardsOpen, setCardsOpen] = useState(false);
   const [loginFormsOpen, setLoginFormsOpen] = useState(false);
+  const [buttonsOpen, setButtonsOpen] = useState(false);
 
   return (
     <Menu pageWrapId={pageWrapId} outerContainerId={outerContainerId}>
@@ -18,6 +19,19 @@ const Sidebar = ({ outerContainerId, pageWrapId }) => {
                  className={({ isActive }) => (isActive ? 'linkActive' : 'linkInactive')}>
                 Home
         </NavLink>
+        <div>
+          <div className='flex items-center cursor-pointer' onClick={() => setButtonsOpen(!buttonsOpen)}>
+            <span className=''>Button effects</span>
+            {buttonsOpen ? <FaMinus className='text-xs ml-2'/> : <FaPlus className='text-xs ml-2'/>}
+          </div>
+        </div>
+        {buttonsOpen ? 
+        <div>
+          <div className='flex flex-col ml-4'>  
+            <NavLink to='/neonEffect'>Neon Effects</NavLink>
+          </div>
+        </div> : null}
+
         <div>
           <div className='flex items-center cursor-pointer' onClick={() => setLoginFormsOpen(!loginFormsOpen)}>
             <span className=''>Login forms</span>
