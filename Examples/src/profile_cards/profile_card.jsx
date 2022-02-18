@@ -9,9 +9,9 @@ function App() {
     <div className='flex-1 flex justify-center items-center'>
         <div className='flex-col scale-75 md:scale-100 basis-1'>
             <div class='flex-col flex justify-center items-center bg-[#2c3a47] p-12 rounded-t-2xl'>
-                <div className='rounded-full p-2
+                <div className='rounded-full p-2 animate-move
                                 bg-gradient-to-r from-cyan-500 to-blue-500'>
-                    <img className='block w-24 h-24 rounded-full bg-center' src={profileImage} alt="" />
+                    <img className='block w-28 h-28 rounded-full bg-center' src={profileImage} alt="" />
                 </div>
 
                 <div className="text-white text-xl font-semibold mt-3">Ludvig Lindahl</div>
