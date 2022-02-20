@@ -5,19 +5,14 @@ module.exports = {
   theme: {
     extend: {
       animation: {
-        move: 'move 2s linear infinite', 
+        move: 'move_right 1s linear', 
       },
       keyframes: {
-        move: {
-          '25%': { 'background-position': 'left bottom' },
-          '50%': { 'background-position': 'right bottom' },
-          '75%': { 'background-position': 'right top' },
-          '100%': { 'background-position': 'left top' }
-        },
-        wiggle: {
-          '0%, 100%': { transform: 'translateX(25%)' },
-          '50%': { transform: 'translateY(25%)' },
-        },
+        move_right: {
+          '0%': { width: '0%' },
+          '99%': { width: '100%' },
+          '100%': { width: '0%' },
+        }
       },
     },
   },
