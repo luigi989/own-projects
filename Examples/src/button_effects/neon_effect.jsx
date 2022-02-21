@@ -3,7 +3,7 @@
 function App() {
   return (
     <div className='flex-1 flex flex-col justify-center items-center bg-[#031321]'>
-        <div className='flex scale-75 md:scale-100'>
+        <div className='flex flex-col scale-75 md:scale-100'>
             {/* Blue */}
             <div className="relative m-3 border-solid border-2 border-[#255784]
                             text-[#255784] box-border p-6">
@@ -65,11 +65,11 @@ function App() {
                 </div>
             </div>
             {/* Multicolor */}
-            <div className="flex p-1 bg-gradient-to-r from-[#743ad5] to-red-700">
-              <div className="relative bg-[#031321]
+            <div className="flex items-center relative p-1 bg-gradient-to-r from-[#743ad5] to-red-700">
+              <h1 className="absolute top-[-10%] left-3 px-2 bg-[#031321] 
+                             text-[#743ad5] uppercase text-base">Multicolor</h1>
+              <div className="bg-[#031321]
                               text-[#743ad5] p-5">
-                  <h1 className="absolute top-[-14%] left-3 px-2 bg-[#031321] 
-                                uppercase text-base">Multicolor</h1>
                   <div className="relative group px-4 py-4 uppercase text-[#585353] text-xl tracking-wider">
                       <span className="absolute h-[2px] top-0 left-0 w-0 
                                       group-hover:w-full group-hover:duration-500
@@ -79,6 +79,16 @@ function App() {
                                       bg-gradient-to-l from-[#743ad5] to-red-700"></span>
                       Neon Button
                   </div>
+              </div>
+
+              <div className="bg-[#031321] p-5">
+                <div className="group relative bg-[#031321] hover:bg-gradient-to-l from-[#743ad5] to-red-700
+                                text-[#743ad5] p-px">
+                    <div className="relative px-4 py-4 uppercase text-[#585353] text-xl tracking-wider
+                                    group-hover:text-[#585353] group-hover:bg-black ">
+                        Neon Button
+                    </div>
+                </div>
               </div>
             </div>
         </div>
