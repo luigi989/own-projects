@@ -11,6 +11,7 @@ import SearchBox from './misc/searchbox';
 import ProfileCard from './profile_cards/profile_card';
 import ProfileCard2 from './profile_cards/profile_card2';
 import NeonEffects from './button_effects/neon_effect';
+import HoverEffect from './button_effects/hover_effect';
 
 const rootElement = document.getElementById('root')
 render(
@@ -27,6 +28,7 @@ render(
           <Route path='profilecard' element={<ProfileCard />} />
           <Route path='profilecard2' element={<ProfileCard2 />} />
           <Route path='neonEffect' element={<NeonEffects />} />
+          <Route path='hoverEffect' element={<HoverEffect />} />
         </Routes>
       </div>
     </div>
