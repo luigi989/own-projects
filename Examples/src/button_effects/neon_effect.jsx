@@ -1,21 +1,19 @@
-// import './neon_effect.css';
-
-function App() {
+function NeonEffect() {
   return (
-    <div className='flex-1 flex flex-col justify-center items-center bg-[#031321]'>
-        <div className='flex flex-col scale-75 md:scale-100'>
+    <div className='flex-1 flex flex-col justify-center items-center bg-slate-300 dark:bg-[#031321]'>
+        <div className='flex flex-col scale-75 md:scale-100 bg-slate-300 rounded-2xl p-3'>
             {/* Map through Blue, Green, Red and Black */}
             <div className="flex flex-col">
               {[
-                ['Blue', 'border-[#255784]', 'text-[#255784]', 'to-[#255784]'],
-                ['Green', 'border-[#055205]', 'text-[#0c8612]', 'to-[#0c8612]'],
-                ['Red', 'border-[#8a1616]', 'text-[#c51313]', 'to-[#c51313]'],
-                ['Black', 'border-black', 'text-[#585353]', 'to-black']
-              ].map(([title, borderColor, textColor, gradientColor]) => (
+                ['Blue', 'bg-slate-300', 'border-[#255784]', 'text-[#255784]', 'to-[#255784]'],
+                ['Green', 'bg-slate-300', 'border-[#055205]', 'text-[#0c8612]', 'to-[#0c8612]'],
+                ['Red', 'bg-slate-300', 'border-[#8a1616]', 'text-[#c51313]', 'to-[#c51313]'],
+                ['Black', 'bg-slate-300', 'border-black', 'text-[#585353]', 'to-black']
+              ].map(([title, bgColor, borderColor, textColor, gradientColor]) => (
                 <div className={`flex relative m-3 border-solid border-2 ${borderColor}
                                 ${textColor} box-border p-6`}>
-                    <h1 className="absolute top-[-12%] left-3 px-2 bg-[#031321] 
-                                  uppercase text-base">{title}</h1>
+                    <h1 className={`absolute top-[-12%] left-3 px-2 ${bgColor}
+                                  uppercase text-base`}>{title}</h1>
 
                     <div className={`relative px-4 py-4 uppercase ${textColor} text-xl tracking-wider
                                   hover:bg-black hover:outline hover:outline-2 hover:${borderColor}`}>
@@ -66,10 +64,10 @@ function App() {
             
             {/* Multicolor */}
             <div className="flex items-center relative m-3 p-px bg-gradient-to-r from-[#743ad5] to-red-700">
-              <h1 className="absolute top-[-10%] left-3 px-2 bg-[#031321] 
+              <h1 className="absolute top-[-10%] left-3 px-2 bg-slate-300
                              text-[#743ad5] uppercase text-base">Multicolor</h1>
 
-              <div className="flex p-5 bg-[#031321] text-[#584353] uppercase text-xl tracking-wider">
+              <div className="flex p-5 bg-slate-300 text-[#584353] uppercase text-xl tracking-wider">
                 <div className="group relative p-px hover:bg-gradient-to-l from-[#743ad5] to-red-700">
                     <div className="px-4 py-4 group-hover:bg-black">
                         Neon Button
@@ -122,4 +120,4 @@ function App() {
   );
 }
 
-export default App;
+export default NeonEffect;
