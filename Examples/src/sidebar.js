@@ -29,6 +29,7 @@ const Sidebar = ({ outerContainerId, pageWrapId }) => {
         <div>
           <div className='flex flex-col ml-4'>  
             <NavLink to='/neonEffect'>Neon Effects</NavLink>
+            <NavLink to='/hoverEffect'>Hover Effect</NavLink>
           </div>
         </div> : null}
 
