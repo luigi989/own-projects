@@ -12,6 +12,7 @@ const Sidebar = ({ outerContainerId, pageWrapId }) => {
   const [cardsOpen, setCardsOpen] = useState(false);
   const [loginFormsOpen, setLoginFormsOpen] = useState(false);
   const [buttonsOpen, setButtonsOpen] = useState(false);
+  const [miscOpen, setMiscOpen] = useState(false);
 
   return (
     <Menu pageWrapId={pageWrapId} outerContainerId={outerContainerId}>
@@ -60,10 +61,21 @@ const Sidebar = ({ outerContainerId, pageWrapId }) => {
           </div>
         </div> : null}
 
-        <NavLink to="/searchbox" 
-                 className={({ isActive }) => (isActive ? 'linkActive' : 'linkInactive')}>
-                 Searchbox
-        </NavLink>
+        <div>
+          <div className='flex items-center cursor-pointer' onClick={() => setMiscOpen(!miscOpen)}>
+            <span className=''>Miscellaneous</span>
+            {loginFormsOpen ? <FaMinus className='text-xs ml-2'/> : <FaPlus className='text-xs ml-2'/>}
+          </div>
+        </div>
+        {miscOpen ? 
+        <div>
+          <div className='flex flex-col ml-4'>
+            <NavLink to="/searchbox"
+                     className={({ isActive }) => (isActive ? 'linkActive' : 'linkInactive')}>
+                     Searchbox
+            </NavLink>
+          </div>
+        </div> : null}
 
         <div>
           <div className='flex items-center cursor-pointer' onClick={() => setCardsOpen(!cardsOpen)}>
