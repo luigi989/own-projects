@@ -7,7 +7,7 @@ import profileImage from './pics/profile_pic.png';
 function App() {
   return (
     <div className='flex-1 flex justify-center items-center'>
-        <div className='flex-col scale-95 md:scale-100'>
+        <div className='flex-col scale-75 md:scale-100'>
             <div class='flex-row flex justify-center items-center bg-[#2c3a47] p-6 md:p-12 rounded-t-2xl'>
                 <div className='rounded-full p-2
                                 bg-gradient-to-r from-cyan-500 to-blue-500'>
