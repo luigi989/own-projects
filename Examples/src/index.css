@@ -12,10 +12,3 @@ html, body {
 #root {
   height: 100%;
 }
-
-.linkActive {
-  text-decoration: underline;
-  }
-.linkInactive {
-  text-decoration: none;
-}
