@@ -15,9 +15,10 @@ const Sidebar = ({ outerContainerId, pageWrapId }) => {
 
   return (
     <Menu pageWrapId={pageWrapId} outerContainerId={outerContainerId}>
+      <div className='space-y-0.5'>
         <NavLink to="/" 
                  className={({ isActive }) => (isActive ? 'linkActive' : 'linkInactive')}>
-                Home
+                  Home
         </NavLink>
         <div>
           <div className='flex items-center cursor-pointer' onClick={() => setButtonsOpen(!buttonsOpen)}>
@@ -28,8 +29,14 @@ const Sidebar = ({ outerContainerId, pageWrapId }) => {
         {buttonsOpen ? 
         <div>
           <div className='flex flex-col ml-4'>  
-            <NavLink to='/neonEffect'>Neon Effects</NavLink>
-            <NavLink to='/hoverEffect'>Hover Effect</NavLink>
+            <NavLink to='/neonEffect'
+                     className={({ isActive }) => (isActive ? 'linkActive' : 'linkInactive')}>
+                     Neon Effects
+            </NavLink>
+            <NavLink to='/hoverEffect'
+                    className={({ isActive }) => (isActive ? 'linkActive' : 'linkInactive')}>
+                    Hover Effect
+            </NavLink>
           </div>
         </div> : null}
 
@@ -42,12 +49,21 @@ const Sidebar = ({ outerContainerId, pageWrapId }) => {
         {loginFormsOpen ? 
         <div>
           <div className='flex flex-col ml-4'>
-            <NavLink to="/loginForm">Login form</NavLink>
-            <NavLink to="/loginFormTrans">Transparent login form</NavLink>
+            <NavLink to="/loginForm"
+                     className={({ isActive }) => (isActive ? 'linkActive' : 'linkInactive')}>
+                     Login form
+            </NavLink>
+            <NavLink to="/loginFormTrans"
+                     className={({ isActive }) => (isActive ? 'linkActive' : 'linkInactive')}>
+                     Transparent login form
+            </NavLink>
           </div>
         </div> : null}
 
-        <NavLink to="/searchbox">Searchbox</NavLink>
+        <NavLink to="/searchbox" 
+                 className={({ isActive }) => (isActive ? 'linkActive' : 'linkInactive')}>
+                 Searchbox
+        </NavLink>
 
         <div>
           <div className='flex items-center cursor-pointer' onClick={() => setCardsOpen(!cardsOpen)}>
@@ -58,10 +74,17 @@ const Sidebar = ({ outerContainerId, pageWrapId }) => {
         {cardsOpen ? 
         <div>
           <div className='flex flex-col ml-4'>
-            <NavLink to="/profilecard" className=''>Profile card 1</NavLink>
-            <NavLink to="/profilecard2" className=''>Profile card 2</NavLink>
+            <NavLink to="/profilecard" 
+                     className={({ isActive }) => (isActive ? 'linkActive' : 'linkInactive')}>
+                     Profile card 1
+            </NavLink>
+            <NavLink to="/profilecard2"
+                     className={({ isActive }) => (isActive ? 'linkActive' : 'linkInactive')}>
+                     Profile card 2
+            </NavLink>
           </div>
         </div> : null}
+      </div>
     </Menu>
   );
 };

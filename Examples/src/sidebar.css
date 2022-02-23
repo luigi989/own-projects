@@ -62,11 +62,17 @@
     text-decoration: none;
     transition: color 0.2s;
   }
-  .bm-item:hover {
-    color: #ffffff;
-  }
   
   /* Styling of overlay */
   .bm-overlay {
     background: rgba(0, 0, 0, 0.3);
+  }
+
+  .linkActive {
+    text-decoration: underline;
+    color: rgb(170, 34, 34);
+    
+  }
+  .linkInactive {
+    text-decoration: none;
   }
