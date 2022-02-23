@@ -23,7 +23,7 @@ const Sidebar = ({ outerContainerId, pageWrapId }) => {
         </NavLink>
         <div>
           <div className='flex items-center cursor-pointer' onClick={() => setButtonsOpen(!buttonsOpen)}>
-            <span className=''>Button effects</span>
+            <span className={(buttonsOpen ? 'underline' : 'text-none')}>Button effects</span>
             {buttonsOpen ? <FaMinus className='text-xs ml-2'/> : <FaPlus className='text-xs ml-2'/>}
           </div>
         </div>
@@ -43,7 +43,7 @@ const Sidebar = ({ outerContainerId, pageWrapId }) => {
 
         <div>
           <div className='flex items-center cursor-pointer' onClick={() => setLoginFormsOpen(!loginFormsOpen)}>
-            <span className=''>Login forms</span>
+            <span className={(loginFormsOpen ? 'underline' : 'text-none')}>Login forms</span>
             {loginFormsOpen ? <FaMinus className='text-xs ml-2'/> : <FaPlus className='text-xs ml-2'/>}
           </div>
         </div>
@@ -63,8 +63,8 @@ const Sidebar = ({ outerContainerId, pageWrapId }) => {
 
         <div>
           <div className='flex items-center cursor-pointer' onClick={() => setMiscOpen(!miscOpen)}>
-            <span className=''>Miscellaneous</span>
-            {loginFormsOpen ? <FaMinus className='text-xs ml-2'/> : <FaPlus className='text-xs ml-2'/>}
+            <span className={(miscOpen ? 'underline' : 'text-none')}>Miscellaneous</span>
+            {miscOpen ? <FaMinus className='text-xs ml-2'/> : <FaPlus className='text-xs ml-2'/>}
           </div>
         </div>
         {miscOpen ? 
@@ -79,7 +79,7 @@ const Sidebar = ({ outerContainerId, pageWrapId }) => {
 
         <div>
           <div className='flex items-center cursor-pointer' onClick={() => setCardsOpen(!cardsOpen)}>
-            <span className=''>Profile cards</span>
+            <span className={(cardsOpen ? 'underline' : 'text-none')}>Profile cards</span>
             {cardsOpen ? <FaMinus className='text-xs ml-2'/> : <FaPlus className='text-xs ml-2'/>}
           </div>
         </div>
