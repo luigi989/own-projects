@@ -8,14 +8,17 @@ import { FaLinkedin } from 'react-icons/fa';
 function HoverEffect() {
     return (
       <div className='flex-1 flex flex-col justify-center items-center bg-slate-300 dark:bg-[#031321]'>
+          {/* Background card behind icons */}
           <div className='flex flex-col scale-75 md:scale-100 bg-slate-300 rounded-2xl p-3'>
+              {/* Maps an array into three rows with a different color on each row */}
               <div className="flex flex-col m-6">
                 {[
                   ['border-[#255784]', 'text-[#255784]'],
                   ['border-[#ca1f1f]', 'text-[#ca1f1f]'],
                   ['border-[#92530b]', 'text-[#92530b]']
                 ].map(([borderColor, textColor]) => (
-                    <div className={`relative flex gap-20 m-4 text-5xl ${textColor}`}>
+                    <div className={`flex gap-20 m-4 text-5xl ${textColor}`}>
+                        {/* Facebook icon */}
                         <div className='group relative cursor-pointer'>
                             {[['top-0', 'group-hover:border-t-4', 'group-hover:w-full', 'group-hover:-skew-y-12'], 
                               ['right-0', 'group-hover:border-r-4', 'group-hover:h-full', 'group-hover:skew-x-12'],
@@ -29,7 +32,7 @@ function HoverEffect() {
                             ))}
                             <FaFacebookF className='group-hover:scale-75 m-3 duration-300'/>
                         </div>
-
+                        {/* Twitter icon */}
                         <div className='group relative cursor-pointer'>
                             {[['top-0', 'group-hover:border-t-8', 'group-hover:w-full'], 
                               ['right-0', 'group-hover:border-r-4', 'group-hover:h-full'],
@@ -42,6 +45,7 @@ function HoverEffect() {
                             ))}
                             <FaTwitter className='group-hover:scale-75 m-3 duration-300'/>
                         </div>
+                        {/* Instagram icon */}
                         <div className='group relative cursor-pointer'>
                             <span className={`absolute w-full h-full ${borderColor} duration-300 
                                             group-hover:border-solid rounded-full
@@ -49,6 +53,7 @@ function HoverEffect() {
                             </span>
                             <FaInstagram className='group-hover:scale-75 m-3 duration-300'/>
                         </div>
+                        {/* Youtube icon */}
                         <div className='group relative cursor-pointer'>
                             <span className={`absolute w-full h-full ${borderColor} duration-300 
                                             group-hover:border-solid rounded-2xl
@@ -56,6 +61,7 @@ function HoverEffect() {
                             </span>
                             <FaYoutube className='group-hover:scale-75 m-3 duration-300'/>
                         </div>
+                        {/* Github icon */}
                         <div className='group relative cursor-pointer'>
                             <span className={`absolute w-full h-full ${borderColor} duration-300 
                                             group-hover:border-solid
@@ -67,6 +73,7 @@ function HoverEffect() {
                             </span>
                             <FaGithub className='group-hover:scale-75 m-3 duration-300'/>
                         </div>
+                        {/* Linkedin icon */}
                         <div className='group relative cursor-pointer'>
                             <span className={`absolute w-1/5 h-1/5 ${borderColor} duration-300 
                                             group-hover:border-solid rounded-full
