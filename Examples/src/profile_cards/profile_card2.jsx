@@ -7,8 +7,8 @@ import profileImage from './pics/profile_pic.png';
 function App() {
   return (
     <div className='flex-1 flex justify-center items-center'>
-        <div className='flex-col scale-75 md:scale-100'>
-            <div class='flex-row flex justify-center items-center bg-[#2c3a47] p-12 rounded-t-2xl'>
+        <div className='flex-col scale-95 md:scale-100'>
+            <div class='flex-row flex justify-center items-center bg-[#2c3a47] p-6 md:p-12 rounded-t-2xl'>
                 <div className='rounded-full p-2
                                 bg-gradient-to-r from-cyan-500 to-blue-500'>
                     <img className='block w-40 h-40 rounded-full bg-center' src={profileImage} alt="" />
@@ -16,7 +16,7 @@ function App() {
 
                 <div className='flex flex-col justify-center items-center ml-5'>
                     <div className="text-white text-center text-xl font-semibold mt-3">Ludvig Lindahl</div>
-                    <div className="m-3 text-[#e66767] text-lg">Developer &#38; Designer</div>
+                    <div className="m-3 text-[#e66767] text-base md:text-lg">Developer &#38; Designer</div>
                     <div className="flex text-white text-2xl">
                         <FaFacebookF className='mr-3 transition ease-linear duration-300
                                             hover:text-[#e66767] cursor-pointer' />
