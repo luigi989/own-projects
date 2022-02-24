@@ -1,9 +1,8 @@
-// import './login_form_trans.css';
 import React from 'react';
 
 export default function Login_form_trans() {
     return(
-        <div className="flex-1 flex justify-center items-center bg-black">
+        <div className={`flex-1 flex justify-center items-center bg-astronaut bg-cover`}>
             <div className="flex flex-col p-10">
                 {/* <input class="radio" type="radio" id="login_btn"  name="group" checked />
                 <input class="radio" type="radio" id="register_btn" name="group" /> */}
