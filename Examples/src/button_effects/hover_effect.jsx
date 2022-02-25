@@ -7,17 +7,17 @@ import { FaLinkedin } from 'react-icons/fa';
 
 function HoverEffect() {
     return (
-      <div className='flex-1 flex flex-col justify-center items-center bg-slate-300 dark:bg-[#031321]'>
+      <div className='w-screen h-screen flex-1 flex justify-center items-center bg-slate-300 dark:bg-[#031321]'>
           {/* Background card behind icons */}
-          <div className='flex flex-col scale-75 md:scale-100 bg-slate-300 rounded-2xl p-3'>
+          <div className='flex scale-50 md:scale-100 bg-slate-300 rounded-2xl p-3'>
               {/* Maps an array into three rows with a different color on each row */}
-              <div className="flex flex-col m-6">
+              <div className="flex flex-row md:flex-col m-6">
                 {[
                   ['border-[#255784]', 'text-[#255784]'],
                   ['border-[#ca1f1f]', 'text-[#ca1f1f]'],
                   ['border-[#92530b]', 'text-[#92530b]']
                 ].map(([borderColor, textColor]) => (
-                    <div className={`flex gap-20 m-4 text-5xl ${textColor}`}>
+                    <div className={`flex flex-col md:flex-row gap-20 m-4 text-5xl ${textColor}`}>
                         {/* Facebook icon */}
                         <div className='group relative cursor-pointer'>
                             {[['top-0', 'group-hover:border-t-4', 'group-hover:w-full', 'group-hover:-skew-y-12'], 

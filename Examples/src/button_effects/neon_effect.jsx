@@ -1,7 +1,7 @@
 function NeonEffect() {
   return (
-    <div className='flex-1 flex flex-col justify-center items-center bg-slate-300 dark:bg-[#031321]'>
-        <div className='flex flex-col scale-75 md:scale-100 bg-slate-300 rounded-2xl p-3'>
+    <div className='w-full h-screen flex-1 flex flex-col justify-center items-center bg-slate-300 dark:bg-[#031321]'>
+        <div className='flex flex-col scale-50 md:scale-100 bg-slate-300 rounded-2xl p-3'>
             {/* Map through Blue, Green, Red and Black */}
             <div className="flex flex-col">
               {[
@@ -63,7 +63,7 @@ function NeonEffect() {
             </div>
             
             {/* Multicolor */}
-            <div className="flex items-center relative m-3 p-px bg-gradient-to-r from-[#743ad5] to-red-700">
+            <div className="flex relative m-3 p-px bg-gradient-to-r from-[#743ad5] to-red-700">
               <h1 className="absolute top-[-10%] left-3 px-2 bg-slate-300
                              text-[#743ad5] uppercase text-base">Multicolor</h1>
 
