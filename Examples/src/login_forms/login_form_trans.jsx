@@ -1,16 +1,31 @@
-import React from 'react';
+import { React, useState } from 'react';
 
 export default function Login_form_trans() {
+
+    const [loginChecked, setLoginChecked] = useState(true);
+    const [registerChecked, setRegisterChecked] = useState(false);
+
+    function showLogin() {
+        setLoginChecked(true);
+        setRegisterChecked(false);
+    } 
+
+    function showRegister() {
+        setRegisterChecked(true);
+        setLoginChecked(false);
+    } 
+
     return(
         <div className={`flex-1 flex justify-center items-center bg-astronaut bg-cover`}>
             <div className="flex flex-col p-10">
                 <div className='text-white mb-4'>
-                    <label className='hover:border-b-4 hover:border-solid hover:border-[#a51717]
-                                      checkedf:border-b-2 checked:border-solid checked:border-[#a51717]
-                                      mr-4 text-4xl cursor-pointer' 
+                    <label className={`hover:border-b-4 hover:border-solid hover:border-[#a51717]
+                                      ${loginChecked ? 'border-b-8 border-solid border-[#a51717]' : ''}
+                                      mr-4 text-4xl cursor-pointer`} onClick={showLogin}
                            htmlFor="login_btn">Login</label>
-                    <label className='hover:border-b-4 hover:border-solid hover:border-[#a51717]
-                                      text-4xl cursor-pointer' 
+                    <label className={`hover:border-b-4 hover:border-solid hover:border-[#a51717]
+                                      ${registerChecked ? 'border-b-8 border-solid border-[#a51717]' : ''}
+                                      text-4xl cursor-pointer`} onClick={showRegister}
                            htmlFor="register_btn">Register</label>
                 </div>
 
