@@ -17,7 +17,7 @@ function HoverEffect() {
                   ['border-[#ca1f1f]', 'text-[#ca1f1f]'],
                   ['border-[#92530b]', 'text-[#92530b]']
                 ].map(([borderColor, textColor]) => (
-                    <div className={`flex flex-col md:flex-row gap-20 m-4 text-5xl ${textColor}`}>
+                    <div key={textColor} className={`flex flex-col md:flex-row gap-20 m-4 text-5xl ${textColor}`}>
                         {/* Facebook icon */}
                         <div className='group relative cursor-pointer'>
                             {[['top-0', 'group-hover:border-t-4', 'group-hover:w-full', 'group-hover:-skew-y-12'], 
@@ -25,7 +25,7 @@ function HoverEffect() {
                               ['bottom-0', 'group-hover:border-b-4', 'group-hover:w-full', 'group-hover:-skew-y-12'], 
                               ['left-0', 'group-hover:border-l-4', 'group-hover:h-full', 'group-hover:skew-x-12']
                             ].map(([position, border, size, skew]) => (
-                                <span className={`absolute ${position} ${borderColor} duration-300 
+                                <span key={position} className={`absolute ${position} ${borderColor} duration-300 
                                                 group-hover:border-solid ${size} 
                                                 ${border} ${skew}`}>
                                 </span>
@@ -39,7 +39,7 @@ function HoverEffect() {
                               ['bottom-0', 'group-hover:border-b-8', 'group-hover:w-full'], 
                               ['left-0', 'group-hover:border-l-4', 'group-hover:h-full']
                             ].map(([position, border, sizeHover]) => (
-                                <span className={`absolute ${position} ${sizeHover} duration-300 
+                                <span key={position} className={`absolute ${position} ${sizeHover} duration-300 
                                                 group-hover:border-solid ${border} ${borderColor}`}>
                                 </span>
                             ))}

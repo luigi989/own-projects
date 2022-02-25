@@ -10,7 +10,7 @@ function NeonEffect() {
                 ['Red', 'bg-slate-300', 'border-[#8a1616]', 'text-[#c51313]', 'to-[#c51313]'],
                 ['Black', 'bg-slate-300', 'border-black', 'text-[#585353]', 'to-black']
               ].map(([title, bgColor, borderColor, textColor, gradientColor]) => (
-                <div className={`flex relative m-3 border-solid border-2 ${borderColor}
+                <div key={title} className={`flex relative m-3 border-solid border-2 ${borderColor}
                                 ${textColor} box-border p-6`}>
                     <h1 className={`absolute top-[-12%] left-3 px-2 ${bgColor}
                                   uppercase text-base`}>{title}</h1>
