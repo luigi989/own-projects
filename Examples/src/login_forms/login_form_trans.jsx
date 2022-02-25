@@ -6,16 +6,16 @@ export default function Login_form_trans() {
             <div className="flex flex-col p-10">
                 <div className='text-white mb-4'>
                     <label className='hover:border-b-4 hover:border-solid hover:border-[#a51717]
-                                      checked:border-b-2 checked:border-solid checked:border-[#a51717]
+                                      checkedf:border-b-2 checked:border-solid checked:border-[#a51717]
                                       mr-4 text-4xl cursor-pointer' 
-                           for="login_btn">Login</label>
+                           htmlFor="login_btn">Login</label>
                     <label className='hover:border-b-4 hover:border-solid hover:border-[#a51717]
                                       text-4xl cursor-pointer' 
-                           for="register_btn">Register</label>
+                           htmlFor="register_btn">Register</label>
                 </div>
 
                 <div>
-                    <input className="peer hidden" type="radio" id="login_btn" name="group" checked />
+                    <input className="peer hidden" type="radio" id="login_btn" name="group" defaultChecked />
                     <div class="hidden peer-checked:flex flex-col" id="login_content">
                         <input className='py-1 my-2 border-solid border-b-2 border-[#a51717]
                                         focus:border-dotted   
@@ -63,7 +63,7 @@ export default function Login_form_trans() {
                                type="password" 
                                name="" 
                                placeholder="Write password again" />
-                        <label for="accept" className='my-1 text-white text-xs 
+                        <label htmlFor="accept" className='my-1 text-white text-xs 
                                                        cursor-pointer'>
                                 <input type="checkbox" id="accept" name="accept"
                                     className='mr-2 checked:bg-red-500'/>
