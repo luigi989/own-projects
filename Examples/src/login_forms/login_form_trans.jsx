@@ -16,8 +16,8 @@ export default function Login_form_trans() {
     } 
 
     return(
-        <div className={`h-screen w-screen flex-1 flex justify-center items-center bg-astronaut bg-cover`}>
-            <div className="flex flex-col p-10">
+        <div className={`h-screen w-screen flex-1 flex justify-center items-center bg-astronaut bg-cover bg-center`}>
+            <div className="flex h-1/3 flex-col">
                 <div className='text-white mb-4'>
                     <label className={`hover:border-b-4 hover:border-solid hover:border-[#a51717]
                                       ${loginChecked ? 'border-b-8 border-solid border-[#a51717]' : ''}
