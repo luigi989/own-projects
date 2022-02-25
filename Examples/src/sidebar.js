@@ -14,7 +14,7 @@ const Sidebar = ({ outerContainerId, pageWrapId }) => {
   const [buttonsOpen, setButtonsOpen] = useState(false);
   const [miscOpen, setMiscOpen] = useState(false);
 
-  const hoverColor = " hover:text-blue-500";
+  const hoverColor = " hover:text-[#aa2222]";
 
   return (
     <Menu pageWrapId={pageWrapId} outerContainerId={outerContainerId}>
