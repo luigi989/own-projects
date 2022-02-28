@@ -1,19 +1,36 @@
+import { React } from 'react';
 import { FaFacebookF } from 'react-icons/fa';
 import { FaTwitter } from 'react-icons/fa';
 import { FaGithub } from 'react-icons/fa';
 import { FaYoutube } from 'react-icons/fa';
+
 import profileImage from './pics/profile_pic.png';
 
 function App() {
+    
   return (
-    <div className='flex-1 flex justify-center items-center'>
+    <div className='flex-1 flex justify-center items-center bg-slate-400 dark:bg-[#34495e]'>
         <div className='flex-col scale-75 md:scale-100 basis-1'>
+
+            <label className='flex justify-center items-center p-2 text-xl'>
+                Toggle me
+                <input type='checkbox' 
+                    className='peer appearance-none '/>
+                <span className='w-16 h-10 flex items-center flex-shrink-0
+                                ml-4 p-1 bg-gray-300 rounded-full
+                                after:w-8 after:h-8 after:bg-white 
+                                after:rounded-full after:shadow-md
+                                duration-300 ease-in-out peer-checked:bg-green-400
+                                after:duration-300 peer-checked:after:translate-x-6'></span>
+            </label>
+
+
             <div class='flex-col flex justify-center items-center bg-[#2c3a47] p-8 rounded-t-2xl'>
                 <div className='rounded-full p-2 animate-move
                                 bg-gradient-to-r from-cyan-500 to-blue-500'>
                     <img className='block w-40 h-40 rounded-full bg-center' src={profileImage} alt="" />
                 </div>
-
+                
                 <div className="text-white text-xl font-semibold mt-3">Ludvig Lindahl</div>
                 <div className="text-[#e66767] text-lg">Developer &#38; Designer</div>
                 <div className="flex flex-row m-3 text-white text-2xl">
