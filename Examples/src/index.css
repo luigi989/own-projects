@@ -13,19 +13,3 @@ html, body {
   @apply: .light;
 }
 
-.dark {
-  --color-bg-primary: #34495e;
-  --color-bg-secondary: #2c3a47;
-  --color-text-primary: #ffffff;
-  --color-text-secondary: #999ca0; 
-  --color-text-accent: #a72c2c;
-}
-
-.light {
-  --color-bg-primary: #ffffff;
-  --color-bg-secondary: #edf2f7;
-  --color-text-primary: #2d3748;
-  --color-text-secondary: #4a5568;
-  --color-text-accent: #2b6cb0;
-
-}
