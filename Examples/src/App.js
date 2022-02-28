@@ -1,6 +1,3 @@
-import './App.css';
-
-
 function App() {
   return (
     <div className='relative h-screen w-screen'>
