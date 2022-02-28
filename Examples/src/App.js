@@ -3,14 +3,25 @@ import './App.css';
 
 function App() {
   return (
-    <div className='h-full'>
-      <div className="flex h-full">
-      {/* <div className="bg-gray-800 basis-1/6 h-full">
-        <NavLink to="/loginForm" className={({ isActive }) => (isActive ? 'linkActive' : 'linkInactive')}>Login form</NavLink> <br />
-        <NavLink to="/loginFormTrans" className={({ isActive }) => (isActive ? 'linkActive' : 'linkInactive')}>Transparent login form</NavLink> <br />
-      </div>  */}
-      {/* <Outlet className='basis-5/6'/> */}
+    <div className='relative h-screen w-screen'>
+      <div className='flex flex-row'>
+        <span className={`absolute top-1/2 left-0 h-[2px] w-0
+                          animate-moveWidthInfin bg-green-600`}>
+        </span>
+        <span className={`absolute mt-4 top-1/2 left-0 h-[2px] w-0
+                          animate-moveWidth75Infin bg-red-600`}></span>
+        <span className={`absolute mt-8 top-1/2 left-0 h-[2px] w-0
+                          animate-moveWidth50Infin bg-purple-600`}></span>
       </div>
+
+      {/* <div className='flex flex-row-reverse'>
+        <span className={`absolute top-1/2 left-0 h-[2px] w-0
+                          animate-moveWidthInfin bg-green-600`}></span>
+        <span className={`absolute mt-4 top-1/2 left-0 h-[2px] w-0
+                          animate-moveWidth75Infin bg-red-600`}></span>
+        <span className={`absolute mt-8 top-1/2 left-0 h-[2px] w-0
+                          animate-moveWidth50Infin bg-purple-600`}></span>
+      </div> */}
     </div>
   );
 }

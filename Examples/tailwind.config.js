@@ -13,21 +13,30 @@ module.exports = {
         'astronaut': "url('../src/login_forms/pics/Astronaut.png')",
       },
       animation: {
-        moveWidth: 'moveWidth 0.5s linear', 
-        moveWidthInfinite: 'moveWidth 0.5s linear infinite', 
+        moveWidth: 'moveWidth100 0.5s linear', 
+        moveWidthInfin: 'moveWidth100 3s linear infinite', 
+        moveWidth75Infin: 'moveWidth75 3s linear infinite', 
+        moveWidth50Infin: 'moveWidth50 3s linear infinite',
         moveHeight: 'moveHeight 0.5s linear', 
         moveHeightInfinite: 'moveHeight 0.5s linear infinite', 
+        scale: 'scaleUp 1.5s linear infinite',
+        spinSlow: 'spin 3s linear infinite'
       },
       keyframes: {
-        moveWidth: {
-          '0%': { width: '0%' },
+        scaleUp: {
+          '50%': { transform: 'scale(1.2)'},
+        },
+        moveWidth50: {
+          '99%': { width: '50%' },
+        }, 
+        moveWidth75: {
+          '99%': { width: '75%' },
+        }, 
+        moveWidth100: {
           '99%': { width: '100%' },
-          '100%': { width: '0%' },
         }, 
         moveHeight: {
-          '0%': { heiight: '0%' },
           '99%': { height: '100%' },
-          '100%': { height: '0%' },
         }
       },
     },

@@ -33,14 +33,14 @@ export default function Login_form_trans() {
                     <input className="peer hidden" type="radio" id="login_btn" name="group" defaultChecked />
                     <div class="hidden peer-checked:flex flex-col" id="login_content">
                         <input className='py-1 my-2 border-solid border-b-2 border-[#a51717]
-                                        focus:border-dotted   
+                                        focus:border-dotted placeholder:text-white   
                                         outline-none bg-transparent text-white'
                             type="text" 
                             name="" 
                             placeholder="Username" 
                         />
                         <input className='py-1 my-2 border-solid border-b-2 border-[#a51717]
-                                        focus:border-dotted
+                                        focus:border-dotted placeholder:text-white
                                         outline-none bg-transparent text-white'
                             type="password" 
                             name="" 
@@ -61,19 +61,19 @@ export default function Login_form_trans() {
                     <input className="peer hidden" type="radio" id="register_btn" name="group" />
                     <div class="hidden peer-checked:flex flex-col" id="register_content">
                         <input className='py-1 my-2 border-solid border-b-2 border-[#a51717]
-                                        focus:border-dotted   
+                                        focus:border-dotted placeholder:text-white
                                         outline-none bg-transparent text-white'
                                type="text" 
                                name="" 
                                placeholder="Username" />
                         <input className='py-1 my-2 border-solid border-b-2 border-[#a51717]
-                                        focus:border-dotted
+                                        focus:border-dotted placeholder:text-white
                                         outline-none bg-transparent text-white'
                                type="password" 
                                name="" 
                                placeholder="Password" />
                         <input className='py-1 my-2 border-solid border-b-2 border-[#a51717]
-                                        focus:border-dotted
+                                        focus:border-dotted placeholder:text-white
                                         outline-none bg-transparent text-white'
                                type="password" 
                                name="" 

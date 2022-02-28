@@ -76,6 +76,14 @@ const Sidebar = ({ outerContainerId, pageWrapId }) => {
                      className={({ isActive }) => (isActive ? 'linkActive' : 'linkInactive') + hoverColor}>
                      Searchbox
             </NavLink>
+            <NavLink to="/loadingIcon"
+                     className={({ isActive }) => (isActive ? 'linkActive' : 'linkInactive') + hoverColor}>
+                     Loading Icon
+            </NavLink>
+            <NavLink to="/accordationMenu"
+                     className={({ isActive }) => (isActive ? 'linkActive' : 'linkInactive') + hoverColor}>
+                     Accordation menu
+            </NavLink>
           </div>
         </div> : null}
 
