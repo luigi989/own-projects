@@ -25,9 +25,11 @@ function AccordationMenu() {
         case 1: 
           setEntry1Open(prevEntry1Open => !prevEntry1Open);
           setImageURL("https://img.freepik.com/free-vector/dark-paper-layers-wallpaper-with-golden-details_23-2148403401.jpg");
+        break;
         case 2:
           setEntry2Open(prevEntry2Open => !prevEntry2Open)
           setImageURL("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYFAmhp4k-JX7afGiU4f-qfbcwPPjJus4xTQ&usqp=CAU");
+        break;
       }
     }
 
