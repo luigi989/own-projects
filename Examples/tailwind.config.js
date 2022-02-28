@@ -2,8 +2,23 @@ module.exports = {
   content: [
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
+  darkMode: 'class',
   theme: {    
     extend: {
+      backgroundColor: {
+        dark: '#34495e',
+        dark_secondary: '#2c3a47',
+        light: '#ffffff',
+        light_secondary: '#edf2f7',
+      },
+      textColor: {
+        dark: '#ffffff',
+        dark_secondary: '#999ca0',
+        dark_accent: '#a72c2c',
+        light: '#2d3748',
+        light_secondary: '#4a5568',
+        light_accent: '#2b6cb0',
+      },
       colors: {
         deepblue: '#255784',
         orangered: '#ca1f1f',
