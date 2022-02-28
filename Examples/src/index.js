@@ -1,6 +1,7 @@
 import React from 'react';
 import { render } from "react-dom";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { ThemeProvider } from './themeContext';
 import './index.css';
 
 import App from './App';
@@ -17,6 +18,7 @@ import AccordationMenu from './misc/accordationMenu';
 
 const rootElement = document.getElementById('root')
 render(
+  <ThemeProvider>
   <BrowserRouter>
     <div id="outer-container" className='h-full'>
       <Sidebar outerContainerId={'outer-container'} pageWrapId={'page-wrap'} />
@@ -36,7 +38,8 @@ render(
         </Routes>
       </div>
     </div>
-  </BrowserRouter>,
+  </BrowserRouter>
+  </ThemeProvider>,
   rootElement
 );
 
