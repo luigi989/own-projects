@@ -11,14 +11,14 @@ function App() {
   return (
     <div className={isDark ? 'w-full h-full dark' : 
                              'w-full h-full '}>
-        <div className='relative h-full flex-1 flex justify-center items-center bg-light dark:bg-dark'>
+        <div className='relative h-full flex-1 flex justify-center items-center bg-light_secondary dark:bg-dark'>
 
             <div className='absolute top-10 right-10'>
                 <ModeSwitch setIsDark={setIsDark} />
             </div>
 
             <div className='flex-col scale-75 md:scale-100 basis-1'>
-                <div className='flex-col flex justify-center items-center bg-[#2c3a47] p-8 rounded-t-2xl'>
+                <div className='flex-col flex justify-center items-center bg-[#2c3a47] p-8 rounded-t-2xl shadow-xl'>
                     <div className='rounded-full p-2 animate-move
                                     bg-gradient-to-r from-cyan-500 to-blue-500'>
                         <img className='block w-40 h-40 rounded-full bg-center' src={profileImage} alt="" />
@@ -42,8 +42,8 @@ function App() {
                             Contact Me
                     </button>
                 </div>
-                <div className="flex flex-row justify-center items-center
-                            bg-[#f4f4f4] p-8 divide-x-2 rounded-b-2xl">
+                <div className="flex flex-row justify-center items-center duration-300
+                            bg-light_secondary p-8 divide-x-2 rounded-b-2xl shadow-xl">
                     <div className="flex flex-col p-4">
                         <span className='text-[#2c3a47] text-3xl '>120</span>
                         <span className='uppercase text-[#e66767]'>Posts</span>
