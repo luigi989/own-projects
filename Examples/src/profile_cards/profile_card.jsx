@@ -1,8 +1,6 @@
 import { React, useState } from 'react';
-import { FaFacebookF } from 'react-icons/fa';
-import { FaTwitter } from 'react-icons/fa';
-import { FaGithub } from 'react-icons/fa';
-import { FaYoutube } from 'react-icons/fa';
+import { FaFacebookF, FaTwitter, FaGithub, FaYoutube } from 'react-icons/fa';
+import ModeSwitch from '../modeSwitch';
 
 import profileImage from './pics/profile_pic.png';
 
@@ -13,22 +11,13 @@ function App() {
   return (
     <div className={isDark ? 'w-full h-full dark' : 
                              'w-full h-full '}>
-        <div className='h-full flex-1 flex justify-center items-center bg-light dark:bg-dark'>
+        <div className='relative h-full flex-1 flex justify-center items-center bg-light dark:bg-dark'>
+
+            <div className='absolute top-10 right-10'>
+                <ModeSwitch setIsDark={setIsDark} />
+            </div>
+
             <div className='flex-col scale-75 md:scale-100 basis-1'>
-
-                <label className='flex justify-center items-center p-2 text-xl '>
-                    Toggle me
-                    <input type='checkbox'
-                        className='peer appearance-none ' onChange={() => setIsDark(prevIsDark => !prevIsDark)}/>
-                    <span className='w-16 h-10 flex items-center flex-shrink-0
-                                    ml-4 p-1 bg-gray-300 rounded-full
-                                    after:w-8 after:h-8 after:bg-white 
-                                    after:rounded-full after:shadow-md
-                                    duration-300 ease-in-out peer-checked:bg-green-400
-                                    after:duration-300 peer-checked:after:translate-x-6'></span>
-                </label>
-
-
                 <div className='flex-col flex justify-center items-center bg-[#2c3a47] p-8 rounded-t-2xl'>
                     <div className='rounded-full p-2 animate-move
                                     bg-gradient-to-r from-cyan-500 to-blue-500'>
