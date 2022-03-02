@@ -11,16 +11,19 @@ module.exports = {
         light: '#ffffff',
         light_secondary: '#edf2f7',
       },
+      borderColor: {
+        dark: '#e66767',
+      },
       textColor: {
         dark: '#ffffff',
         dark_secondary: '#999ca0',
-        dark_accent: '#a72c2c',
+        dark_accent: '#e66767',
         light: '#2d3748',
         light_secondary: '#4a5568',
         light_accent: '#2b6cb0',
       },
       colors: {
-        deepblue: '#255784',
+        deepblue: '#2d3748',
         orangered: '#ca1f1f',
         khaki: '#92530b',
       },
