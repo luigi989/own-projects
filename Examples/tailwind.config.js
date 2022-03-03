@@ -11,9 +11,6 @@ module.exports = {
         light: '#ffffff',
         light_secondary: '#edf2f7',
       },
-      borderColor: {
-        dark: '#e66767',
-      },
       textColor: {
         dark: '#ffffff',
         dark_secondary: '#999ca0',
@@ -38,9 +35,13 @@ module.exports = {
         moveHeight: 'moveHeight 0.5s linear', 
         moveHeightInfinite: 'moveHeight 0.5s linear infinite', 
         scale: 'scaleUp 1.5s linear infinite',
-        spinSlow: 'spin 3s linear infinite'
+        spinSlow: 'spin 3s linear infinite',
+        slideSlow: 'slideSlow 1s linear',
       },
       keyframes: {
+        slideSlow: {
+          '100%': { width: '100%' },
+        },
         scaleUp: {
           '50%': { transform: 'scale(1.2)'},
         },
