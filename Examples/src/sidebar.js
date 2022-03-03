@@ -40,6 +40,10 @@ const Sidebar = ({ outerContainerId, pageWrapId }) => {
                     className={({ isActive }) => (isActive ? 'linkActive' : 'linkInactive') + hoverColor}>
                     Hover Effect
             </NavLink>
+            <NavLink to='/slideEffect'
+                    className={({ isActive }) => (isActive ? 'linkActive' : 'linkInactive') + hoverColor}>
+                    Slide Effect
+            </NavLink>
           </div>
         </div> : null}
 

@@ -10,8 +10,9 @@ import LoginFormTrans from './login_forms/login_form_trans';
 import SearchBox from './misc/searchbox';
 import ProfileCard from './profile_cards/profile_card';
 import ProfileCard2 from './profile_cards/profile_card2';
-import NeonEffects from './button_effects/neon_effect';
 import HoverEffect from './button_effects/hover_effect';
+import NeonEffects from './button_effects/neon_effect';
+import SlideEffect from './button_effects/button_slide';
 import LoadingIcon from './misc/loadingIcon';
 import AccordationMenu from './misc/accordationMenu';
 
@@ -31,6 +32,7 @@ render(
           <Route path='profilecard2' element={<ProfileCard2 />} />
           <Route path='neonEffect' element={<NeonEffects />} />
           <Route path='hoverEffect' element={<HoverEffect />} />
+          <Route path='slideEffect' element={<SlideEffect />} />
           <Route path='loadingIcon' element={<LoadingIcon />} />
           <Route path='accordationMenu' element={<AccordationMenu />} />
         </Routes>
