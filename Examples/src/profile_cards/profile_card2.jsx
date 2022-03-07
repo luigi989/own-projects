@@ -19,7 +19,7 @@ function App() {
             </div>
 
             <div className='flex-col scale-75 md:scale-100 '>
-                <div class='flex-row flex justify-center items-center bg-dark_secondary  p-6 md:p-12 rounded-t-2xl shadow-xl'>
+                <div className='flex-row flex justify-center items-center bg-dark_secondary  p-6 md:p-12 rounded-t-2xl shadow-xl'>
                     <div className='rounded-full p-2
                                     bg-gradient-to-r from-cyan-500 to-blue-500'>
                         <img className='block w-40 h-40 rounded-full bg-center' src={profileImage} alt="Profile image" />
@@ -45,7 +45,7 @@ function App() {
                 <div className="flex flex-row justify-center items-center
                             bg-light_secondary p-8 divide-x-2 rounded-b-2xl shadow-xl">
                     {[['120', 'Posts'], ['127', 'Following'], ['120k', 'Followers']].map(([number, text]) =>(
-                        <div className="flex flex-col items-center p-4">
+                        <div key={text} className="flex flex-col items-center p-4">
                             <span className='text-[#2c3a47] text-3xl'>{number}</span>
                             <span className='uppercase text-dark_accent'>{text}</span>
                         </div>

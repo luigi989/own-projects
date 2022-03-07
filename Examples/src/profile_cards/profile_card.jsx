@@ -43,7 +43,7 @@ function App() {
                 <div className="flex flex-row justify-center items-center
                             bg-light_secondary p-8 divide-x-2 rounded-b-2xl shadow-xl">
                     {[['120', 'Posts'], ['127', 'Following'], ['120k', 'Followers']].map(([number, text]) =>(
-                        <div className="flex flex-col items-center p-4">
+                        <div key={text} className="flex flex-col items-center p-4">
                             <span className='text-[#2c3a47] text-3xl'>{number}</span>
                             <span className='uppercase text-dark_accent'>{text}</span>
                         </div>
