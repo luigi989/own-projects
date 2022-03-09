@@ -16,104 +16,60 @@ const Sidebar = ({ outerContainerId, pageWrapId }) => {
 
   const hoverColor = " hover:text-[#aa2222]";
 
+  function SubMenu(props) {
+    return (
+      <div>
+        <div>
+          <div className={`flex items-center cursor-pointer` + hoverColor} onClick={() => props.func(!props.state)}>
+            <span className={(buttonsOpen ? 'underline' : 'text-none')}>{props.text}</span>
+            {props.state ? <FaMinus className='text-xs ml-2'/> : <FaPlus className='text-xs ml-2'/>}
+          </div>
+        </div>
+        {props.state ? 
+          <div>
+            <div className='flex flex-col ml-4'>  
+            {props.children}
+            </div>
+          </div> : null}
+      </div>
+    );
+  }
+
+  function MenuItem(props) {
+    return (
+      <NavLink to={props.path}
+        className={({ isActive }) => (isActive ? 'linkActive' : 'linkInactive') + hoverColor}>
+        {props.text}
+      </NavLink>
+    );
+  }
+
   return (
     <Menu pageWrapId={pageWrapId} outerContainerId={outerContainerId}>
       <div className='space-y-0.5'>
-        <NavLink to="/" 
-                 className={({ isActive }) => (isActive ? 'linkActive' : 'linkInactive') + hoverColor}>
-                  Home
-        </NavLink>
-        <div>
-          <div className={`flex items-center cursor-pointer` + hoverColor} onClick={() => setButtonsOpen(!buttonsOpen)}>
-            <span className={(buttonsOpen ? 'underline' : 'text-none')}>Button effects</span>
-            {buttonsOpen ? <FaMinus className='text-xs ml-2'/> : <FaPlus className='text-xs ml-2'/>}
-          </div>
-        </div>
-        {buttonsOpen ? 
-        <div>
-          <div className='flex flex-col ml-4'>  
-            <NavLink to='/neonEffect'
-                     className={({ isActive }) => (isActive ? 'linkActive' : 'linkInactive') + hoverColor}>
-                     Neon Effects
-            </NavLink>
-            <NavLink to='/hoverEffect'
-                    className={({ isActive }) => (isActive ? 'linkActive' : 'linkInactive') + hoverColor}>
-                    Hover Effect
-            </NavLink>
-            <NavLink to='/slideEffect'
-                    className={({ isActive }) => (isActive ? 'linkActive' : 'linkInactive') + hoverColor}>
-                    Slide Effect
-            </NavLink>
-          </div>
-        </div> : null}
+        <MenuItem path='./' text='Home' />
+        <SubMenu text='Buttons effects' state={buttonsOpen} func={setButtonsOpen}>
+          <MenuItem path='./neonEffect' text='Neon Effects' />
+          <MenuItem path='./hoverEffect' text='Hover Effects' />
+          <MenuItem path='./slideEffect' text='Slide Effects' />
+        </SubMenu>
 
-        <div>
-          <div className={`flex items-center cursor-pointer` + hoverColor} onClick={() => setLoginFormsOpen(!loginFormsOpen)}>
-            <span className={(loginFormsOpen ? 'underline' : 'text-none')}>Login forms</span>
-            {loginFormsOpen ? <FaMinus className='text-xs ml-2'/> : <FaPlus className='text-xs ml-2'/>}
-          </div>
-        </div>
-        {loginFormsOpen ? 
-        <div>
-          <div className='flex flex-col ml-4'>
-            <NavLink to="/loginForm"
-                     className={({ isActive }) => (isActive ? 'linkActive' : 'linkInactive') + hoverColor}>
-                     Login form
-            </NavLink>
-            <NavLink to="/loginFormTrans"
-                     className={({ isActive }) => (isActive ? 'linkActive' : 'linkInactive') + hoverColor}>
-                     Transparent login form
-            </NavLink>
-          </div>
-        </div> : null}
+        <SubMenu text='Login Forms' state={loginFormsOpen} func={setLoginFormsOpen}>
+          <MenuItem path='./loginForm' text='Login Form' />
+          <MenuItem path='./loginFormTrans' text='Transparent Login form' />
+        </SubMenu>
 
-        <div>
-          <div className={`flex items-center cursor-pointer` + hoverColor} onClick={() => setMiscOpen(!miscOpen)}>
-            <span className={(miscOpen ? 'underline' : 'text-none')}>Miscellaneous</span>
-            {miscOpen ? <FaMinus className='text-xs ml-2'/> : <FaPlus className='text-xs ml-2'/>}
-          </div>
-        </div>
-        {miscOpen ? 
-        <div>
-          <div className='flex flex-col ml-4'>
-            <NavLink to="/searchbox"
-                     className={({ isActive }) => (isActive ? 'linkActive' : 'linkInactive') + hoverColor}>
-                     Searchbox
-            </NavLink>
-            <NavLink to="/loadingIcon"
-                     className={({ isActive }) => (isActive ? 'linkActive' : 'linkInactive') + hoverColor}>
-                     Loading Icon
-            </NavLink>
-            <NavLink to="/accordationMenu"
-                     className={({ isActive }) => (isActive ? 'linkActive' : 'linkInactive') + hoverColor}>
-                     Accordation menu
-            </NavLink>
-            <NavLink to="/menuDropDown"
-                     className={({ isActive }) => (isActive ? 'linkActive' : 'linkInactive') + hoverColor}>
-                     Dropdown Menu
-            </NavLink>
-          </div>
-        </div> : null}
+        <SubMenu text='Miscellaneous' state={miscOpen} func={setMiscOpen}>
+          <MenuItem path='./searchBox' text='Searchbox' />
+          <MenuItem path='./loadingIcon' text='Loading Icon' />
+          <MenuItem path='./accordationMenu' text='Accordation menu' />
+          <MenuItem path='./menuDropDown' text='Dropdown menu' />          
+        </SubMenu>
 
-        <div>
-          <div className={`flex items-center cursor-pointer` + hoverColor} onClick={() => setCardsOpen(!cardsOpen)}>
-            <span className={(cardsOpen ? 'underline' : 'text-none')}>Profile cards</span>
-            {cardsOpen ? <FaMinus className='text-xs ml-2'/> : <FaPlus className='text-xs ml-2'/>}
-          </div>
-        </div>
-        {cardsOpen ? 
-        <div>
-          <div className='flex flex-col ml-4'>
-            <NavLink to="/profilecard" 
-                     className={({ isActive }) => (isActive ? 'linkActive' : 'linkInactive') + hoverColor}>
-                     Profile card 1
-            </NavLink>
-            <NavLink to="/profilecard2"
-                     className={({ isActive }) => (isActive ? 'linkActive' : 'linkInactive') + hoverColor}>
-                     Profile card 2
-            </NavLink>
-          </div>
-        </div> : null}
+        <SubMenu text='Profile cards' state={cardsOpen} func={setCardsOpen}>
+          <MenuItem path='./profilecard' text='Profile card 1' />
+          <MenuItem path='./profilecard2' text='Profile card 2' />       
+        </SubMenu>
       </div>
     </Menu>
   );
