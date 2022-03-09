@@ -1,6 +1,6 @@
 import { React, useState } from 'react';
 import { FaUser, FaLock } from 'react-icons/fa';
-import ModeSwitch from "../modeSwitch";
+import ModeSwitch from "../assets/modeSwitch";
 
 export default function Login_form() {
     const [isDark, setIsDark] = useState(true);

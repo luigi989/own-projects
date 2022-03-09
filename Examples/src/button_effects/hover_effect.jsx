@@ -1,6 +1,6 @@
 import { FaFacebookF, FaTwitter, FaInstagram, FaYoutube, FaGithub, FaLinkedin } from 'react-icons/fa';
 import { React, useState } from 'react';
-import ModeSwitch from '../modeSwitch';
+import ModeSwitch from '../assets/modeSwitch';
 
 function HoverEffect() {
     const [isDark, setIsDark] = useState(true);

@@ -1,5 +1,5 @@
 import { React, useState } from 'react';
-import ModeSwitch from '../modeSwitch';
+import ModeSwitch from '../assets/modeSwitch';
 import { CSSTransition } from 'react-transition-group';
 import { FaArrowLeft, FaBell, FaBolt, FaCaretDown, FaChevronRight, FaCog, FaFacebookMessenger, FaPlus } from 'react-icons/fa';
 

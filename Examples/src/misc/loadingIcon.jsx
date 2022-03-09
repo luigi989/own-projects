@@ -1,5 +1,5 @@
 import { React, useState } from 'react';
-import ModeSwitch from "../modeSwitch";
+import ModeSwitch from "../assets/modeSwitch";
 
 function LoadingIcon() {
   const [isDark, setIsDark] = useState(true);
@@ -19,7 +19,7 @@ function LoadingIcon() {
                                    animate-scale
                                    rounded-t-full rounded-l-full origin-bottom-right"></span>
             <span className="w-[32px] h-[32px] bg-blue-400 m-1 
-                                   animate-scale animation-delay-500
+              w                     animate-scale animation-delay-500
                                    rounded-t-full rounded-r-full origin-bottom-left"></span>
             <span className="w-[32px] h-[32px] bg-pink-400 m-1 
                                    animate-scale animation-delay-1500

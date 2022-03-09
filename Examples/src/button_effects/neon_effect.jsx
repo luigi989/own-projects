@@ -1,5 +1,5 @@
 import { React, useState } from 'react';
-import ModeSwitch from "../modeSwitch";
+import ModeSwitch from "../assets/modeSwitch";
 
 function NeonEffect() {
   const [isDark, setIsDark] = useState(true);

@@ -1,6 +1,6 @@
 import { React, useState } from 'react';
 import { FaFacebookF, FaTwitter, FaGithub, FaYoutube } from 'react-icons/fa';
-import ModeSwitch from '../modeSwitch';
+import ModeSwitch from '../assets/modeSwitch';
 
 import profileImage from './pics/profile_pic.png';
 

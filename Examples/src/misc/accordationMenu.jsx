@@ -1,5 +1,5 @@
 import { React, useState } from 'react';
-import ModeSwitch from "../modeSwitch";
+import ModeSwitch from "../assets/modeSwitch";
 import { FaPlus, FaMinus } from 'react-icons/fa';
 
 function AccordationMenu() {

@@ -1,5 +1,5 @@
 import { React, useState } from 'react';
-import ModeSwitch from "./modeSwitch";
+import ModeSwitch from "./assets/modeSwitch";
 
 function App() {
   const [isDark, setIsDark] = useState(true);
