@@ -22,7 +22,7 @@ function App() {
                 <div className='flex-row flex justify-center items-center bg-dark_secondary  p-6 md:p-12 rounded-t-2xl shadow-xl'>
                     <div className='rounded-full p-2
                                     bg-gradient-to-r from-cyan-500 to-blue-500'>
-                        <img className='block w-40 h-40 rounded-full bg-center' src={profileImage} alt="Profile image" />
+                        <img className='block w-40 h-40 rounded-full bg-center' src={profileImage} alt='Profile' />
                     </div>
 
                     <div className='flex flex-col justify-center items-center ml-5'>
