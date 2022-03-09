@@ -88,6 +88,10 @@ const Sidebar = ({ outerContainerId, pageWrapId }) => {
                      className={({ isActive }) => (isActive ? 'linkActive' : 'linkInactive') + hoverColor}>
                      Accordation menu
             </NavLink>
+            <NavLink to="/menuDropDown"
+                     className={({ isActive }) => (isActive ? 'linkActive' : 'linkInactive') + hoverColor}>
+                     Dropdown Menu
+            </NavLink>
           </div>
         </div> : null}
 

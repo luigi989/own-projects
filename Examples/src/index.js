@@ -15,6 +15,7 @@ import NeonEffects from './button_effects/neon_effect';
 import SlideEffect from './button_effects/button_slide';
 import LoadingIcon from './misc/loadingIcon';
 import AccordationMenu from './misc/accordationMenu';
+import MenuDropDown from './misc/menuDropDown';
 
 const rootElement = document.getElementById('root')
 render(
@@ -35,6 +36,7 @@ render(
           <Route path='slideEffect' element={<SlideEffect />} />
           <Route path='loadingIcon' element={<LoadingIcon />} />
           <Route path='accordationMenu' element={<AccordationMenu />} />
+          <Route path='menuDropDown' element={<MenuDropDown />} />
         </Routes>
       </div>
     </div>
