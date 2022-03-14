@@ -1,8 +1,75 @@
-import { React, useState } from 'react';
+import { React, useState, useEffect } from 'react';
+import { BlockPicker } from 'react-color';
+import Popup from 'reactjs-popup';
+import 'reactjs-popup/dist/index.css';
 import ModeSwitch from "../assets/modeSwitch";
 
 function LoadingIcon() {
+  const red = 'bg-red-500';
+  const green = 'bg-green-500';
+  const blue = 'bg-blue-400';
+  const pink = 'bg-pink-400';
+  const yellow = 'bg-yellow-400';
+
   const [isDark, setIsDark] = useState(true);
+  const [selectedObject, setSelectedObject] = useState([true, false, false, false]);
+  const [colors, setColors] = useState([red, green, blue, pink]);
+
+  function ColorSelect() {
+
+    function changeColor(color) {
+      var newArray = [...colors];
+      for (var i = 0; i < newArray.length; i++) {
+        if (selectedObject[i]) {
+          newArray[i] = "bg-[" + color.hex + "]";
+        }
+      }
+      console.log(color.hex);
+      console.log(newArray);
+      setColors(newArray);
+    }
+
+    useEffect(() => {
+      console.log('color[0]: ' + colors[0]);
+      console.log('colors ' + colors);
+    }, [])
+    
+  
+    function setIndex(index) {
+      let newArray = [false, false, false, false];
+      newArray[index - 1] = true;
+      setSelectedObject(newArray);
+    }
+
+    function InputTab(props) {
+      return (
+        <div>
+          <input type='radio' id={props.id} name='number' checked={selectedObject[props.index - 1]} onChange={() => setIndex(props.index)}
+            className='peer hidden' />
+          <label htmlFor={props.id} className='peer-checked:bg-slate-500 hover:bg-slate-500 p-2 rounded-2xl'>
+            {props.text}</label>
+        </div>
+      );
+    }
+    return (
+      <div className='absolute right-12 p-2 flex flex-row items-center bg-slate-300 rounded-2xl'>
+
+        <div className='flex flex-col justify-center items-center gap-3 px-2'>
+          <Popup trigger={<button>Pick Color</button>} position='left center'>
+            <BlockPicker onChangeComplete={changeColor} />
+          </Popup>
+        </div>
+
+        <div className='flex flex-col gap-5 p-1'>
+          <InputTab id='number1' index='1' text='Siffra 1' />
+          <InputTab id='number2' index='2' text='Siffra 2' />
+          <InputTab id='number3' index='3' text='Siffra 3' />
+          <InputTab id='number4' index='4' text='Siffra 4' />
+        </div>
+      </div>
+
+    );
+  }
 
   return (
     <div className={isDark ? 'w-full h-full dark' :
@@ -12,21 +79,22 @@ function LoadingIcon() {
         <div className='absolute top-10 right-10'>
           <ModeSwitch setIsDark={setIsDark} />
         </div>
+        <ColorSelect />
 
         <div className='flex justify-center items-center md:scale-100'>
-          <div className="w-1/2 flex flex-wrap animate-spinSlow">
-            <span className="w-[32px] h-[32px] bg-orange-400 m-1 
+          <div className="w-1/2 flex flex-wrap animate-spinSlow text-xs">
+            <span className={`w-[32px] h-[32px] ${colors[0]} m-1 
                                    animate-scale
-                                   rounded-t-full rounded-l-full origin-bottom-right"></span>
-            <span className="w-[32px] h-[32px] bg-blue-400 m-1 
-              w                     animate-scale animation-delay-500
-                                   rounded-t-full rounded-r-full origin-bottom-left"></span>
-            <span className="w-[32px] h-[32px] bg-pink-400 m-1 
+                                   rounded-t-full rounded-l-full origin-bottom-right flex items-center justify-center`}>1</span>
+            <span className={`w-[32px] h-[32px] ${colors[1]} m-1 
+                                   animate-scale animation-delay-500
+                                   rounded-t-full rounded-r-full origin-bottom-left flex items-center justify-center`}>2</span>
+            <span className={`w-[32px] h-[32px] ${colors[2]} m-1 
                                    animate-scale animation-delay-1500
-                                   rounded-b-full rounded-l-full origin-top-right"></span>
-            <span className="w-[32px] h-[32px] bg-yellow-400 m-1 
+                                   rounded-b-full rounded-l-full origin-top-right flex items-center justify-center`}>3</span>
+            <span className={`w-[32px] h-[32px] ${colors[3]} m-1 
                                    animate-scale animation-delay-1000
-                                   rounded-b-full rounded-r-full origin-top-left"></span>
+                                   rounded-b-full rounded-r-full origin-top-left flex items-center justify-center`}>4</span>
           </div>
         </div>
       </div>
