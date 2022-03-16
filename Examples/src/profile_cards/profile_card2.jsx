@@ -39,7 +39,7 @@ function App() {
                                 <FaGithub className={mediaButton} onClick={() => window.open(github, '_blank')} />
                                 <FaLinkedin className={mediaButton} onClick={() => window.open(linkedin, '_blank')} />
                             </div>
-                            <ContactButton text='Contact me' />
+                            <ContactButton text='Contact me' to='mailto:ludde.lindahl@gmail.com' />
                         </div>
 
                     </div>
