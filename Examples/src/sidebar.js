@@ -22,13 +22,14 @@ const Sidebar = ({ outerContainerId, pageWrapId }) => {
         <div>
           <div className={`flex items-center cursor-pointer` + hoverColor} onClick={() => props.func(!props.state)}>
             <span className={(buttonsOpen ? 'underline' : 'text-none')}>{props.text}</span>
-            {props.state ? <FaMinus className='text-xs ml-2'/> : <FaPlus className='text-xs ml-2'/>}
+            {props.state ? <FaMinus className='text-xs ml-2' /> : <FaPlus className='text-xs ml-2' />}
           </div>
         </div>
-        {props.state ? 
-          <div>
-            <div className='flex flex-col ml-4'>  
-            {props.children}
+        {props.state ?
+          <div className='relative'>
+            <span className='absolute left-2 w-[1px] h-full bg-red-500'></span>
+            <div className='flex flex-col ml-4'>
+              {props.children}
             </div>
           </div> : null}
       </div>
@@ -63,12 +64,12 @@ const Sidebar = ({ outerContainerId, pageWrapId }) => {
           <MenuItem path='./searchBox' text='Searchbox' />
           <MenuItem path='./loadingIcon' text='Loading Icon' />
           <MenuItem path='./accordationMenu' text='Accordation menu' />
-          <MenuItem path='./menuDropDown' text='Dropdown menu' />          
+          <MenuItem path='./menuDropDown' text='Dropdown menu' />
         </SubMenu>
 
         <SubMenu text='Profile cards' state={cardsOpen} func={setCardsOpen}>
           <MenuItem path='./profilecard' text='Profile card 1' />
-          <MenuItem path='./profilecard2' text='Profile card 2' />       
+          <MenuItem path='./profilecard2' text='Profile card 2' />
         </SubMenu>
       </div>
     </Menu>
