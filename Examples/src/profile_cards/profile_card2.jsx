@@ -1,5 +1,5 @@
 import { React, useState } from 'react';
-import { FaFacebookF, FaTwitter, FaGithub, FaYoutube } from 'react-icons/fa';
+import { FaFacebookF, FaTwitter, FaGithub, FaLinkedin } from 'react-icons/fa';
 import ModeSwitch from '../assets/modeSwitch';
 import profileImage from './pics/profile_pic.png';
 import { InfoCell, ContactButton } from './assets';
@@ -8,6 +8,10 @@ function App() {
 
     const [isDark, setIsDark] = useState(true);
 
+    const facebook = 'https://www.facebook.com/ludvig.lindahl.1/';
+    const twitter = 'https://twitter.com/Ludde989';
+    const github = 'https://github.com/luigi989';
+    const linkedin = 'https://www.linkedin.com/in/ludvig-lindahl/';
     const mediaButton = 'transition ease-linear duration-300 hover:text-dark_accent cursor-pointer';
 
     return (
@@ -30,10 +34,10 @@ function App() {
                             <p className="text-dark text-center text-xl font-semibold mt-3">Ludvig Lindahl</p>
                             <p className="m-3 text-dark_accent text-base md:text-lg">Developer &#38; Designer</p>
                             <div className="flex gap-5 text-dark text-2xl">
-                                <FaFacebookF className={mediaButton} />
-                                <FaTwitter className={mediaButton} />
-                                <FaGithub className={mediaButton} />
-                                <FaYoutube className={mediaButton} />
+                                <FaFacebookF className={mediaButton} onClick={() => window.open(facebook, '_blank')} />
+                                <FaTwitter className={mediaButton} onClick={() => window.open(twitter, '_blank')} />
+                                <FaGithub className={mediaButton} onClick={() => window.open(github, '_blank')} />
+                                <FaLinkedin className={mediaButton} onClick={() => window.open(linkedin, '_blank')} />
                             </div>
                             <ContactButton text='Contact me' />
                         </div>

@@ -1,14 +1,17 @@
 import { React, useState } from 'react';
-import { FaFacebookF, FaTwitter, FaGithub, FaYoutube } from 'react-icons/fa';
+import { FaFacebookF, FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
 import ModeSwitch from '../assets/modeSwitch';
-import { InfoCell, ContactButton } from './assets';
-
+import { ContactButton, InfoCell } from './assets';
 import profileImage from './pics/profile_pic.png';
 
-function App() {
 
+function App() {
     const [isDark, setIsDark] = useState(true);
 
+    const facebook = 'https://www.facebook.com/ludvig.lindahl.1/';
+    const twitter = 'https://twitter.com/Ludde989';
+    const github = 'https://github.com/luigi989';
+    const linkedin = 'https://www.linkedin.com/in/ludvig-lindahl/';
     const mediaButton = 'transition ease-linear duration-300 hover:text-dark_accent cursor-pointer';
 
     return (
@@ -30,10 +33,10 @@ function App() {
                         <div className="text-dark text-xl font-semibold mt-3">Ludvig Lindahl</div>
                         <div className="text-dark_accent text-lg">Developer &#38; Designer</div>
                         <div className="flex gap-5 m-2 text-dark text-2xl">
-                            <FaFacebookF className={mediaButton} />
-                            <FaTwitter className={mediaButton} />
-                            <FaGithub className={mediaButton} />
-                            <FaYoutube className={mediaButton} />
+                            <FaFacebookF className={mediaButton} onClick={() => window.open(facebook, '_blank')} />
+                            <FaTwitter className={mediaButton} onClick={() => window.open(twitter, '_blank')} />
+                            <FaGithub className={mediaButton} onClick={() => window.open(github, '_blank')} />
+                            <FaLinkedin className={mediaButton} onClick={() => window.open(linkedin, '_blank')} />
                         </div>
                             <ContactButton text='Contact me' />
 
