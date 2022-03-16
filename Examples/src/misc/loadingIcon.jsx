@@ -16,6 +16,7 @@ function LoadingIcon() {
   const [isDark, setIsDark] = useState(true);
   const [selectedObject, setSelectedObject] = useState([true, false, false, false]);
   const [colors, setColors] = useState([red, green, blue, pink]);
+  const [showPopup, setShowPopup] = useState(false);
 
   function ColorSelect() {
 
@@ -39,7 +40,11 @@ function LoadingIcon() {
       var newArray = [...colors];
       newArray[index] = color;
       setColors(newArray);
+    }
 
+    function handleOnClick(index) {
+      setIndex(index);
+      setShowPopup(true);
     }
 
     function InputTab(props) {
@@ -48,7 +53,7 @@ function LoadingIcon() {
           <input type='radio' id={props.id} name='number' checked={selectedObject[props.index - 1]} onChange={() => setIndex(props.index)}
             className='peer hidden' />
           <label htmlFor={props.id} style={{ backgroundColor: colors[props.index - 1] }}
-            className='peer-checked:outline peer-checked:outline-2 peer-checked:outline-slate-900  hover:bg-slate-500 p-2 rounded-2xl'>
+            className='p-2 rounded-2xl cursor-pointer' onClick={() => handleOnClick(props.index)}>
             {props.text}
           </label>
         </div>
@@ -57,29 +62,31 @@ function LoadingIcon() {
 
     function ResetButton(props) {
       return (
-        <button className='w-fit bg-red-500' onClick={() => resetColor(props.color, props.index)}><FaRedo /></button>
+        <button className='w-fit' onClick={() => resetColor(props.color, props.index)}><FaRedo /></button>
       );
     }
 
     return (
       <div className='absolute right-12 p-2 flex flex-row items-center bg-slate-300 rounded-2xl'>
-
-        <div className='flex flex-col justify-center items-center gap-3 px-1'>
-          <Popup trigger={<button>Pick Color</button>} position='left center'>
-            <BlockPicker onChangeComplete={changeColor} />
-          </Popup>
-        </div>
-
-        <div className='grid grid-cols-2 gap-5 p-2'>
+        <div className='flex flex-col gap-5 p-2'>
           <InputTab id='number1' index='1' text='Siffra 1' />
-          <ResetButton color={red} index='0' />
           <InputTab id='number2' index='2' text='Siffra 2' />
-          <ResetButton color={green} index='1' />
           <InputTab id='number3' index='3' text='Siffra 3' />
-          <ResetButton color={blue} index='2' />
           <InputTab id='number4' index='4' text='Siffra 4' />
+        </div>
+        <div className='flex flex-col gap-7 p-2'>
+          <ResetButton color={red} index='0' />
+          <ResetButton color={green} index='1' />
+          <ResetButton color={blue} index='2' />
           <ResetButton color={pink} index='3' />
         </div>
+        <Popup open={showPopup} onClose={() => setShowPopup(false)} 
+              position='left center'>
+          <div className='bg-red-500 w-1/2'>
+          <BlockPicker onChangeComplete={changeColor} />
+
+          </div>
+        </Popup>
       </div>
 
     );
