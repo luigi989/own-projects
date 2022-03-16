@@ -9,9 +9,10 @@ function InfoCell(props) {
 
 function ContactButton(props) {
     return (
-        <button className="bg-transparent border-[#e66767] border-solid border-2 rounded-lg
+        <button className='bg-transparent border-[#e66767] border-solid border-2 rounded-lg
             px-10 py-2 mt-4  w-fit text-dark_accent hover:bg-[#e66767] hover:text-dark
-            transition ease-linear duration-300">
+            transition ease-linear duration-300' 
+            onClick={() => window.open(props.to, '_self')}>
             {props.text}
         </button>
     );
