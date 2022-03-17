@@ -18,23 +18,23 @@ function LoopRow(props) {
     for(var i = props.start; i <= props.end; i++) {
         if(i === props.divider) {
             elems.push(
-                <div className='cell ms-auto' key={i} onClick={(e) => {handleShow(e)}}>
+                <div className='hover:scale-125 hover:shadow-[0_0_0_2px] hover:shadow-black ms-auto' key={i} onClick={(e) => {handleShow(e)}}>
                     <Cell eData={data.elements[i]}></Cell>
                 </div>);
         } else {
             elems.push(
-                <div className='cell' key={i} onClick={(e) => {handleShow(e)}}>
+                <div className='hover:scale-125 hover:shadow-[0_0_0_2px] hover:shadow-black' key={i} onClick={(e) => {handleShow(e)}}>
                     <Cell eData={data.elements[i]}></Cell>
                 </div>);              
         }
     }
 
     return (
-        <div className='row'>
-            <div className='col-12 col-md-10 p-1'>
-                <Stack direction='horizontal' gap={1}>
+        <div className='flex'>
+            <div className='w-2/3 p-1'>
+                <div className='flex gap-1'>
                     {elems}
-                </Stack>
+                </div>
                 {show ? <ElementModal closeModal={handleClose} data={currentData} /> : null}
             </div>
         </div>
@@ -54,24 +54,24 @@ function LoopSplitRow(props) {
     var elems = [];
     for(var i = props.start1; i <= props.end1; i++) {
         elems.push(
-            <div div className='cell' key={i} onClick={(e) => {handleShow(e)}}>
+            <div div className='hover:scale-125 hover:shadow-[0_0_0_2px] hover:shadow-black' key={i} onClick={(e) => {handleShow(e)}}>
                 <Cell eData={data.elements[i]} ></Cell>
             </div>);                
     }
-    elems.push(<div className='cell' key={i}><IntervalCell interval={props.interval}></IntervalCell></div>)
+    elems.push(<div className='chover:scale-125 hover:shadow-[0_0_0_2px] hover:shadow-blackell' key={i}><IntervalCell interval={props.interval}></IntervalCell></div>)
     for(i = props.start2; i <= props.end2; i++) {
         elems.push(
-            <div className='cell' key={i} onClick={(e) => {handleShow(e)}}>
+            <div className='hover:scale-125 hover:shadow-[0_0_0_2px] hover:shadow-black' key={i} onClick={(e) => {handleShow(e)}}>
                 <Cell eData={data.elements[i]}></Cell>
             </div>);                
     }
 
     return(
-        <div className='row'>
-            <div className='col-12 col-md-10 p-1'>
-                <Stack direction='horizontal' gap={1}>
+        <div className='flex'>
+            <div className='w-2/3 p-1'>
+                <div className='flex gap-1'>
                     {elems}
-                </Stack>
+                </div>
                 {show ? <ElementModal closeModal={handleClose} data={currentData} /> : null}
             </div>
         </div>
@@ -90,23 +90,29 @@ function LoopSpecialRow(props) {
 
     var elems = [];
     var i = props.start;
-    elems.push(<div className='cell' key={i}><EmptyCell></EmptyCell></div>);
+    elems.push(
+        <div className='hover:scale-125 hover:shadow-[0_0_0_2px] hover:shadow-black' key={i}>
+            <EmptyCell></EmptyCell>
+        </div>);
     /* i++; */
-    elems.push(<div className='cell' key={i}><EmptyCell></EmptyCell></div>);
+    elems.push(
+        <div className='hover:scale-125 hover:shadow-[0_0_0_2px] hover:shadow-black' key={i}>
+            <EmptyCell></EmptyCell>
+        </div>);
     /* i++; */
     for(i; i <= props.end; i++) {
         elems.push(
-            <div div className='cell' key={i} onClick={(e) => {handleShow(e)}}>
+            <div div className='hover:scale-125 hover:shadow-[0_0_0_2px] hover:shadow-black' key={i} onClick={(e) => {handleShow(e)}}>
                 <Cell eData={data.elements[i]} ></Cell>
             </div>);                
     }
 
     return(
-        <div className='row'>
-            <div className='col-12 p-1'>
-                <Stack direction='horizontal' gap={1}>
+        <div className='flex'>
+            <div className='w-2/3 p-1'>
+                <div className='flex gap-1'>
                     {elems}
-                </Stack>
+                </div>
                 {show ? <ElementModal closeModal={handleClose} data={currentData} /> : null}
             </div>
         </div>

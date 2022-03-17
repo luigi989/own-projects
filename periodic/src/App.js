@@ -1,4 +1,3 @@
-import './css/App.css';
 import React from 'react';
 import { Container, Navbar } from 'react-bootstrap';
 
@@ -7,12 +6,10 @@ import { Row1, Row2, Row3, Row4, Row5, Row6, Row7, Row6exp, Row7exp } from './ro
 function App() {
   return (
     <div className='background'>
-      <Navbar bg='dark' variant='dark'>
-        <Container>
-          <Navbar.Brand href="#home">Periodiska systemet</Navbar.Brand>
-        </Container>
-      </Navbar>
-      <div className="container fit-content">
+      <header className="w-full flex items-center justify-center py-2 bg-slate-800">
+        <span className='text-3xl text-slate-400'>Periodiska systemet</span>
+      </header>
+      <div className="mx-auto w-fit">
         <Row1></Row1>
         <Row2></Row2>
         <Row3></Row3>
