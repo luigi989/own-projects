@@ -39,6 +39,10 @@ function LoopRow(props) {
         <div className='flex'>
             <div className='w-2/3 p-1'>
                 <div className='flex gap-1'>
+                    <span className='wh-10 flex items-center justify-center px-3 
+                                    text-white text-xl'>
+                        {data.elements[props.start].period}
+                    </span>
                     {elems}
                 </div>
                 {show ? <ElementModal closeModal={handleClose} data={currentData} /> : null}
@@ -76,6 +80,10 @@ function LoopSplitRow(props) {
         <div className='flex'>
             <div className='w-2/3 p-1'>
                 <div className='flex gap-1'>
+                    <span className='wh-10 flex items-center justify-center px-3 
+                                    text-white text-xl'>
+                        {data.elements[props.start1].period}
+                    </span>
                     {elems}
                 </div>
                 {show ? <ElementModal closeModal={handleClose} data={currentData} /> : null}
@@ -104,6 +112,11 @@ function LoopSpecialRow(props) {
         <div key={i}>
             <EmptyCell></EmptyCell>
         </div>);
+    elems.push(
+        <span className='wh-10 flex items-center justify-center px-3 
+        text-white text-xl'>
+            {data.elements[props.start].period}
+        </span>);
     for(i; i <= props.end; i++) {
         elems.push(
             <div div className='hover:scale-125 hover:shadow-[0_0_0_2px] hover:shadow-black' key={i} onClick={(e) => {handleShow(e)}}>
