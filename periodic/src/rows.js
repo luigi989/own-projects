@@ -45,7 +45,7 @@ function LoopRow(props) {
                     </span>
                     {elems}
                 </div>
-                {show ? <ElementModal closeModal={handleClose} data={currentData} /> : null}
+                {show ? <ElementModal onOpen={show} onClose={handleClose} data={currentData} /> : null}
             </div>
         </div>
     );
