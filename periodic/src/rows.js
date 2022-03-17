@@ -17,10 +17,16 @@ function LoopRow(props) {
     var elems = [];
     for(var i = props.start; i <= props.end; i++) {
         if(i === props.divider) {
+            for (var j = 0; j < props.emptyCells; j++) {
+                elems.push(
+                    <div key={i}>
+                        <EmptyCell></EmptyCell>
+                    </div>);
+            }
             elems.push(
-                <div className='hover:scale-125 hover:shadow-[0_0_0_2px] hover:shadow-black ms-auto' key={i} onClick={(e) => {handleShow(e)}}>
+                <div className='hover:scale-125 hover:shadow-[0_0_0_2px] hover:shadow-black' key={i} onClick={(e) => {handleShow(e)}}>
                     <Cell eData={data.elements[i]}></Cell>
-                </div>);
+                </div>); 
         } else {
             elems.push(
                 <div className='hover:scale-125 hover:shadow-[0_0_0_2px] hover:shadow-black' key={i} onClick={(e) => {handleShow(e)}}>
@@ -91,15 +97,13 @@ function LoopSpecialRow(props) {
     var elems = [];
     var i = props.start;
     elems.push(
-        <div className='hover:scale-125 hover:shadow-[0_0_0_2px] hover:shadow-black' key={i}>
+        <div key={i}>
             <EmptyCell></EmptyCell>
         </div>);
-    /* i++; */
     elems.push(
-        <div className='hover:scale-125 hover:shadow-[0_0_0_2px] hover:shadow-black' key={i}>
+        <div key={i}>
             <EmptyCell></EmptyCell>
         </div>);
-    /* i++; */
     for(i; i <= props.end; i++) {
         elems.push(
             <div div className='hover:scale-125 hover:shadow-[0_0_0_2px] hover:shadow-black' key={i} onClick={(e) => {handleShow(e)}}>
@@ -122,7 +126,7 @@ function LoopSpecialRow(props) {
 class Row1 extends React.Component {
     render() {
         return (
-            <LoopRow start={0} end={1} divider={1}></LoopRow>
+            <LoopRow start={0} end={1} divider={1} emptyCells={16}></LoopRow>
         );
     }
 }
@@ -130,7 +134,7 @@ class Row1 extends React.Component {
 class Row2 extends React.Component {
     render() {
         return (
-            <LoopRow start={2} end={9} divider={4}></LoopRow>
+            <LoopRow start={2} end={9} divider={4} emptyCells={10}></LoopRow>
         );
     }
 }
@@ -138,7 +142,7 @@ class Row2 extends React.Component {
 class Row3 extends React.Component {
     render() {
         return (
-            <LoopRow start={10} end={17} divider={12}></LoopRow>
+            <LoopRow start={10} end={17} divider={12} emptyCells={10}></LoopRow>
         );
     }
 }
