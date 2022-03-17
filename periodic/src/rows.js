@@ -19,17 +19,17 @@ function LoopRow(props) {
         if(i === props.divider) {
             for (var j = 0; j < props.emptyCells; j++) {
                 elems.push(
-                    <div key={i}>
+                    <div key={j}>
                         <EmptyCell></EmptyCell>
                     </div>);
             }
             elems.push(
-                <div className='hover:scale-125 hover:shadow-[0_0_0_2px] hover:shadow-black' key={i} onClick={(e) => {handleShow(e)}}>
+                <div className='hover:scale-125 hover:shadow-[0_0_0_2px] hover:shadow-black' key={data.elements[i].name} onClick={(e) => {handleShow(e)}}>
                     <Cell eData={data.elements[i]}></Cell>
                 </div>); 
         } else {
             elems.push(
-                <div className='hover:scale-125 hover:shadow-[0_0_0_2px] hover:shadow-black' key={i} onClick={(e) => {handleShow(e)}}>
+                <div className='hover:scale-125 hover:shadow-[0_0_0_2px] hover:shadow-black' key={data.elements[i].name} onClick={(e) => {handleShow(e)}}>
                     <Cell eData={data.elements[i]}></Cell>
                 </div>);              
         }
@@ -64,14 +64,14 @@ function LoopSplitRow(props) {
     var elems = [];
     for(var i = props.start1; i <= props.end1; i++) {
         elems.push(
-            <div div className='hover:scale-125 hover:shadow-[0_0_0_2px] hover:shadow-black' key={i} onClick={(e) => {handleShow(e)}}>
+            <div div className='hover:scale-125 hover:shadow-[0_0_0_2px] hover:shadow-black' key={data.elements[i].name} onClick={(e) => {handleShow(e)}}>
                 <Cell eData={data.elements[i]} ></Cell>
             </div>);                
     }
-    elems.push(<div className='chover:scale-125 hover:shadow-[0_0_0_2px] hover:shadow-blackell' key={i}><IntervalCell interval={props.interval}></IntervalCell></div>)
+    elems.push(<div key={i}><IntervalCell interval={props.interval}></IntervalCell></div>)
     for(i = props.start2; i <= props.end2; i++) {
         elems.push(
-            <div className='hover:scale-125 hover:shadow-[0_0_0_2px] hover:shadow-black' key={i} onClick={(e) => {handleShow(e)}}>
+            <div className='hover:scale-125 hover:shadow-[0_0_0_2px] hover:shadow-black' key={data.elements[i].name} onClick={(e) => {handleShow(e)}}>
                 <Cell eData={data.elements[i]}></Cell>
             </div>);                
     }
@@ -105,21 +105,21 @@ function LoopSpecialRow(props) {
     var elems = [];
     var i = props.start;
     elems.push(
-        <div key={i}>
+        <div key={'e1'}>
             <EmptyCell></EmptyCell>
         </div>);
     elems.push(
-        <div key={i}>
+        <div key={'e2'}>
             <EmptyCell></EmptyCell>
         </div>);
     elems.push(
-        <span className='wh-10 flex items-center justify-center px-3 
+        <span key='num' className='wh-10 flex items-center justify-center px-3 
         text-white text-xl'>
             {data.elements[props.start].period}
         </span>);
     for(i; i <= props.end; i++) {
         elems.push(
-            <div div className='hover:scale-125 hover:shadow-[0_0_0_2px] hover:shadow-black' key={i} onClick={(e) => {handleShow(e)}}>
+            <div div className='hover:scale-125 hover:shadow-[0_0_0_2px] hover:shadow-black' key={data.elements[i].name} onClick={(e) => {handleShow(e)}}>
                 <Cell eData={data.elements[i]} ></Cell>
             </div>);                
     }
