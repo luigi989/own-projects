@@ -1,5 +1,5 @@
-import { React, useState } from 'react';
-import { BlockPicker } from 'react-color';
+import { React, useState, useEffect  } from 'react';
+import { SketchPicker } from 'react-color';
 import { FaRedo } from 'react-icons/fa';
 import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
@@ -10,13 +10,15 @@ function LoadingIcon() {
   const green = '#4caf50';
   const blue = '#2196f3';
   const pink = '#e91e63';
-  const displayColors = ['bg-red-500'];
-
 
   const [isDark, setIsDark] = useState(true);
   const [selectedObject, setSelectedObject] = useState([true, false, false, false]);
+  const [selectedIndex, setSelectedIndex] = useState();
   const [colors, setColors] = useState([red, green, blue, pink]);
   const [showPopup, setShowPopup] = useState(false);
+
+  const contentStyle = { background: '#FFF', width: 'min-content', padding: '0', borderRadius: '3%'};
+  const overlayStyle = { background: 'rgba(0,0,0,0.0)' };
 
   function ColorSelect() {
 
@@ -33,6 +35,7 @@ function LoadingIcon() {
     function setIndex(index) {
       let newArray = [false, false, false, false];
       newArray[index - 1] = true;
+      setSelectedIndex(index - 1);
       setSelectedObject(newArray);
     }
 
@@ -45,6 +48,16 @@ function LoadingIcon() {
     function handleOnClick(index) {
       setIndex(index);
       setShowPopup(true);
+    }
+
+    function showColor() {
+      for(var i = 0; i < selectedObject.length; i++) {
+        console.log(selectedObject[i]);
+        if(selectedObject[i]) {
+          console.log(colors[i]);
+          return colors[i];
+        }
+      }
     }
 
     function InputTab(props) {
@@ -62,30 +75,28 @@ function LoadingIcon() {
 
     function ResetButton(props) {
       return (
-        <button className='w-fit' onClick={() => resetColor(props.color, props.index)}><FaRedo /></button>
+        <button className='w-fit p-2 hover:bg-slate-700 rounded-full hover:text-dark duration-300' onClick={() => resetColor(props.color, props.index)}><FaRedo /></button>
       );
     }
 
     return (
-      <div className='absolute right-12 p-2 flex flex-row items-center bg-slate-300 rounded-2xl'>
+      <div className='parent absolute right-12 p-2 flex flex-row items-center bg-slate-300 rounded-2xl'>
         <div className='flex flex-col gap-5 p-2'>
           <InputTab id='number1' index='1' text='Siffra 1' />
           <InputTab id='number2' index='2' text='Siffra 2' />
           <InputTab id='number3' index='3' text='Siffra 3' />
           <InputTab id='number4' index='4' text='Siffra 4' />
         </div>
-        <div className='flex flex-col gap-7 p-2'>
+        <div className='flex flex-col gap-3 py-2'>
           <ResetButton color={red} index='0' />
           <ResetButton color={green} index='1' />
           <ResetButton color={blue} index='2' />
           <ResetButton color={pink} index='3' />
         </div>
         <Popup open={showPopup} onClose={() => setShowPopup(false)} 
-              position='left center'>
-          <div className='bg-red-500 w-1/2'>
-          <BlockPicker onChangeComplete={changeColor} />
-
-          </div>
+              position='right' closeOnDocumentClick
+              {...{ contentStyle, overlayStyle }}>
+          <SketchPicker color={colors[selectedIndex]} onChange={changeColor} />
         </Popup>
       </div>
 
@@ -106,16 +117,16 @@ function LoadingIcon() {
           <div className="w-1/2 flex flex-wrap animate-spinSlow text-xs">
             <span style={{ backgroundColor: colors[0] }}
               className={`w-[32px] h-[32px] m-1 animate-scale
-                                   rounded-t-full rounded-l-full origin-bottom-right flex items-center justify-center`}>1</span>
+                          rounded-t-full rounded-l-full origin-bottom-right flex items-center justify-center`}>1</span>
             <span style={{ backgroundColor: colors[1] }}
               className={`w-[32px] h-[32px] m-1 animate-scale animation-delay-500
-                                   rounded-t-full rounded-r-full origin-bottom-left flex items-center justify-center`}>2</span>
+                          rounded-t-full rounded-r-full origin-bottom-left flex items-center justify-center`}>2</span>
             <span style={{ backgroundColor: colors[2] }}
               className={`w-[32px] h-[32px] m-1 animate-scale animation-delay-1500
-                                   rounded-b-full rounded-l-full origin-top-right flex items-center justify-center`}>3</span>
+                          rounded-b-full rounded-l-full origin-top-right flex items-center justify-center`}>3</span>
             <span style={{ backgroundColor: colors[3] }}
               className={`w-[32px] h-[32px] m-1 animate-scale animation-delay-1000
-                                   rounded-b-full rounded-r-full origin-top-left flex items-center justify-center`}>4</span>
+                          rounded-b-full rounded-r-full origin-top-left flex items-center justify-center`}>4</span>
           </div>
         </div>
       </div>
