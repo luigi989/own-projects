@@ -12,7 +12,7 @@ function getHeaderColor(category) {
         case 'transition metal': return 'bg-[#FF6600]'
         case 'lanthanide': return 'bg-[#CC6699]'
         case 'actinide': return 'bg-[#CC33FF]'
-        default: return 'none'
+        default: return 'bg-[#05595B]'
     }
 }
 
@@ -27,19 +27,19 @@ function getBodyColor(category) {
         case 'post-transition metal': return 'bg-[#008400]'
         case 'transition metal': return 'bg-[#A64200]'
         case 'lanthanide': return 'bg-[#AF3A75]'
-        case 'actinide': return 'bg-[#A600DD'
-        default: return 'none'
+        case 'actinide': return 'bg-[#A600DD]'
+        default: return 'bg-[#062C30]'
     }
 }
 
 
 function Cell(props) {
     return(
-        <div className={"wh-10 text-white " + getHeaderColor(props.eData.category)}>
-            <div className="px-1">
+        <div className={"wh-10 text-white flex flex-col"}>
+            <div className={"px-1 " + getHeaderColor(props.eData.category)}>
                 {props.eData.number}
             </div>
-            <div className={"text-center " + getBodyColor(props.eData.category)}>
+            <div className={"text-center grow " + getBodyColor(props.eData.category)}>
                 <div className="">{props.eData.symbol}</div>
                 <div className="">
                     {props.eData.atomic_mass.toPrecision(3)}
