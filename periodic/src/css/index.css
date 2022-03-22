@@ -21,21 +21,3 @@ body {
   width: 3vw;
   height: 8vh;
 }
-
-.fit-content {
-  width: fit-content;
-  height: fit-content; 
-  margin: 0 auto;
-}
-
-.cell:hover {
-  transform: scale(1.2);
-  box-shadow: 0 0 0 2px red;
-}
-
-.modal .modal-content {
-  background-color: #34384B;
-}
-.modal .list-group .list-group-item {
-  background-color: #232633;
-}

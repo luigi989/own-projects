@@ -1,6 +1,5 @@
 import React from 'react';
 import Popup from 'reactjs-popup';
-import { Col, Container, ListGroup, Modal, Row } from 'react-bootstrap';
 
 function ElementModal( {onOpen, onClose, data }) {
   const contentStyle = { background: '#FFF', width: '35%', padding: '0', borderRadius: '2rem'};
