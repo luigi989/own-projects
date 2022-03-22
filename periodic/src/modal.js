@@ -18,11 +18,11 @@ function ElementModal( {onOpen, onClose, data }) {
         <div className='flex justify-between'>
           {/* Facts */}
           <ul className='w-1/2'>
-            {[['Appearance', data.appearance, ''], 
+            {[['Appearance', data.appearance ? data.appearance : 'Unknown', ''], 
               ['Phase', data.phase, ''], 
               ['Atomic mass', data.atomic_mass , 'u'],
-              ['Boil point', data.boil, <span>&#176;&#8490;</span>], 
-              ['Melting point', data.melt , <span>&#176;&#8490;</span>], 
+              ['Boil point', data.boil, data.boil ? <span>&#176;&#8490;</span> : 'Unknown'], 
+              ['Melting point', data.melt , data.melt ? <span>&#176;&#8490;</span> : 'Unknown'], 
               ['Density', data.density, <span>g/cm&#179;</span>]]
               .map(([description, text, unit]) => (
                 <li className='p-1 bg-slate-800'>
@@ -49,8 +49,8 @@ function ElementModal( {onOpen, onClose, data }) {
 
         {/* Row and Col number */}
         <div className="mb-2 w-100 text-center text-white">
-          {data.category}<br/>
-          {data.number} | {data.period}
+          <p className='m-0 first-letter:uppercase'>{data.category}</p>
+          <p className='m-0'>{data.number} | {data.period}</p>
         </div>
       </div>
     </Popup>
