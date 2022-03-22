@@ -8,10 +8,15 @@ function ElementModal( {onOpen, onClose, data }) {
   return (
     <Popup open={onOpen} onClose={onClose} position='center'
       {...{ contentStyle, overlayStyle }}>
-      <div className='flex flex-col bg-[#34384B] text-white rounded-2xl'>
+      <div className='relative flex flex-col bg-[#34384B] text-white rounded-2xl'>
         {/* Header */}
         <div className='m-1 p-2 text-3xl text-center'>
           <strong>{data.name}</strong>
+
+          <button className='absolute right-5 top-4 text-2xl px-2
+                          hover:bg-blue-400 hover:rounded-full'
+                  onClick={onClose}>X</button>
+
           <hr></hr>
         </div>
 
@@ -25,9 +30,11 @@ function ElementModal( {onOpen, onClose, data }) {
               ['Melting point', data.melt , data.melt ? <span>&#176;&#8490;</span> : 'Unknown'], 
               ['Density', data.density, <span>g/cm&#179;</span>]]
               .map(([description, text, unit]) => (
-                <li className='p-1 bg-slate-800'>
+                <li className='p-1 bg-slate-800' key={description}>
                   <strong className='text-light' >{description}: </strong>
-                  <span className='text-slate-500'>{text} {unit}</span>
+                  <span className='text-slate-500 inline-block first-letter:uppercase'>
+                    {text} {unit}
+                  </span>
                 </li>
               ))}
           </ul>
