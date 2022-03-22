@@ -23,7 +23,7 @@ function App() {
               <span className='peer wh-10 flex items-center justify-center px-3 
                                         text-white text-xl'
                     id='row1num'>{number}</span>
-              <div className='peer-hover:bg-red-500 '>{row}</div>
+              <div className='peer-hover:grayscale'>{row}</div>
             </div>
           ))}
       </div>

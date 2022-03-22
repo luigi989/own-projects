@@ -52,8 +52,8 @@ function Cell(props) {
 function IntervalCell(props) {
     return(
         <div className="flex flex-col wh-10">
-            <div className="px-1 bg-[#293F76]">&nbsp;</div>
-            <div className="flex items-center justify-center bg-[#1B284B] text-white">
+            <div className="px-1 bg-[#2B2B2B]">&nbsp;</div>
+            <div className="flex items-center justify-center bg-[#171010] text-white">
                 {props.interval}
             </div>
         </div>
