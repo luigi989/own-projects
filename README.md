@@ -1,34 +1,36 @@
-# Projects
+## :microscope: [Periodic](periodic/)
 
-A repo where I house all my own little side-project. Planning to store webpages, small programs and more here. The languages used will be HTML, CSS, Javascript, Java and more.
-
-
-## :books: [Apps](apps/)
-
-Ongoing project. Website with different small apps. Few apps for now, but more will be added later
+Periodic is a website with a model over the periodic system. The user can choose the element they want to inspect more and get more information about it.
 
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
 
-## :notebook_with_decorative_cover: [Examples](Examples/)
+## Getting started
 
-A website with a lot of experimental code example. These are different button effects, login forms, profile cards and more! Planning to expand the site with more exciting and interesting small code examples.
+This is an instruction to setting up the project locally.
 
-![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
+### Prerequisities
 
-## :microscope: [Periodiska systemet](Periodiska_Systemet/)
+Node and npm is needed to run react
 
-A interactive website over the periodic table with simple filter capabilites. Planning big overhaul of code through porting to react. 
+### How to install
 
-![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
+1. Goto the folder /periodic
+2. Open a terminal in this location and run
 
-## :microscope: [Periodic](periodic/)
+```
+npm install
+```
 
-Ongoing project. Interactive website over the periodic system. Ported to React from [Periodiska systemet](Periodiska_Systemet/).
+3. Start the project
 
-![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)![MySQL](https://img.shields.io/badge/mysql-%2300f.svg?style=for-the-badge&logo=mysql&logoColor=white)
+```
+npm start
+```
+## Smart solutions
 
-## :zap: [Ragnarok](Ragnarok/)
+* Error handling if no data for an element is found
 
-Ongoing project. A website used to show information about nordic gods and lore. Originally coded in HTML and CSS. Cause of language restrictations, a switch to React was neccessary. Data is fetched from a MySQL database to the website.
+## Future development
 
-![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)![MySQL](https://img.shields.io/badge/mysql-%2300f.svg?style=for-the-badge&logo=mysql&logoColor=white)
+* User friendly on mobile 
+* Filter function
