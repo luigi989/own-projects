@@ -66,14 +66,24 @@ function EmptyCell() {
             <div className="bg-transparent px-1">
             </div>
             <div className="bg-info flex flex-col items-center">
-                <div className=""></div>
+                <div></div>
                 <div className="flex-grow"></div>
             </div>
         </div>
     );
 }
+
+function NumberCell(props) {
+    return (
+        <div id={props.id} className='wh-10 inline-flex justify-center items-center text-xl'>
+            {props.number}
+        </div>
+    );
+}
+
 export {
     Cell,
     EmptyCell,    
     IntervalCell,
+    NumberCell,
 };
