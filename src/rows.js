@@ -36,7 +36,7 @@ function LoopRow(props) {
 
     return (
         <div className='flex'>
-            <div className='w-2/3 p-1'>
+            <div className='w-2/3'>
                 <div className='flex gap-1'>
                     {elems}
                 </div>
@@ -73,7 +73,7 @@ function LoopSplitRow(props) {
 
     return(
         <div className='flex'>
-            <div className='w-2/3 p-1'>
+            <div className='w-2/3'>
                 <div className='flex gap-1'>
                     {elems}
                 </div>
@@ -112,7 +112,7 @@ function LoopSpecialRow(props) {
 
     return(
         <div className='flex'>
-            <div className='w-2/3 p-1'>
+            <div className='w-2/3'>
                 <div className='flex gap-1'>
                     {elems}
                 </div>
