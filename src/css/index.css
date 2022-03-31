@@ -22,17 +22,6 @@ body {
   height: 8vh;
 }
 
-/* #row1num:hover ~ #row2,
-#row1num:hover ~ #row3,
-#row1num:hover ~ #row4,
-#row1num:hover ~ #row5,
-#row1num:hover ~ #row6,
-#row1num:hover ~ #row7,
-#row1num:hover ~ #row6exp,
-#row1num:hover ~ #row7exp {
-  filter: grayscale(1);
-} */
-
 #row1num:hover ~ div:not(#row1) {
   filter: grayscale(1);
 }
