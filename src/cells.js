@@ -1,3 +1,4 @@
+import { grayscale } from 'polished';
 import React from 'react';
 
 function getHeaderColor(category) {
@@ -31,7 +32,6 @@ function getBodyColor(category) {
         default: return 'bg-[#062C30]'
     }
 }
-
 
 function Cell(props) {
     return(
@@ -74,8 +74,24 @@ function EmptyCell() {
 }
 
 function NumberCell(props) {
+    function onHover(state, row) {
+        var rows = document.getElementById(String(row)).parentElement.childNodes;
+        rows.forEach(currentRow => {
+            if(currentRow.id !== String(row)) {
+                if(state) {
+                    currentRow.style.filter = 'grayscale(100%)';
+                } else {
+                    currentRow.style.filter = 'none';
+                }
+            }
+        });
+        // elem.style.color = 'red';
+    }
+
+
     return (
-        <div id={props.id} className='wh-10 inline-flex justify-center items-center text-xl'>
+        <div id={props.id} onMouseEnter={() => onHover(true, props.row)} onMouseLeave={() => onHover(false, props.row)} 
+            className={props.className + ' wh-10 inline-flex justify-center items-center text-xl'}>
             {props.number}
         </div>
     );
@@ -83,7 +99,7 @@ function NumberCell(props) {
 
 export {
     Cell,
-    EmptyCell,    
+    EmptyCell,
     IntervalCell,
     NumberCell,
 };
