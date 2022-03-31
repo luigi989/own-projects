@@ -1,4 +1,3 @@
-import { grayscale } from 'polished';
 import React from 'react';
 
 function getHeaderColor(category) {
@@ -53,7 +52,7 @@ function IntervalCell(props) {
     return(
         <div className="flex flex-col wh-10">
             <div className="px-1 bg-[#2B2B2B]">&nbsp;</div>
-            <div className="flex items-center justify-center bg-[#171010] text-white">
+            <div className="flex items-center justify-center bg-[#171010] text-white w-full text-xs grow">
                 {props.interval}
             </div>
         </div>
@@ -76,18 +75,21 @@ function EmptyCell() {
 function NumberCell(props) {
     function onHover(state, row) {
         var rows = document.getElementById(String(row)).parentElement.childNodes;
+        var rowNum = document.getElementById(String(row) + 'num');
         rows.forEach(currentRow => {
             if(currentRow.id !== String(row)) {
                 if(state) {
+                    rowNum.style.textDecoration = 'underline';
                     currentRow.style.filter = 'grayscale(100%)';
+                    currentRow.style.transition = 'all 0.3s';
                 } else {
+                    rowNum.style.textDecoration = 'none';
                     currentRow.style.filter = 'none';
+                    currentRow.style.transition = 'all 0.3s';
                 }
             }
         });
-        // elem.style.color = 'red';
     }
-
 
     return (
         <div id={props.id} onMouseEnter={() => onHover(true, props.row)} onMouseLeave={() => onHover(false, props.row)} 
