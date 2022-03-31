@@ -20,9 +20,9 @@ function ElementModal( {onOpen, onClose, data }) {
           <hr></hr>
         </div>
 
-        <div className='flex justify-between'>
+        <div className='flex spacejustify-center items-center'>
           {/* Facts */}
-          <ul className='w-1/2'>
+          <ul className='basis-1/2'>
             {[['Appearance', data.appearance ? data.appearance : 'Unknown', ''], 
               ['Phase', data.phase, ''], 
               ['Atomic mass', data.atomic_mass , 'u'],
@@ -40,8 +40,8 @@ function ElementModal( {onOpen, onClose, data }) {
           </ul>
 
           {/* Image */}
-          <div className='w-1/3 h-1/3 mr-16 flex flex-col items-center justify-center'>
-            <img className='w-100 p-2'
+          <div className='basis-1/2 flex flex-col items-center justify-center'>
+            <img className='p-2 w-9/12 h-auto'
               src={ require(`./images/${data.name}.png`) }
               alt={`${data.name} atomic model`} />
           </div>
