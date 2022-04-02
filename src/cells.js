@@ -32,9 +32,25 @@ function getBodyColor(category) {
     }
 }
 
+function getCategory(category) {
+    switch (category) {
+        case 'diatomic nonmetal':  return 'cell diatomicNonmetal'
+        case 'noble gas': return 'cell nobleGas'
+        case 'alkali metal': return 'cell alkaliMetal'
+        case 'alkaline earth metal': return 'cell alkalineEarthMetal'
+        case 'metalloid': return 'cell metalloid'
+        case 'polyatomic nonmetal': return 'cell polyatomicNonmetal'
+        case 'post-transition metal': return 'cell postTransitionMetal'
+        case 'transition metal': return 'cell transitionMetal'
+        case 'lanthanide': return 'cell lanthanide'
+        case 'actinide': return 'cell actinide'
+        default: return 'cell unknown'
+    }
+}
+
 function Cell(props) {
     return(
-        <div className={"wh-10 text-white flex flex-col"}>
+        <div className={"wh-10 text-white flex flex-col " + getCategory(props.eData.category)}>
             <div className={"px-1 " + getHeaderColor(props.eData.category)}>
                 {props.eData.number}
             </div>
