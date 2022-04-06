@@ -5,32 +5,43 @@ import { Row1, Row2, Row3, Row4, Row5, Row6, Row6exp, Row7, Row7exp } from './ro
 
 function App() {
   function onHover(state, category) {
-    var elements = document.getElementsByClassName('cell');
-    for (var i = 0; i < elements.length; i++) {
-      if (!elements[i].className.includes(String(category))) {
+    var cells = document.getElementsByClassName('cell');
+    for (var i = 0; i < cells.length; i++) {
+      if (!cells[i].className.includes(String(category))) {
         if (state) {
-          elements[i].style.filter = 'grayscale(100%)';
-          elements[i].style.transition = 'all 0.3s';
+          cells[i].style.filter = 'grayscale(100%)';
+          cells[i].style.transition = 'all 0.3s';
         } else {
-          elements[i].style.filter = 'none';
-          elements[i].style.transition = 'all 0.3s';
+          cells[i].style.filter = 'none';
+          cells[i].style.transition = 'all 0.3s';
         }
       }
     };
   }
 
   function CategoryItem(props) {
+    function setHoverColor(category) {
+      var hoveredCellClasses = document.getElementsByClassName(String(category)).item(0).firstChild.className;
+      const hoverColor = hoveredCellClasses.split(' ')[1];
+      var hoverClass = 'hover:' + hoverColor;
+      console.log(hoverClass);
+      return hoverClass;
+    }
+
     return (
-      <div onMouseEnter={() => onHover(true, props.category)} onMouseLeave={() => onHover(false, props.category)}
-        className='p-2 bg-slate-800 hover:bg-blue-500 last:rounded-b-2xl
-                  transition ease-linear duration-300'>{props.children}</div>
+      <div 
+        onMouseEnter={() => onHover(true, props.category)} 
+        onMouseLeave={() => onHover(false, props.category)}
+        className={'p-2 bg-slate-800 hover:bg-blue-600 cursor-default last:rounded-b-2xl transition ease-linear duration-300'}>
+          {props.children}
+      </div>
     );
   }
 
   return (
-    <div className='background'>
-      <header className="w-full flex items-center justify-center py-2 bg-slate-800">
-        <span className='text-3xl text-slate-400'>Periodiska systemet</span>
+    <div className='w-screen h-screen bg-[#34384b]'>
+      <header className="flex items-center justify-center py-2 bg-slate-800">
+        <h2 className='text-slate-400'>Periodiska systemet</h2>
       </header>
       <div className=" text-white flex justify-center mt-4 relative">
         <div className='absolute left-10'>
@@ -48,15 +59,15 @@ function App() {
           <CategoryItem category='unknown'>Unknown</CategoryItem>
         </div>
         <div className='flex flex-col gap-1'>
-          <NumberCell id='row1num' number='1' row='row1' />
-          <NumberCell id='row2num' number='2' row='row2' />
-          <NumberCell id='row3num' number='3' row='row3' />
-          <NumberCell id='row4num' number='4' row='row4' />
-          <NumberCell id='row5num' number='5' row='row5' />
-          <NumberCell id='row6num' number='6' row='row6' />
-          <NumberCell id='row7num' number='7' row='row7' />
-          <NumberCell id='row6num' number='6' row='row6' />
-          <NumberCell id='row7num' number='7' row='row7' />
+          <NumberCell id='row1num' row='row1'>1</NumberCell>
+          <NumberCell id='row2num' row='row2'>2</NumberCell>
+          <NumberCell id='row3num' row='row3'>3</NumberCell>
+          <NumberCell id='row4num' row='row4'>4</NumberCell>
+          <NumberCell id='row5num' row='row5'>5</NumberCell>
+          <NumberCell id='row6num' row='row6'>6</NumberCell>
+          <NumberCell id='row7num' row='row7'>7</NumberCell>
+          <NumberCell id='row6num' row='row6'>8</NumberCell>
+          <NumberCell id='row7num' row='row7'>9</NumberCell>
         </div>
         <div className='flex flex-col gap-1'>
           <div id='row1'><Row1 /></div>

@@ -110,7 +110,7 @@ function NumberCell(props) {
     return (
         <div id={props.id} onMouseEnter={() => onHover(true, props.row)} onMouseLeave={() => onHover(false, props.row)} 
             className={props.className + ' wh-10 inline-flex justify-center items-center text-xl'}>
-            {props.number}
+            {props.children}
         </div>
     );
 }

@@ -32,7 +32,7 @@ function ElementModal( {onOpen, onClose, data }) {
               .map(([description, text, unit]) => (
                 <li className='p-1 bg-slate-800' key={description}>
                   <strong className='text-light' >{description}: </strong>
-                  <span className='text-slate-500 inline-block first-letter:uppercase'>
+                  <span className='text-slate-400 inline-block first-letter:uppercase'>
                     {text} {unit}
                   </span>
                 </li>
