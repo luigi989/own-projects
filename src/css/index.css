@@ -11,12 +11,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.background {
-  height: 100vh;
-  width: 100vw;
-  background-color: #34384B;
-}
-
 .wh-10 {
   width: 3vw;
   height: 8vh;
