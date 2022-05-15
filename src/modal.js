@@ -13,8 +13,9 @@ function ElementModal( {onOpen, onClose, data }) {
         <div className='m-1 p-2 text-3xl text-center'>
           <strong>{data.name}</strong>
 
-          <button className='absolute right-5 top-4 text-2xl px-2
-                          hover:bg-blue-400 hover:rounded-full'
+          <button className='absolute right-5 top-4 text-2xl px-2 rounded-full
+                          hover:bg-blue-400
+                          transition ease-linear duration-300'
                   onClick={onClose}>X</button>
 
           <hr></hr>
@@ -42,7 +43,7 @@ function ElementModal( {onOpen, onClose, data }) {
           {/* Image */}
           <div className='basis-1/2 flex flex-col items-center justify-center'>
             <img className='p-2 w-9/12 h-auto'
-              src={ require(`./images/${data.name}.png`) }
+              src={ require(`./images/${data.name}.webp`) }
               alt={`${data.name} atomic model`} />
           </div>
         </div>
