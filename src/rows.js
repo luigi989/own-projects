@@ -10,12 +10,12 @@ function LoopRow(props) {
     const handleShow = (e) => {
         setShow(true);
         var index = e.currentTarget.firstChild.firstChild.innerText;
-        setCurrentData(data.elements[index-1]);
+        setCurrentData(data.elements[index - 1]);
     }
 
     var elems = [];
-    for(var i = props.start; i <= props.end; i++) {
-        if(i === props.divider) {
+    for (var i = props.start; i <= props.end; i++) {
+        if (i === props.divider) {
             for (var j = 0; j < props.emptyCells; j++) {
                 elems.push(
                     <div key={j}>
@@ -23,14 +23,14 @@ function LoopRow(props) {
                     </div>);
             }
             elems.push(
-                <div className='hover:scale-125 hover:shadow-[0_0_0_2px] hover:shadow-black cursor-pointer' key={data.elements[i].name} onClick={(e) => {handleShow(e)}}>
+                <div className='hover:scale-125 hover:shadow-[0_0_0_2px] hover:shadow-black cursor-pointer' key={data.elements[i].name} onClick={(e) => { handleShow(e) }}>
                     <Cell eData={data.elements[i]}></Cell>
-                </div>); 
+                </div>);
         } else {
             elems.push(
-                <div className='hover:scale-125 hover:shadow-[0_0_0_2px] hover:shadow-black cursor-pointer' key={data.elements[i].name} onClick={(e) => {handleShow(e)}}>
+                <div className='hover:scale-125 hover:shadow-[0_0_0_2px] hover:shadow-black cursor-pointer' key={data.elements[i].name} onClick={(e) => { handleShow(e) }}>
                     <Cell eData={data.elements[i]}></Cell>
-                </div>);              
+                </div>);
         }
     }
 
@@ -40,7 +40,7 @@ function LoopRow(props) {
                 <div className='flex gap-1'>
                     {elems}
                 </div>
-                {show ? <ElementModal onOpen={show} onClose={handleClose} data={currentData} /> : null}
+                {show && <ElementModal onOpen={show} onClose={handleClose} data={currentData} />}
             </div>
         </div>
     );
@@ -53,31 +53,33 @@ function LoopSplitRow(props) {
     const handleShow = (e) => {
         setShow(true);
         var index = e.currentTarget.firstChild.firstChild.innerText;
-        setCurrentData(data.elements[index-1]);
+        setCurrentData(data.elements[index - 1]);
     }
 
     var elems = [];
-    for(var i = props.start1; i <= props.end1; i++) {
+    for (var i = props.start1; i <= props.end1; i++) {
         elems.push(
-            <div div className='hover:scale-125 hover:shadow-[0_0_0_2px] hover:shadow-black cursor-pointer' key={data.elements[i].name} onClick={(e) => {handleShow(e)}}>
+            <div div className='hover:scale-125 hover:shadow-[0_0_0_2px] hover:shadow-black cursor-pointer'
+                key={data.elements[i].name} onClick={(e) => { handleShow(e) }}>
                 <Cell eData={data.elements[i]} ></Cell>
-            </div>);                
+            </div>);
     }
     elems.push(<div key={i}><IntervalCell interval={props.interval}></IntervalCell></div>)
-    for(i = props.start2; i <= props.end2; i++) {
+    for (i = props.start2; i <= props.end2; i++) {
         elems.push(
-            <div className='hover:scale-125 hover:shadow-[0_0_0_2px] hover:shadow-black cursor-pointer' key={data.elements[i].name} onClick={(e) => {handleShow(e)}}>
+            <div className='hover:scale-125 hover:shadow-[0_0_0_2px] hover:shadow-black cursor-pointer'
+                key={data.elements[i].name} onClick={(e) => { handleShow(e) }}>
                 <Cell eData={data.elements[i]}></Cell>
-            </div>);                
+            </div>);
     }
 
-    return(
+    return (
         <div className='flex'>
             <div className='w-2/3'>
                 <div className='flex gap-1'>
                     {elems}
                 </div>
-                {show ? <ElementModal onOpen={show} onClose={handleClose} data={currentData} /> : null}            
+                {show && <ElementModal onOpen={show} onClose={handleClose} data={currentData} />}
             </div>
         </div>
     );
@@ -90,7 +92,7 @@ function LoopSpecialRow(props) {
     const handleShow = (e) => {
         setShow(true);
         var index = e.currentTarget.firstChild.firstChild.innerText;
-        setCurrentData(data.elements[index-1]);
+        setCurrentData(data.elements[index - 1]);
     }
 
     var elems = [];
@@ -103,78 +105,79 @@ function LoopSpecialRow(props) {
         <div key={'e2'}>
             <EmptyCell></EmptyCell>
         </div>);
-    for(i; i <= props.end; i++) {
+    for (i; i <= props.end; i++) {
         elems.push(
-            <div div className='hover:scale-125 hover:shadow-[0_0_0_2px] hover:shadow-black cursor-pointer' key={data.elements[i].name} onClick={(e) => {handleShow(e)}}>
+            <div div className='hover:scale-125 hover:shadow-[0_0_0_2px] hover:shadow-black cursor-pointer'
+                key={data.elements[i].name} onClick={(e) => { handleShow(e) }}>
                 <Cell eData={data.elements[i]} ></Cell>
-            </div>);                
+            </div>);
     }
 
-    return(
+    return (
         <div className='flex'>
             <div className='w-2/3'>
                 <div className='flex gap-1'>
                     {elems}
                 </div>
-                {show ? <ElementModal onOpen={show} onClose={handleClose} data={currentData} /> : null}            
+                {show && <ElementModal onOpen={show} onClose={handleClose} data={currentData} />}
             </div>
         </div>
     );
 }
 
-function Row1(props) {
-    return( 
+function Row1() {
+    return (
         <LoopRow start={0} end={1} divider={1} emptyCells={16}></LoopRow>
     );
 }
 
-function Row2(props) {
+function Row2() {
     return (
         <LoopRow start={2} end={9} divider={4} emptyCells={10}></LoopRow>
     );
 }
 
-function Row3(props) {
+function Row3() {
     return (
         <LoopRow start={10} end={17} divider={12} emptyCells={10}></LoopRow>
     );
 }
 
-function Row4(props) {
+function Row4() {
     return (
         <LoopRow start={18} end={35} divider={0}></LoopRow>
     );
 }
 
-function Row5(props) {
+function Row5() {
     return (
         <LoopRow start={36} end={53} divider={0}></LoopRow>
     );
 }
 
-function Row6(props) {
+function Row6() {
     return (
-        <LoopSplitRow start1={54} end1={55} 
-                        start2={71} end2={85}
-                        interval={"57-71"}></LoopSplitRow>
+        <LoopSplitRow start1={54} end1={55}
+            start2={71} end2={85}
+            interval={"57-71"}></LoopSplitRow>
     );
 }
 
-function Row7(props) {
+function Row7() {
     return (
         <LoopSplitRow start1={86} end1={87}
-                        start2={103} end2={117}
-                        interval={"89-103"}></LoopSplitRow>
+            start2={103} end2={117}
+            interval={"89-103"}></LoopSplitRow>
     );
 }
 
-function Row6exp(props) {
+function Row6exp() {
     return (
         <LoopSpecialRow start={56} end={70}></LoopSpecialRow>
     );
 }
 
-function Row7exp(props) {
+function Row7exp() {
     return (
         <LoopSpecialRow start={88} end={102}></LoopSpecialRow>
     );
