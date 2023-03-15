@@ -1,6 +1,8 @@
-import React from 'react';
+interface CellProps {
+    
+}
 
-function getHeaderColor(category) {
+function getHeaderColor(category: string) {
     switch (category) {
         case 'diatomic nonmetal':  return 'bg-[#0066CC]'
         case 'noble gas': return 'bg-[#293F76]'
@@ -16,7 +18,7 @@ function getHeaderColor(category) {
     }
 }
 
-function getBodyColor(category) {
+function getBodyColor(category: string) {
     switch (category) {
         case 'diatomic nonmetal':  return 'bg-[#03C]'
         case 'noble gas': return 'bg-[#1B284B]'
@@ -32,31 +34,31 @@ function getBodyColor(category) {
     }
 }
 
-function getCategory(category) {
+function getCategory(category: string) {
     switch (category) {
-        case 'diatomic nonmetal':  return 'diatomicNonmetal'
-        case 'noble gas': return 'nobleGas'
-        case 'alkali metal': return 'alkaliMetal'
-        case 'alkaline earth metal': return 'alkalineEarthMetal'
-        case 'metalloid': return 'metalloid'
-        case 'polyatomic nonmetal': return 'polyatomicNonmetal'
-        case 'post-transition metal': return 'postTransitionMetal'
-        case 'transition metal': return 'transitionMetal'
-        case 'lanthanide': return 'lanthanide'
-        case 'actinide': return 'actinide'
-        default: return 'unknown'
+        case 'diatomic nonmetal':  return 'cell diatomicNonmetal'
+        case 'noble gas': return 'cell nobleGas'
+        case 'alkali metal': return 'cell alkaliMetal'
+        case 'alkaline earth metal': return 'cell alkalineEarthMetal'
+        case 'metalloid': return 'cell metalloid'
+        case 'polyatomic nonmetal': return 'cell polyatomicNonmetal'
+        case 'post-transition metal': return 'cell postTransitionMetal'
+        case 'transition metal': return 'cell transitionMetal'
+        case 'lanthanide': return 'cell lanthanide'
+        case 'actinide': return 'cell actinide'
+        default: return 'cell unknown'
     }
 }
 
 function Cell(props) {
     return(
-        <div className={"wh-10 text-white flex flex-col cell " + getCategory(props.eData.category)}>
+        <div className={"wh-10 text-white flex flex-col " + getCategory(props.eData.category)}>
             <div className={"px-1 " + getHeaderColor(props.eData.category)}>
                 {props.eData.number}
             </div>
             <div className={"text-center grow " + getBodyColor(props.eData.category)}>
-                <div>{props.eData.symbol}</div>
-                <div>
+                <div className="">{props.eData.symbol}</div>
+                <div className="">
                     {props.eData.atomic_mass.toPrecision(3)}
                 </div>
             </div>
