@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  .wh-10 {
+    width: 3vw;
+    height: 8vh;
+  }
+  
+  #row1num:hover ~ div:not(#row1) {
+    filter: grayscale(1);
+  }
+  #row2num:hover ~ div:not(#row2) {
+    filter: grayscale(1);
+  }
+  #row3num:hover ~ div:not(#row3) {
+    filter: grayscale(1);
+  }
+  #row4num:hover ~ div:not(#row4) {
+    filter: grayscale(1);
+  }
+  #row5num:hover ~ div:not(#row5) {
+    filter: grayscale(1);
+  }
+  #row6num:hover ~ div:not(#row6):not(#row6exp) {
+    filter: grayscale(1);
+  }
+  #row7num:hover ~ div:not(#row7):not(#row7exp) {
+    filter: grayscale(1);
+  }

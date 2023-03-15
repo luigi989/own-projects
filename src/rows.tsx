@@ -3,7 +3,22 @@ import { Cell, EmptyCell, IntervalCell } from './cells';
 import data from './json/PeriodicTableJSON.json';
 import ElementModal from './modal';
 
-function LoopRow(props) {
+interface RowProps {
+    start: number;
+    end: number;
+    divider?: number;
+    emptyCells?: number;
+}
+
+interface RowSplitProps {
+    start1: number;
+    start2: number;
+    end1: number;
+    end2: number;
+    interval: string;
+}
+
+const LoopRow = ({start, end, divider, emptyCells}: RowProps) => {
     const [show, setShow] = useState(false);
     const [currentData, setCurrentData] = useState(null);
     const handleClose = () => setShow(false);
@@ -14,9 +29,9 @@ function LoopRow(props) {
     }
 
     var elems = [];
-    for(var i = props.start; i <= props.end; i++) {
-        if(i === props.divider) {
-            for (var j = 0; j < props.emptyCells; j++) {
+    for(var i = start; i <= end; i++) {
+        if(i === divider) {
+            for (var j = 0; j < emptyCells; j++) {
                 elems.push(
                     <div key={j}>
                         <EmptyCell></EmptyCell>
@@ -46,25 +61,27 @@ function LoopRow(props) {
     );
 }
 
-function LoopSplitRow(props) {
+const LoopSplitRow = ({start1, start2, end1, end2, interval}: RowSplitProps) => {
     const [show, setShow] = useState(false);
     const [currentData, setCurrentData] = useState(null);
     const handleClose = () => setShow(false);
     const handleShow = (e) => {
         setShow(true);
         var index = e.currentTarget.firstChild.firstChild.innerText;
-        setCurrentData(data.elements[index-1]);
+        if (index) {
+            setCurrentData(data.elements[index-1]);
+        }
     }
 
     var elems = [];
-    for(var i = props.start1; i <= props.end1; i++) {
+    for(var i = start1; i <= end1; i++) {
         elems.push(
-            <div div className='hover:scale-125 hover:shadow-[0_0_0_2px] hover:shadow-black cursor-pointer' key={data.elements[i].name} onClick={(e) => {handleShow(e)}}>
+            <div className='hover:scale-125 hover:shadow-[0_0_0_2px] hover:shadow-black cursor-pointer' key={data.elements[i].name} onClick={(e) => {handleShow(e)}}>
                 <Cell eData={data.elements[i]} ></Cell>
             </div>);                
     }
-    elems.push(<div key={i}><IntervalCell interval={props.interval}></IntervalCell></div>)
-    for(i = props.start2; i <= props.end2; i++) {
+    elems.push(<div key={i}><IntervalCell interval={interval}></IntervalCell></div>)
+    for(i = start2; i <= end2; i++) {
         elems.push(
             <div className='hover:scale-125 hover:shadow-[0_0_0_2px] hover:shadow-black cursor-pointer' key={data.elements[i].name} onClick={(e) => {handleShow(e)}}>
                 <Cell eData={data.elements[i]}></Cell>
@@ -83,7 +100,7 @@ function LoopSplitRow(props) {
     );
 }
 
-function LoopSpecialRow(props) {
+const LoopSpecialRow = ({start,end}: RowProps) => {
     const [show, setShow] = useState(false);
     const [currentData, setCurrentData] = useState(null);
     const handleClose = () => setShow(false);
@@ -94,7 +111,7 @@ function LoopSpecialRow(props) {
     }
 
     var elems = [];
-    var i = props.start;
+    var i = start;
     elems.push(
         <div key={'e1'}>
             <EmptyCell></EmptyCell>
@@ -103,9 +120,9 @@ function LoopSpecialRow(props) {
         <div key={'e2'}>
             <EmptyCell></EmptyCell>
         </div>);
-    for(i; i <= props.end; i++) {
+    for(i; i <= end; i++) {
         elems.push(
-            <div div className='hover:scale-125 hover:shadow-[0_0_0_2px] hover:shadow-black cursor-pointer' key={data.elements[i].name} onClick={(e) => {handleShow(e)}}>
+            <div className='hover:scale-125 hover:shadow-[0_0_0_2px] hover:shadow-black cursor-pointer' key={data.elements[i].name} onClick={(e) => {handleShow(e)}}>
                 <Cell eData={data.elements[i]} ></Cell>
             </div>);                
     }
@@ -122,37 +139,37 @@ function LoopSpecialRow(props) {
     );
 }
 
-function Row1(props) {
+const Row1 = () => {
     return( 
         <LoopRow start={0} end={1} divider={1} emptyCells={16}></LoopRow>
     );
 }
 
-function Row2(props) {
+const Row2 = () => {
     return (
         <LoopRow start={2} end={9} divider={4} emptyCells={10}></LoopRow>
     );
 }
 
-function Row3(props) {
+const Row3 = () => {
     return (
         <LoopRow start={10} end={17} divider={12} emptyCells={10}></LoopRow>
     );
 }
 
-function Row4(props) {
+const Row4 = () => {
     return (
         <LoopRow start={18} end={35} divider={0}></LoopRow>
     );
 }
 
-function Row5(props) {
+const Row5 = () => {
     return (
         <LoopRow start={36} end={53} divider={0}></LoopRow>
     );
 }
 
-function Row6(props) {
+const Row6 = () => {
     return (
         <LoopSplitRow start1={54} end1={55} 
                         start2={71} end2={85}
@@ -160,7 +177,7 @@ function Row6(props) {
     );
 }
 
-function Row7(props) {
+const Row7 = () => {
     return (
         <LoopSplitRow start1={86} end1={87}
                         start2={103} end2={117}
@@ -168,13 +185,13 @@ function Row7(props) {
     );
 }
 
-function Row6exp(props) {
+const Row6exp = () => {
     return (
         <LoopSpecialRow start={56} end={70}></LoopSpecialRow>
     );
 }
 
-function Row7exp(props) {
+const Row7exp = () => {
     return (
         <LoopSpecialRow start={88} end={102}></LoopSpecialRow>
     );
