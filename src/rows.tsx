@@ -25,7 +25,7 @@ const LoopRow = ({start, end, divider, emptyCells}: RowProps) => {
     const handleShow = (e) => {
         setShow(true);
         var index = e.currentTarget.firstChild.firstChild.innerText;
-        setCurrentData(data.elements[index-1]);
+        setCurrentData(data.elements[index - 1]);
     }
 
     var elems = [];
@@ -38,14 +38,14 @@ const LoopRow = ({start, end, divider, emptyCells}: RowProps) => {
                     </div>);
             }
             elems.push(
-                <div className='hover:scale-125 hover:shadow-[0_0_0_2px] hover:shadow-black cursor-pointer' key={data.elements[i].name} onClick={(e) => {handleShow(e)}}>
+                <div className='hover:scale-125 hover:shadow-[0_0_0_2px] hover:shadow-black cursor-pointer' key={data.elements[i].name} onClick={(e) => { handleShow(e) }}>
                     <Cell eData={data.elements[i]}></Cell>
-                </div>); 
+                </div>);
         } else {
             elems.push(
-                <div className='hover:scale-125 hover:shadow-[0_0_0_2px] hover:shadow-black cursor-pointer' key={data.elements[i].name} onClick={(e) => {handleShow(e)}}>
+                <div className='hover:scale-125 hover:shadow-[0_0_0_2px] hover:shadow-black cursor-pointer' key={data.elements[i].name} onClick={(e) => { handleShow(e) }}>
                     <Cell eData={data.elements[i]}></Cell>
-                </div>);              
+                </div>);
         }
     }
 
@@ -55,7 +55,7 @@ const LoopRow = ({start, end, divider, emptyCells}: RowProps) => {
                 <div className='flex gap-1'>
                     {elems}
                 </div>
-                {show ? <ElementModal onOpen={show} onClose={handleClose} data={currentData} /> : null}
+                {show && <ElementModal onOpen={show} onClose={handleClose} data={currentData} />}
             </div>
         </div>
     );
@@ -78,23 +78,24 @@ const LoopSplitRow = ({start1, start2, end1, end2, interval}: RowSplitProps) => 
         elems.push(
             <div className='hover:scale-125 hover:shadow-[0_0_0_2px] hover:shadow-black cursor-pointer' key={data.elements[i].name} onClick={(e) => {handleShow(e)}}>
                 <Cell eData={data.elements[i]} ></Cell>
-            </div>);                
+            </div>);
     }
     elems.push(<div key={i}><IntervalCell interval={interval}></IntervalCell></div>)
     for(i = start2; i <= end2; i++) {
         elems.push(
-            <div className='hover:scale-125 hover:shadow-[0_0_0_2px] hover:shadow-black cursor-pointer' key={data.elements[i].name} onClick={(e) => {handleShow(e)}}>
+            <div className='hover:scale-125 hover:shadow-[0_0_0_2px] hover:shadow-black cursor-pointer'
+                key={data.elements[i].name} onClick={(e) => { handleShow(e) }}>
                 <Cell eData={data.elements[i]}></Cell>
-            </div>);                
+            </div>);
     }
 
-    return(
+    return (
         <div className='flex'>
             <div className='w-2/3'>
                 <div className='flex gap-1'>
                     {elems}
                 </div>
-                {show ? <ElementModal onOpen={show} onClose={handleClose} data={currentData} /> : null}            
+                {show && <ElementModal onOpen={show} onClose={handleClose} data={currentData} />}
             </div>
         </div>
     );
@@ -107,7 +108,7 @@ const LoopSpecialRow = ({start,end}: RowProps) => {
     const handleShow = (e) => {
         setShow(true);
         var index = e.currentTarget.firstChild.firstChild.innerText;
-        setCurrentData(data.elements[index-1]);
+        setCurrentData(data.elements[index - 1]);
     }
 
     var elems = [];
@@ -124,16 +125,16 @@ const LoopSpecialRow = ({start,end}: RowProps) => {
         elems.push(
             <div className='hover:scale-125 hover:shadow-[0_0_0_2px] hover:shadow-black cursor-pointer' key={data.elements[i].name} onClick={(e) => {handleShow(e)}}>
                 <Cell eData={data.elements[i]} ></Cell>
-            </div>);                
+            </div>);
     }
 
-    return(
+    return (
         <div className='flex'>
             <div className='w-2/3'>
                 <div className='flex gap-1'>
                     {elems}
                 </div>
-                {show ? <ElementModal onOpen={show} onClose={handleClose} data={currentData} /> : null}            
+                {show && <ElementModal onOpen={show} onClose={handleClose} data={currentData} />}
             </div>
         </div>
     );
@@ -171,17 +172,17 @@ const Row5 = () => {
 
 const Row6 = () => {
     return (
-        <LoopSplitRow start1={54} end1={55} 
-                        start2={71} end2={85}
-                        interval={"57-71"}></LoopSplitRow>
+        <LoopSplitRow start1={54} end1={55}
+            start2={71} end2={85}
+            interval={"57-71"}></LoopSplitRow>
     );
 }
 
 const Row7 = () => {
     return (
         <LoopSplitRow start1={86} end1={87}
-                        start2={103} end2={117}
-                        interval={"89-103"}></LoopSplitRow>
+            start2={103} end2={117}
+            interval={"89-103"}></LoopSplitRow>
     );
 }
 

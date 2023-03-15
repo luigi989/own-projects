@@ -24,7 +24,6 @@ function App() {
       var hoveredCellClasses = document.getElementsByClassName(String(category)).item(0).firstChild.className;
       const hoverColor = hoveredCellClasses.split(' ')[1];
       var hoverClass = 'hover:' + hoverColor;
-      console.log(hoverClass);
       return hoverClass;
     }
 
