@@ -1,12 +1,18 @@
-import React from 'react';
 import Popup from 'reactjs-popup';
+import { Element } from './types';
 
-function ElementModal( {onOpen, onClose, data }) {
+interface ElementModalProps {
+  onOpen: boolean;
+  onClose: () => void; 
+  data: Element;
+}
+
+function ElementModal( {onOpen, onClose, data }: ElementModalProps) {
   const contentStyle = { background: '#FFF', width: '35%', padding: '0', borderRadius: '2rem'};
   const overlayStyle = { background: 'rgba(0,0,0,0.5)' };
-
+  
   return (
-    <Popup open={onOpen} onClose={onClose} position='center'
+    <Popup open={onOpen} onClose={onClose} position='center center'
       {...{ contentStyle, overlayStyle }}>
       <div className='relative flex flex-col bg-[#34384B] text-white rounded-2xl'>
         {/* Header */}
@@ -30,8 +36,8 @@ function ElementModal( {onOpen, onClose, data }) {
               ['Boil point', data.boil, data.boil ? <span>&#176;&#8490;</span> : 'Unknown'], 
               ['Melting point', data.melt , data.melt ? <span>&#176;&#8490;</span> : 'Unknown'], 
               ['Density', data.density, <span>g/cm&#179;</span>]]
-              .map(([description, text, unit]) => (
-                <li className='p-1 bg-slate-800' key={description}>
+              .map(([description, text, unit], index) => (
+                <li className='p-1 bg-slate-800' key={index}>
                   <strong className='text-light' >{description}: </strong>
                   <span className='text-slate-400 inline-block first-letter:uppercase'>
                     {text} {unit}
@@ -43,7 +49,7 @@ function ElementModal( {onOpen, onClose, data }) {
           {/* Image */}
           <div className='basis-1/2 flex flex-col items-center justify-center'>
             <img className='p-2 w-9/12 h-auto'
-              src={ require(`./images/${data.name}.webp`) }
+              src={`./images/${data.name}.webp`}
               alt={`${data.name} atomic model`} />
           </div>
         </div>

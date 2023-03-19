@@ -1,13 +1,19 @@
-import React, { useState } from 'react';
+import { MouseEvent, useState } from 'react';
 import { Cell, EmptyCell, IntervalCell } from './cells';
 import data from './json/PeriodicTableJSON.json';
 import ElementModal from './modal';
+import { Element } from './types';
 
 interface RowProps {
     start: number;
     end: number;
     divider?: number;
     emptyCells?: number;
+}
+
+interface LoopSpecialRowProps {
+    start: number;
+    end: number;
 }
 
 interface RowSplitProps {
@@ -20,31 +26,40 @@ interface RowSplitProps {
 
 const LoopRow = ({start, end, divider, emptyCells}: RowProps) => {
     const [show, setShow] = useState(false);
-    const [currentData, setCurrentData] = useState(null);
+    const [currentData, setCurrentData] = useState<Element | null>(null);
     const handleClose = () => setShow(false);
-    const handleShow = (e) => {
+    const handleShow = (e: MouseEvent<HTMLDivElement>) => {
         setShow(true);
-        var index = e.currentTarget.firstChild.firstChild.innerText;
-        setCurrentData(data.elements[index - 1]);
+        var index = e.currentTarget.firstChild?.firstChild?.firstChild?.nodeValue;
+        if (index) {
+            const i = parseInt(index);
+            setCurrentData(data.elements[i - 1]);
+        }
     }
 
     var elems = [];
     for(var i = start; i <= end; i++) {
-        if(i === divider) {
-            for (var j = 0; j < emptyCells; j++) {
-                elems.push(
-                    <div key={j}>
-                        <EmptyCell></EmptyCell>
-                    </div>);
+        if(divider && i === divider) {
+            if (emptyCells) {
+                for (var j = 0; j < emptyCells; j++) {
+                    elems.push(
+                        <div key={j}>
+                            <EmptyCell></EmptyCell>
+                        </div>);
+                }
             }
             elems.push(
-                <div className='hover:scale-125 hover:shadow-[0_0_0_2px] hover:shadow-black cursor-pointer' key={data.elements[i].name} onClick={(e) => { handleShow(e) }}>
-                    <Cell eData={data.elements[i]}></Cell>
+                <div className='hover:scale-125 hover:shadow-[0_0_0_2px] hover:shadow-black cursor-pointer' 
+                    key={data.elements[i].name} 
+                    onClick={(e) => { handleShow(e) }}>
+                    <Cell element={data.elements[i]}></Cell>
                 </div>);
         } else {
             elems.push(
-                <div className='hover:scale-125 hover:shadow-[0_0_0_2px] hover:shadow-black cursor-pointer' key={data.elements[i].name} onClick={(e) => { handleShow(e) }}>
-                    <Cell eData={data.elements[i]}></Cell>
+                <div className='hover:scale-125 hover:shadow-[0_0_0_2px] hover:shadow-black cursor-pointer' 
+                    key={data.elements[i].name} 
+                    onClick={(e) => { handleShow(e) }}>
+                    <Cell element={data.elements[i]}></Cell>
                 </div>);
         }
     }
@@ -55,7 +70,7 @@ const LoopRow = ({start, end, divider, emptyCells}: RowProps) => {
                 <div className='flex gap-1'>
                     {elems}
                 </div>
-                {show && <ElementModal onOpen={show} onClose={handleClose} data={currentData} />}
+                {show && currentData && <ElementModal onOpen={show} onClose={handleClose} data={currentData} />}
             </div>
         </div>
     );
@@ -63,13 +78,14 @@ const LoopRow = ({start, end, divider, emptyCells}: RowProps) => {
 
 const LoopSplitRow = ({start1, start2, end1, end2, interval}: RowSplitProps) => {
     const [show, setShow] = useState(false);
-    const [currentData, setCurrentData] = useState(null);
+    const [currentData, setCurrentData] = useState<Element | null>(null);
     const handleClose = () => setShow(false);
-    const handleShow = (e) => {
+    const handleShow = (e: MouseEvent<HTMLDivElement>) => {
         setShow(true);
-        var index = e.currentTarget.firstChild.firstChild.innerText;
+        var index = e.currentTarget.firstChild?.firstChild?.firstChild?.nodeValue;
         if (index) {
-            setCurrentData(data.elements[index-1]);
+            const i = parseInt(index);
+            setCurrentData(data.elements[i - 1]);
         }
     }
 
@@ -77,7 +93,7 @@ const LoopSplitRow = ({start1, start2, end1, end2, interval}: RowSplitProps) => 
     for(var i = start1; i <= end1; i++) {
         elems.push(
             <div className='hover:scale-125 hover:shadow-[0_0_0_2px] hover:shadow-black cursor-pointer' key={data.elements[i].name} onClick={(e) => {handleShow(e)}}>
-                <Cell eData={data.elements[i]} ></Cell>
+                <Cell element={data.elements[i]} ></Cell>
             </div>);
     }
     elems.push(<div key={i}><IntervalCell interval={interval}></IntervalCell></div>)
@@ -85,7 +101,7 @@ const LoopSplitRow = ({start1, start2, end1, end2, interval}: RowSplitProps) => 
         elems.push(
             <div className='hover:scale-125 hover:shadow-[0_0_0_2px] hover:shadow-black cursor-pointer'
                 key={data.elements[i].name} onClick={(e) => { handleShow(e) }}>
-                <Cell eData={data.elements[i]}></Cell>
+                <Cell element={data.elements[i]}></Cell>
             </div>);
     }
 
@@ -95,20 +111,23 @@ const LoopSplitRow = ({start1, start2, end1, end2, interval}: RowSplitProps) => 
                 <div className='flex gap-1'>
                     {elems}
                 </div>
-                {show && <ElementModal onOpen={show} onClose={handleClose} data={currentData} />}
+                {show && currentData && <ElementModal onOpen={show} onClose={handleClose} data={currentData} />}
             </div>
         </div>
     );
 }
 
-const LoopSpecialRow = ({start,end}: RowProps) => {
+const LoopSpecialRow = ({start,end}: LoopSpecialRowProps) => {
     const [show, setShow] = useState(false);
-    const [currentData, setCurrentData] = useState(null);
+    const [currentData, setCurrentData] = useState<Element | null>(null);
     const handleClose = () => setShow(false);
-    const handleShow = (e) => {
+    const handleShow = (e: MouseEvent<HTMLDivElement>) => {
         setShow(true);
-        var index = e.currentTarget.firstChild.firstChild.innerText;
-        setCurrentData(data.elements[index - 1]);
+        var index = e.currentTarget.firstChild?.firstChild?.firstChild?.nodeValue;
+        if (index) {
+            const i = parseInt(index);
+            setCurrentData(data.elements[i - 1]);
+        }
     }
 
     var elems = [];
@@ -124,7 +143,7 @@ const LoopSpecialRow = ({start,end}: RowProps) => {
     for(i; i <= end; i++) {
         elems.push(
             <div className='hover:scale-125 hover:shadow-[0_0_0_2px] hover:shadow-black cursor-pointer' key={data.elements[i].name} onClick={(e) => {handleShow(e)}}>
-                <Cell eData={data.elements[i]} ></Cell>
+                <Cell element={data.elements[i]} ></Cell>
             </div>);
     }
 
@@ -134,7 +153,7 @@ const LoopSpecialRow = ({start,end}: RowProps) => {
                 <div className='flex gap-1'>
                     {elems}
                 </div>
-                {show && <ElementModal onOpen={show} onClose={handleClose} data={currentData} />}
+                {show && currentData &&  <ElementModal onOpen={show} onClose={handleClose} data={currentData} />}
             </div>
         </div>
     );

@@ -9,7 +9,7 @@ interface CategoryItemProps {
 
 function App() {
   const onHover = (state: boolean, category: string) => {
-    var cells = document.getElementsByClassName('cell');
+    var cells = document.getElementsByClassName('cell') as HTMLCollectionOf<HTMLElement>;
     for (var i = 0; i < cells.length; i++) {
       if (!cells[i].className.includes(String(category))) {
         if (state) {
@@ -23,24 +23,14 @@ function App() {
     };
   }
 
-  const CategoryItem = ({category, children}: CategoryItemProps) => {
-    function setHoverColor(category) {
-      var hoveredCellClasses = document.getElementsByClassName(String(category)).item(0).firstChild.className;
-      const hoverColor = hoveredCellClasses.split(' ')[1];
-      var hoverClass = 'hover:' + hoverColor;
-      console.log(hoverClass);
-      return hoverClass;
-    }
+  const CategoryItem = ({ category, children }: CategoryItemProps) => (
+    <div
+      onMouseEnter={() => onHover(true, category)}
+      onMouseLeave={() => onHover(false, category)}
+      className={'p-2 bg-slate-800 hover:bg-blue-600 cursor-default last:rounded-b-2xl transition ease-linear duration-300'}>
+      {children}
+    </div>)
 
-    return (
-      <div 
-        onMouseEnter={() => onHover(true, category)} 
-        onMouseLeave={() => onHover(false, category)}
-        className={'p-2 bg-slate-800 hover:bg-blue-600 cursor-default last:rounded-b-2xl transition ease-linear duration-300'}>
-          {children}
-      </div>
-    );
-  }
 
   return (
     <div className='w-screen h-screen bg-[#34384b]'>

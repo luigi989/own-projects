@@ -1,10 +1,23 @@
+import { Element } from "./types"
+
 interface CellProps {
-    
+    element: Element
+}
+
+interface IntervalCellProps {
+    interval: string
+}
+
+interface NumberCellProps {
+    id: string
+    row: string
+    className?: string
+    children: React.ReactNode
 }
 
 function getHeaderColor(category: string) {
     switch (category) {
-        case 'diatomic nonmetal':  return 'bg-[#0066CC]'
+        case 'diatomic nonmetal': return 'bg-[#0066CC]'
         case 'noble gas': return 'bg-[#293F76]'
         case 'alkali metal': return 'bg-[#833081]'
         case 'alkaline earth metal': return 'bg-[#A63737]'
@@ -20,7 +33,7 @@ function getHeaderColor(category: string) {
 
 function getBodyColor(category: string) {
     switch (category) {
-        case 'diatomic nonmetal':  return 'bg-[#03C]'
+        case 'diatomic nonmetal': return 'bg-[#03C]'
         case 'noble gas': return 'bg-[#1B284B]'
         case 'alkali metal': return 'bg-[#582062]'
         case 'alkaline earth metal': return 'bg-[#722525]'
@@ -36,7 +49,7 @@ function getBodyColor(category: string) {
 
 function getCategory(category: string) {
     switch (category) {
-        case 'diatomic nonmetal':  return 'cell diatomicNonmetal'
+        case 'diatomic nonmetal': return 'cell diatomicNonmetal'
         case 'noble gas': return 'cell nobleGas'
         case 'alkali metal': return 'cell alkaliMetal'
         case 'alkaline earth metal': return 'cell alkalineEarthMetal'
@@ -50,34 +63,34 @@ function getCategory(category: string) {
     }
 }
 
-function Cell(props) {
-    return(
-        <div className={"wh-10 text-white flex flex-col " + getCategory(props.eData.category)}>
-            <div className={"px-1 " + getHeaderColor(props.eData.category)}>
-                {props.eData.number}
+const Cell = ({ element }: CellProps) => {
+    return (
+        <div className={"wh-10 text-white flex flex-col " + getCategory(element.category)}>
+            <div className={"px-1 " + getHeaderColor(element.category)}>
+                {element.number}
             </div>
-            <div className={"text-center grow " + getBodyColor(props.eData.category)}>
-                <div className="">{props.eData.symbol}</div>
+            <div className={"text-center grow " + getBodyColor(element.category)}>
+                <div className="">{element.symbol}</div>
                 <div className="">
-                    {props.eData.atomic_mass.toPrecision(3)}
+                    {element.atomic_mass.toPrecision(3)}
                 </div>
             </div>
         </div>
     );
 }
 
-function IntervalCell(props) {
-    return(
+const IntervalCell = ({ interval }: IntervalCellProps) => {
+    return (
         <div className="flex flex-col wh-10">
             <div className="px-1 bg-[#2B2B2B]">&nbsp;</div>
             <div className="flex items-center justify-center bg-[#171010] text-white w-full text-xs grow">
-                {props.interval}
+                {interval}
             </div>
         </div>
     );
 }
 
-function EmptyCell() {
+const EmptyCell = () => {
     return (
         <div className="wh-10">
             <div className="bg-transparent px-1">
@@ -90,29 +103,31 @@ function EmptyCell() {
     );
 }
 
-function NumberCell(props) {
-    function onHover(state, row) {
-        var rows = document.getElementById(String(row)).parentElement.childNodes;
-        var rowNum = document.getElementById(String(row) + 'num');
-        rows.forEach(currentRow => {
-            if(currentRow.id !== String(row)) {
-                if(state) {
-                    rowNum.style.textDecoration = 'underline';
-                    currentRow.style.filter = 'grayscale(100%)';
-                    currentRow.style.transition = 'all 0.3s';
-                } else {
-                    rowNum.style.textDecoration = 'none';
-                    currentRow.style.filter = 'none';
-                    currentRow.style.transition = 'all 0.3s';
+const NumberCell = ({ id, row, className, children }: NumberCellProps) => {
+    const onHover = (state: boolean, row: string) => {
+        var rows = document.getElementById(row)?.parentElement?.children as HTMLCollectionOf<HTMLElement>;
+        var rowNum = document.getElementById(row + 'num');
+        if (rows) {
+            [...rows].forEach(currentRow => {
+                if (currentRow.id !== row && rowNum) {
+                    if (state) {
+                        rowNum.style.textDecoration = 'underline';
+                        currentRow.style.filter = 'grayscale(100%)';
+                        currentRow.style.transition = 'all 0.3s';
+                    } else {
+                        rowNum.style.textDecoration = 'none';
+                        currentRow.style.filter = 'none';
+                        currentRow.style.transition = 'all 0.3s';
+                    }
                 }
-            }
-        });
+            });
+        }
     }
 
     return (
-        <div id={props.id} onMouseEnter={() => onHover(true, props.row)} onMouseLeave={() => onHover(false, props.row)} 
-            className={props.className + ' wh-10 inline-flex justify-center items-center text-xl'}>
-            {props.children}
+        <div id={id} onMouseEnter={() => onHover(true, row)} onMouseLeave={() => onHover(false, row)}
+            className={className + ' wh-10 inline-flex justify-center items-center text-xl'}>
+            {children}
         </div>
     );
 }
